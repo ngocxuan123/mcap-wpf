@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\project\vnpt\mcap\Mcap\Mcap\obj\Debug\
+E:\learn\c#\mca-wpf\mcap-wpf\Mcap\Mcap\obj\Debug\
 Mcap
 none
 false
 DEBUG;TRACE
-D:\project\vnpt\mcap\Mcap\Mcap\App.xaml
-2-1542128202
-
-10-877584625
-20-1172124577
-MainWindow.xaml;Views\Login.xaml;
+E:\learn\c#\mca-wpf\mcap-wpf\Mcap\Mcap\App.xaml
+4865683132
+22923066385
+20489370313
+20102898045
+Components\HtmlTextBox.xaml;MainLayout.xaml;Views\Login.xaml;Views\Main.xaml;
 
 True
 

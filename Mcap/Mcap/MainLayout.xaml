@@ -1,0 +1,78 @@
+﻿<Window x:Class="Mcap.MainLayout"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Mcap"
+        xmlns:views="clr-namespace:Mcap.Views"
+        mc:Ignorable="d"
+        Title="MainLayout" Height="450" Width="800" WindowStyle="None">
+    <Window.Resources>
+
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35"></RowDefinition>
+            <RowDefinition Height="32"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <!--Window navigate-->
+        <Grid Grid.Row="0" Grid.Column="0" Background="#EEE">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" HorizontalAlignment="Left" Orientation="Horizontal">
+                <Button Padding="5,2" Width="30" Height="25" Margin="10,5,10,5">&lt;</Button>
+                <Button Padding="5,2"  Width="30" Height="25" Margin="0,5">&gt;</Button>
+            </StackPanel>
+            <StackPanel Grid.Column="1" HorizontalAlignment="Right" Orientation="Horizontal">
+                <Button x:Name="MinimiseScreen" Width="30" Padding="5,2" Height="25" Margin="0,5,10,5" Click="MinimiseScreen_Click">-</Button>
+                <Button x:Name="Fullscreen" Width="30" Padding="5,2"  Height="25" Margin="0,5,10,5" Click="Fullscreen_Click">O</Button>
+                <Button x:Name="Close" Width="30" Padding="5,2" Height="25" Margin="0,5,10,5" Click="Close_Click">x</Button>
+            </StackPanel>
+        </Grid>
+        <!-- Navigate Menu bar -->
+        <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Stretch" Background="#1B66B2">
+            <Menu x:Name="mainMenu" IsMainMenu="True" Height="32" Background="#1B66B2" Foreground="White" VerticalAlignment="Center">
+                <MenuItem Header="THỰC HIỆN CA CHỤP" Cursor="Hand" Background="White" Height="32" Padding="10,0" Foreground="Black" VerticalAlignment="Center">
+                    <MenuItem.Icon>
+                        <Image Source="/Resources/icons/black/b-workstation.png" Margin="0,-4,0,0"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="TIẾP NHẬN" Cursor="Hand" Background="Transparent" Height="32" Padding="10,0" Foreground="White" VerticalAlignment="Center">
+                    <MenuItem.Icon>
+                        <Image Source="/Resources/icons/white/w-patient-add.png" Margin="0,-4,0,0"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="WORKLIST" Background="Transparent" Height="32" Padding="10,0" Foreground="White" VerticalAlignment="Center">
+                    <MenuItem.Icon>
+                        <Image Source="/Resources/icons/white/w-list.png" Margin="0,-4,0,0"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="BỆNH NHÂN" Background="Transparent" Height="32" Padding="10,0" Foreground="White" VerticalAlignment="Center">
+                    <MenuItem.Icon>
+                        <Image Source="/Resources/icons/white/w-patient.png" Margin="0,-4,0,0"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="THỐNG KÊ" Background="Transparent" Height="32" Padding="10,0" Foreground="White" VerticalAlignment="Center">
+                    <MenuItem.Icon>
+                        <Image Source="/Resources/icons/white/w-chart.png" Margin="0,-4,0,0"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="DANH MỤC" Background="Transparent" Height="32" Padding="10,0" Foreground="White" VerticalAlignment="Center">
+                    <MenuItem.Icon>
+                        <Image Source="/Resources/icons/white/w-category.png" Margin="0,-4,0,0"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="CÀI ĐẶT" Background="Transparent" Height="32" Padding="10,0" Foreground="White" VerticalAlignment="Center">
+                    <MenuItem.Icon>
+                        <Image Source="/Resources/icons/white/w-setting.png" Margin="0,-4,0,0"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+            </Menu>
+        </StackPanel>
+        <!-- Content -->
+        <ContentControl Grid.Row="2" Content="{Binding}" />
+    </Grid>
+</Window>

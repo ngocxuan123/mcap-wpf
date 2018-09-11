@@ -15,7 +15,8 @@ namespace Mcap
     {
         private void Application_Startup(object sender, StartupEventArgs e)
         {
-            StartupUri = new Uri("MainWindow.xaml", UriKind.Relative);
+            //StartupUri = new Uri("Views/Login.xaml", UriKind.Relative);
+            StartupUri = new Uri("MainLayout.xaml", UriKind.Relative);
         }
     }
 }

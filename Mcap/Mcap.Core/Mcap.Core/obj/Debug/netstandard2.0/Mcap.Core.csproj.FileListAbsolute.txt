@@ -1,0 +1,9 @@
+E:\learn\c#\mca-wpf\mcap-wpf\Mcap\Mcap.Core\Mcap.Core\bin\Debug\netstandard2.0\Mcap.Core.deps.json
+E:\learn\c#\mca-wpf\mcap-wpf\Mcap\Mcap.Core\Mcap.Core\bin\Debug\netstandard2.0\Mcap.Core.dll
+E:\learn\c#\mca-wpf\mcap-wpf\Mcap\Mcap.Core\Mcap.Core\bin\Debug\netstandard2.0\Mcap.Core.pdb
+E:\learn\c#\mca-wpf\mcap-wpf\Mcap\Mcap.Core\Mcap.Core\obj\Debug\netstandard2.0\Mcap.Core.csprojAssemblyReference.cache
+E:\learn\c#\mca-wpf\mcap-wpf\Mcap\Mcap.Core\Mcap.Core\obj\Debug\netstandard2.0\Mcap.Core.csproj.CoreCompileInputs.cache
+E:\learn\c#\mca-wpf\mcap-wpf\Mcap\Mcap.Core\Mcap.Core\obj\Debug\netstandard2.0\Mcap.Core.AssemblyInfoInputs.cache
+E:\learn\c#\mca-wpf\mcap-wpf\Mcap\Mcap.Core\Mcap.Core\obj\Debug\netstandard2.0\Mcap.Core.AssemblyInfo.cs
+E:\learn\c#\mca-wpf\mcap-wpf\Mcap\Mcap.Core\Mcap.Core\obj\Debug\netstandard2.0\Mcap.Core.dll
+E:\learn\c#\mca-wpf\mcap-wpf\Mcap\Mcap.Core\Mcap.Core\obj\Debug\netstandard2.0\Mcap.Core.pdb

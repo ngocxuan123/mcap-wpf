@@ -1,0 +1,12 @@
+﻿<UserControl x:Name="HtmlTextBox1" x:Class="Mcap.Components.HtmlTextBox"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Mcap.Components"
+             mc:Ignorable="d" 
+             d:DesignHeight="223.729" d:DesignWidth="405.932" Loaded="HtmlTextBox1_Loaded_1">
+    <Grid>
+        <WebBrowser Name="visualBrowser" HorizontalAlignment="Left" Height="224" VerticalAlignment="Top" Width="406"/>
+    </Grid>
+</UserControl>
