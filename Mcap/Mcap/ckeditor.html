@@ -5,7 +5,12 @@
     <meta charset="utf-8">
     <meta name="robots" content="noindex, nofollow">
     <title>Custom toolbar</title>
-    <script src="https://cdn.ckeditor.com/4.10.0/standard-all/ckeditor.js"></script>
+    <script src="./Scripts/ckeditor/ckeditor.js"></script>
+    <style>
+        html {
+            overflow: hidden;
+        }
+    </style>
 </head>
 
 <body>
@@ -14,7 +19,7 @@
 	</textarea>
 
     <script>
-        CKEDITOR.replace('editor1', {
+        var editor = CKEDITOR.replace('editor1', {
             // Define the toolbar groups as it is a more accessible solution.
             toolbarGroups: [
                 { "name": "basicstyles", "groups": ["basicstyles"] },
@@ -28,6 +33,8 @@
             // Remove the redundant buttons from toolbar groups defined above.
             removeButtons: 'Underline,Strike,Subscript,Superscript,Anchor,Styles,Specialchar'
         });
+        editor.execCommand('maximize');
+        //CKEDITOR.replace('editor1');
     </script>
 </body>
 

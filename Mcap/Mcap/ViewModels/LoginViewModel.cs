@@ -9,7 +9,7 @@ using System.Windows.Input;
 
 namespace Mcap.ViewModels
 {
-    internal class LoginViewModel
+    internal class LoginViewModel: BaseViewModel
     {
         public UserLoginModel UserLogin { get; set; }
 
@@ -28,7 +28,7 @@ namespace Mcap.ViewModels
 
         public LoginViewModel ()
         {
-            UserLogin = new UserLoginModel() { UserName = "", Password = "123456", Remember = false };
+            UserLogin = new UserLoginModel() { UserName = "admin", Password = "123456", Remember = false };
         }
         
         private bool SaveCanExecute()

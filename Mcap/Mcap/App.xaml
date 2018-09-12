@@ -1,8 +1,7 @@
 ﻿<Application x:Class="Mcap.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:Mcap"
-             Startup="Application_Startup">
+             xmlns:local="clr-namespace:Mcap">
     <Application.Resources>
         <ResourceDictionary>
             <!-- WPF 4.0 workaround -->

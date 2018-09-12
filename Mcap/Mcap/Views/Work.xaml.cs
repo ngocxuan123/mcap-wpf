@@ -13,20 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Mcap.Components
+namespace Mcap.Views
 {
     /// <summary>
-    /// Interaction logic for HtmlTextBox.xaml
+    /// Interaction logic for Work.xaml
     /// </summary>
-    public partial class HtmlTextBox : UserControl
+    public partial class Work : UserControl
     {
-        public HtmlTextBox()
+        public Work()
         {
             InitializeComponent();
-        }
-
-        private void HtmlTextBox_Loaded(object sender, RoutedEventArgs e)
-        {
             visualBrowser.Navigate(@"E:\learn\c#\mca-wpf\mcap-wpf\Mcap\Mcap\ckeditor.html");
         }
     }

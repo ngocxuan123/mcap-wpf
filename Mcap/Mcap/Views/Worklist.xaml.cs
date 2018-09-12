@@ -16,13 +16,13 @@ using System.Windows.Shapes;
 namespace Mcap.Views
 {
     /// <summary>
-    /// Interaction logic for Main.xaml
+    /// Interaction logic for Worklist.xaml
     /// </summary>
-    public partial class Main : Page
+    public partial class Worklist : UserControl
     {
-        public Main()
+        public Worklist()
         {
-            //InitializeComponent();
+            InitializeComponent();
         }
     }
 }

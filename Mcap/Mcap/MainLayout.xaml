@@ -5,10 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Mcap"
         xmlns:views="clr-namespace:Mcap.Views"
+        xmlns:viewmodels="clr-namespace:Mcap.ViewModels"
         mc:Ignorable="d"
         Title="MainLayout" Height="450" Width="800" WindowStyle="None">
     <Window.Resources>
-
+        <DataTemplate DataType="{x:Type viewmodels:LoginViewModel}">
+            <views:Login />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:WorklistViewModel}">
+            <views:Worklist />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:WorkingViewModel}">
+            <views:Work />
+        </DataTemplate>
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
@@ -35,7 +44,7 @@
         <!-- Navigate Menu bar -->
         <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Stretch" Background="#1B66B2">
             <Menu x:Name="mainMenu" IsMainMenu="True" Height="32" Background="#1B66B2" Foreground="White" VerticalAlignment="Center">
-                <MenuItem Header="THỰC HIỆN CA CHỤP" Cursor="Hand" Background="White" Height="32" Padding="10,0" Foreground="Black" VerticalAlignment="Center">
+                <MenuItem Command="{Binding Path=WorkingPageCommand}" Header="THỰC HIỆN CA CHỤP" Cursor="Hand" Background="White" Height="32" Padding="10,0" Foreground="Black" VerticalAlignment="Center">
                     <MenuItem.Icon>
                         <Image Source="/Resources/icons/black/b-workstation.png" Margin="0,-4,0,0"/>
                     </MenuItem.Icon>
@@ -45,7 +54,7 @@
                         <Image Source="/Resources/icons/white/w-patient-add.png" Margin="0,-4,0,0"/>
                     </MenuItem.Icon>
                 </MenuItem>
-                <MenuItem Header="WORKLIST" Background="Transparent" Height="32" Padding="10,0" Foreground="White" VerticalAlignment="Center">
+                <MenuItem Header="WORKLIST" Command="{Binding Path=WorkListPageCommand}" Background="Transparent" Height="32" Padding="10,0" Foreground="White" VerticalAlignment="Center">
                     <MenuItem.Icon>
                         <Image Source="/Resources/icons/white/w-list.png" Margin="0,-4,0,0"/>
                     </MenuItem.Icon>
@@ -64,6 +73,11 @@
                     <MenuItem.Icon>
                         <Image Source="/Resources/icons/white/w-category.png" Margin="0,-4,0,0"/>
                     </MenuItem.Icon>
+                    <StackPanel Orientation="Vertical">
+                        <MenuItem Header="QUẢN LÝ NGƯỜI DÙNG" Width="Auto" Cursor="Hand" Background="White" Height="32" Foreground="Black" VerticalAlignment="Center"></MenuItem>
+                        <MenuItem Header="QUẢN LÝ MẪU BÁO CÁO" Width="Auto" Cursor="Hand" Background="White" Height="32" Foreground="Black" VerticalAlignment="Center"></MenuItem>
+                        <MenuItem Header="QUẢN LÝ TỪ VIẾT TẮT" Width="Auto" Cursor="Hand" Background="White" Height="32" Foreground="Black" VerticalAlignment="Center"></MenuItem>
+                    </StackPanel>
                 </MenuItem>
                 <MenuItem Header="CÀI ĐẶT" Background="Transparent" Height="32" Padding="10,0" Foreground="White" VerticalAlignment="Center">
                     <MenuItem.Icon>
@@ -73,6 +87,6 @@
             </Menu>
         </StackPanel>
         <!-- Content -->
-        <ContentControl Grid.Row="2" Content="{Binding}" />
+        <ContentControl Grid.Row="2" Content="{Binding Path=CurrentViewModel}" />
     </Grid>
 </Window>

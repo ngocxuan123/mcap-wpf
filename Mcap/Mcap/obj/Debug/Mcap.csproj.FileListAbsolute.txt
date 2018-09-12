@@ -75,7 +75,9 @@ E:\learn\c#\mca-wpf\mcap-wpf\Mcap\Mcap\obj\Debug\Mcap_Content.g.cs
 E:\learn\c#\mca-wpf\mcap-wpf\Mcap\Mcap\obj\Debug\Components\HtmlTextBox.baml
 E:\learn\c#\mca-wpf\mcap-wpf\Mcap\Mcap\obj\Debug\GeneratedInternalTypeHelper.g.cs
 E:\learn\c#\mca-wpf\mcap-wpf\Mcap\Mcap\bin\Debug\ckeditor.html
-E:\learn\c#\mca-wpf\mcap-wpf\Mcap\Mcap\obj\Debug\Views\Main.g.cs
 E:\learn\c#\mca-wpf\mcap-wpf\Mcap\Mcap\obj\Debug\MainLayout.g.cs
 E:\learn\c#\mca-wpf\mcap-wpf\Mcap\Mcap\obj\Debug\MainLayout.baml
-E:\learn\c#\mca-wpf\mcap-wpf\Mcap\Mcap\obj\Debug\Views\Main.baml
+E:\learn\c#\mca-wpf\mcap-wpf\Mcap\Mcap\obj\Debug\Views\Worklist.g.cs
+E:\learn\c#\mca-wpf\mcap-wpf\Mcap\Mcap\obj\Debug\Views\Worklist.baml
+E:\learn\c#\mca-wpf\mcap-wpf\Mcap\Mcap\obj\Debug\Views\Work.g.cs
+E:\learn\c#\mca-wpf\mcap-wpf\Mcap\Mcap\obj\Debug\Views\Work.baml

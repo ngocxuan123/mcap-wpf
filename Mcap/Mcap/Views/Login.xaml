@@ -1,4 +1,4 @@
-﻿<Page x:Class="Mcap.Views.Login"
+﻿<UserControl x:Class="Mcap.Views.Login"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Mcap.ViewModels"
         xmlns:validation="clr-namespace:Mcap.Validation"
         mc:Ignorable="d"
-        Title="Đăng nhập hệ thống MCAP" Height="450" Width="1000">
+        Height="450" Width="1000">
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="/Resources/bg/vnpt-bg.jpg" Stretch="UniformToFill"/>
@@ -98,4 +98,4 @@
             </Grid>
         </Canvas>
     </Grid>
-</Page>
+</UserControl>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Mcap.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -13,10 +14,12 @@ namespace Mcap
     /// </summary>
     public partial class App : Application
     {
-        private void Application_Startup(object sender, StartupEventArgs e)
+        protected override void OnStartup(StartupEventArgs e)
         {
-            //StartupUri = new Uri("Views/Login.xaml", UriKind.Relative);
-            StartupUri = new Uri("MainLayout.xaml", UriKind.Relative);
+            base.OnStartup(e);
+
+            var window = new MainLayout() { DataContext = new LayoutViewModel() };
+            window.Show();
         }
     }
 }
