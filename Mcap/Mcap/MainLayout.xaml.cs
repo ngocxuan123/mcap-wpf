@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Mcap.Core.EventArgs;
+using Mcap.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -48,6 +50,14 @@ namespace Mcap
         private void MinimiseScreen_Click(object sender, RoutedEventArgs e)
         {
             WindowState = WindowState.Minimized;
+        }
+
+        private void McapMenu_Tap(object sender, RoutedEventArgs e)
+        {
+            MenuLayoutRoutedEventArgs args = (MenuLayoutRoutedEventArgs)e;
+            LayoutViewModel viewModel = (LayoutViewModel)DataContext;
+            Type t = Type.GetType(args.Name);
+            viewModel.CurrentViewModel = (BaseViewModel) Activator.CreateInstance(t);
         }
     }
 }

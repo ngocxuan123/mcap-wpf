@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:Mcap"
         xmlns:views="clr-namespace:Mcap.Views"
         xmlns:viewmodels="clr-namespace:Mcap.ViewModels"
+        xmlns:components="clr-namespace:Mcap.Components"
         mc:Ignorable="d"
         Title="MainLayout" Height="450" Width="800" WindowStyle="None">
     <Window.Resources>
@@ -22,6 +23,7 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="35"></RowDefinition>
+            <!--<RowDefinition Height="35"></RowDefinition>-->
             <RowDefinition Height="32"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
@@ -42,7 +44,7 @@
             </StackPanel>
         </Grid>
         <!-- Navigate Menu bar -->
-        <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Stretch" Background="#1B66B2">
+        <!--<StackPanel Grid.Row="1" Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Stretch" Background="#1B66B2">
             <Menu x:Name="mainMenu" IsMainMenu="True" Height="32" Background="#1B66B2" Foreground="White" VerticalAlignment="Center">
                 <MenuItem Command="{Binding Path=WorkingPageCommand}" Header="THỰC HIỆN CA CHỤP" Cursor="Hand" Background="White" Height="32" Padding="10,0" Foreground="Black" VerticalAlignment="Center">
                     <MenuItem.Icon>
@@ -85,7 +87,11 @@
                     </MenuItem.Icon>
                 </MenuItem>
             </Menu>
-        </StackPanel>
+        </StackPanel>-->
+        <!-- Menu Example -->
+        <Grid Grid.Row="1">
+            <components:McapMenu Tap="McapMenu_Tap"></components:McapMenu>
+        </Grid>
         <!-- Content -->
         <ContentControl Grid.Row="2" Content="{Binding Path=CurrentViewModel}" />
     </Grid>
