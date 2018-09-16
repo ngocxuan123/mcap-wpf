@@ -10,12 +10,15 @@
         html {
             overflow: hidden;
         }
+        #editor1 {
+            min-height: 400px;
+        }
     </style>
 </head>
 
 <body>
 
-    <textarea cols="80" id="editor1" name="editor1" rows="10">&lt;p&gt;This is some &lt;strong&gt;sample text&lt;/strong&gt;. You are using &lt;a href="https://ckeditor.com/"&gt;CKEditor&lt;/a&gt;.&lt;/p&gt;
+    <textarea cols="80" id="editor1" name="editor1" rows="50">&lt;p&gt;This is some &lt;strong&gt;sample text&lt;/strong&gt;. You are using &lt;a href="https://ckeditor.com/"&gt;CKEditor&lt;/a&gt;.&lt;/p&gt;
 	</textarea>
 
     <script>
@@ -33,7 +36,6 @@
             // Remove the redundant buttons from toolbar groups defined above.
             removeButtons: 'Underline,Strike,Subscript,Superscript,Anchor,Styles,Specialchar'
         });
-        editor.execCommand('maximize');
         //CKEDITOR.replace('editor1');
     </script>
 </body>

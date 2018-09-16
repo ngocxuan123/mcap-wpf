@@ -4,8 +4,12 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             Loaded="HtmlTextBox_Loaded">
+             Loaded="HtmlTextBox_Loaded" MinWidth="219.202" MinHeight="276.971">
     <Grid>
-        <WebBrowser Name="visualBrowser" HorizontalAlignment="Left" Height="224" VerticalAlignment="Top" Width="406"/>
+        <WebBrowser Name="visualBrowser"
+                    OverridesDefaultStyle="False"
+                    ScrollViewer.CanContentScroll="False"
+                    ScrollViewer.HorizontalScrollBarVisibility="Hidden" 
+                    ScrollViewer.VerticalScrollBarVisibility="Hidden" Margin="0,0,0.2,-0.2"/>
     </Grid>
 </UserControl>

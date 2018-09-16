@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Mcap.Helper;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,7 +25,6 @@ namespace Mcap.Views
         public Work()
         {
             InitializeComponent();
-            visualBrowser.Navigate(@"E:\learn\c#\mca-wpf\mcap-wpf\Mcap\Mcap\ckeditor.html");
         }
     }
 }

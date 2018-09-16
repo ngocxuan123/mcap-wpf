@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Mcap.Model
 {
-    internal class UserLoginModel : BaseModel
+    public class UserLoginModel : BaseModel
     {
         
         private string username;

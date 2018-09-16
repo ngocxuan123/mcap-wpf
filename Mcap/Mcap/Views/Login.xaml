@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:Mcap.ViewModels"
         xmlns:validation="clr-namespace:Mcap.Validation"
         mc:Ignorable="d"
-        Height="450" Width="1000">
+        Height="450" Width="1000"
+        DataContext="{Binding Login, Source={StaticResource Locator}}">
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="/Resources/bg/vnpt-bg.jpg" Stretch="UniformToFill"/>

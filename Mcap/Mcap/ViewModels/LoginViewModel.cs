@@ -1,4 +1,5 @@
-﻿using Mcap.Commands;
+﻿using GalaSoft.MvvmLight;
+using Mcap.Commands;
 using Mcap.Model;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ using System.Windows.Input;
 
 namespace Mcap.ViewModels
 {
-    internal class LoginViewModel: BaseViewModel
+    public class LoginViewModel: ViewModelBase
     {
         public UserLoginModel UserLogin { get; set; }
 

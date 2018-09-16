@@ -1,4 +1,5 @@
-﻿using Mcap.Core.EventArgs;
+﻿using GalaSoft.MvvmLight;
+using Mcap.Core.EventArgs;
 using Mcap.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -26,6 +27,7 @@ namespace Mcap
             InitializeComponent();
         }
 
+        #region "Window action Overide"
         private void Close_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
@@ -52,12 +54,20 @@ namespace Mcap
             WindowState = WindowState.Minimized;
         }
 
+        protected override void OnMouseLeftButtonDown(MouseButtonEventArgs e)
+        {
+            base.OnMouseLeftButtonDown(e);
+            if (e.ButtonState == MouseButtonState.Pressed)
+                DragMove();
+        }
+        #endregion
+
         private void McapMenu_Tap(object sender, RoutedEventArgs e)
         {
             MenuLayoutRoutedEventArgs args = (MenuLayoutRoutedEventArgs)e;
-            LayoutViewModel viewModel = (LayoutViewModel)DataContext;
+            LayoutViewModel viewModel = (LayoutViewModel) DataContext;
             Type t = Type.GetType(args.Name);
-            viewModel.CurrentViewModel = (BaseViewModel) Activator.CreateInstance(t);
+            viewModel.CurrentViewModel = (ViewModelBase) Activator.CreateInstance(t);
         }
     }
 }

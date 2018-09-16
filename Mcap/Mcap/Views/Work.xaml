@@ -5,8 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Mcap.Views"
              xmlns:Components="clr-namespace:Mcap.Components"
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             mc:Ignorable="d" d:DesignWidth="800" Height="799.6">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -107,12 +106,7 @@
                                     </Grid>
                                 </GroupBox>
                                 <GroupBox Header="Kết quả khám bệnh">
-                                    <WebBrowser x:Name="visualBrowser" Height="400"
-                                                OverridesDefaultStyle="False"
-                                                ScrollViewer.CanContentScroll="False"
-                                                ScrollViewer.HorizontalScrollBarVisibility="Hidden" 
-                                                ScrollViewer.VerticalScrollBarVisibility="Hidden"
-                                                />
+                                    <Components:HtmlTextBox />
                                 </GroupBox>
                             </StackPanel>
                             <Border Grid.Column="1" Grid.Row="2" Grid.RowSpan="2" Background="Transparent" BorderBrush="Gainsboro" BorderThickness="1" Margin="5" Padding="5">

@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-E:\learn\c#\mca-wpf\mcap-wpf\Mcap\Mcap\obj\Debug\
+D:\work\wpf\mcap-wpf\Mcap\Mcap\obj\Debug\
 Mcap
 none
 false
 DEBUG;TRACE
-E:\learn\c#\mca-wpf\mcap-wpf\Mcap\Mcap\App.xaml
+D:\work\wpf\mcap-wpf\Mcap\Mcap\App.xaml
 6-1065472888
 22923066385
-27-2140748352
-1341205520953
+25266208320
+129151489123
 Components\HtmlTextBox.xaml;Components\McapMenu.xaml;MainLayout.xaml;Views\Login.xaml;Views\Work.xaml;Views\Worklist.xaml;
 
-True
+False
 

@@ -5,11 +5,13 @@ VisualStudioVersion = 15.0.27703.2042
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mcap", "Mcap\Mcap.csproj", "{52AC7F0F-3137-4B19-86B0-EAE25774476E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mcap.Core", "Mcap.Core\Mcap.Core\Mcap.Core.csproj", "{78B392FD-F277-40D1-A087-595BE43A1439}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mcap.Core", "Mcap.Core\Mcap.Core\Mcap.Core.csproj", "{78B392FD-F277-40D1-A087-595BE43A1439}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mcap.Service", "Mcap.Service\Mcap.Service\Mcap.Service.csproj", "{6760BCA0-E8E6-4F93-AB75-28699060CCBF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mcap.Service", "Mcap.Service\Mcap.Service\Mcap.Service.csproj", "{6760BCA0-E8E6-4F93-AB75-28699060CCBF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mcap.Integrate", "Mcap.Integrate\Mcap.Integrate\Mcap.Integrate.csproj", "{F8938DA9-E8E9-45BB-80E2-22E900BFAC2D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mcap.Integrate", "Mcap.Integrate\Mcap.Integrate\Mcap.Integrate.csproj", "{F8938DA9-E8E9-45BB-80E2-22E900BFAC2D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mcap.Data", "Mcap.Data\Mcap.Data\Mcap.Data.csproj", "{E59F831D-DC11-45C9-9FC6-1F7D9C459E55}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{F8938DA9-E8E9-45BB-80E2-22E900BFAC2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F8938DA9-E8E9-45BB-80E2-22E900BFAC2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F8938DA9-E8E9-45BB-80E2-22E900BFAC2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E59F831D-DC11-45C9-9FC6-1F7D9C459E55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E59F831D-DC11-45C9-9FC6-1F7D9C459E55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E59F831D-DC11-45C9-9FC6-1F7D9C459E55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E59F831D-DC11-45C9-9FC6-1F7D9C459E55}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

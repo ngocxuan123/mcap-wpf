@@ -8,6 +8,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media.Imaging;
+using System.Linq;
 
 namespace Mcap.Components
 {
@@ -35,34 +36,51 @@ namespace Mcap.Components
             RaiseEvent(newEventArgs);
         }
 
+        public void ChangeActive (string Header)
+        {
+            for (int i = 0; i < MenuItems.Count; i++)
+            {
+                if (MenuItems[i].Header == Header)
+                {
+                    MenuItems[i].IsActive = true;
+                } else
+                {
+                    MenuItems[i].IsActive = false;
+                }
+                
+            }
+        }
         public McapMenu()
         {
             InitializeComponent();
             MenuItems = new ObservableCollection<MenuItemViewModel>
             {
-                new MenuItemViewModel { Header = "Thực hiện", MenuIcon = "/Resources/icons/white/w-patient-add.png", Command = new DelegateCommand( () => {
+                new MenuItemViewModel { Header = "Thực hiện", MenuIcon = "AddressCard", Command = new DelegateCommand( () => {
                        RaiseTapEvent("Mcap.ViewModels.WorkingViewModel");
-                    }) },
-                new MenuItemViewModel { Header = "Tiếp nhận", MenuIcon = "/Resources/icons/white/w-chart.png", Command = new DelegateCommand( () => {
+                       ChangeActive("Thực hiện");
+                    }), IsActive = true },
+                new MenuItemViewModel { Header = "Tiếp nhận", MenuIcon = "Ambulance", Command = new DelegateCommand( () => {
                        RaiseTapEvent("Tiếp nhận");
+                       ChangeActive("Tiếp nhận");
                     }),
                     MenuItems = new ObservableCollection<MenuItemViewModel>
                         {
-                            new MenuItemViewModel { Header = "Beta1", MenuIcon = "/Resources/icons/black/b-workstation.png" },
-                            new MenuItemViewModel { Header = "Beta2", MenuIcon = "/Resources/icons/black/b-workstation.png",
+                            new MenuItemViewModel { Header = "Beta1", MenuIcon = "Ambulance" },
+                            new MenuItemViewModel { Header = "Beta2", MenuIcon = "Ambulance",
                                 MenuItems = new ObservableCollection<MenuItemViewModel>
                                 {
-                                    new MenuItemViewModel { Header = "Beta1a", MenuIcon = "/Resources/icons/black/b-workstation.png" },
-                                    new MenuItemViewModel { Header = "Beta1b", MenuIcon = "/Resources/icons/black/b-workstation.png" },
-                                    new MenuItemViewModel { Header = "Beta1c", MenuIcon = "/Resources/icons/black/b-workstation.png" }
+                                    new MenuItemViewModel { Header = "Beta1a", MenuIcon = "Ambulance" },
+                                    new MenuItemViewModel { Header = "Beta1b", MenuIcon = "Ambulance" },
+                                    new MenuItemViewModel { Header = "Beta1c", MenuIcon = "Ambulance" }
                                 }
                             },
-                            new MenuItemViewModel { Header = "Beta3", MenuIcon = "/Resources/icons/black/b-workstation.png" }
+                            new MenuItemViewModel { Header = "Beta3", MenuIcon = "Ambulance" }
                         }
                 },
-                new MenuItemViewModel { Header = "Worklist", MenuIcon = "/Resources/icons/white/w-workstation.png",  Command = new DelegateCommand( () => {
+                new MenuItemViewModel { Header = "Worklist", MenuIcon = "Ambulance",  Command = new DelegateCommand( () => {
                        RaiseTapEvent("Mcap.ViewModels.LoginViewModel");
-                    })  }
+                       ChangeActive("Worklist");
+                    }), IsActive = false  }
             };
             DataContext = this;
         }
@@ -129,6 +147,37 @@ namespace Mcap.Components
             }
         }
 
+        private bool _isActive;
+        public bool IsActive
+        {
+            get { return _isActive; }
+            set
+            {
+                if (_isActive == value)
+                    return;
+
+                _isActive = value;
+                base.RaisePropertyChanged("IsActive");
+                base.RaisePropertyChanged("BackgroundColor");
+                base.RaisePropertyChanged("ForeGround");
+            }
+        }
+
+        public string BackgroundColor
+        {
+            get
+            {
+                return IsActive ? "White" : "#0095FF";
+            }
+        }
+
+        public string Foreground
+        {
+            get
+            {
+                return IsActive ? "Black" : "White";
+            }
+        }
 
         private ObservableCollection<MenuItemViewModel> _menuItems;
         public ObservableCollection<MenuItemViewModel> MenuItems

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Mcap.Helper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,7 +28,7 @@ namespace Mcap.Components
 
         private void HtmlTextBox_Loaded(object sender, RoutedEventArgs e)
         {
-            visualBrowser.Navigate(@"E:\learn\c#\mca-wpf\mcap-wpf\Mcap\Mcap\ckeditor.html");
+            visualBrowser.Navigate(CommonHelper.GetCkeditorUri());
         }
     }
 }
