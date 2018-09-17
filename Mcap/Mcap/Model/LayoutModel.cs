@@ -1,4 +1,5 @@
-﻿using Mcap.ViewModels;
+﻿using GalaSoft.MvvmLight;
+using Mcap.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,14 +10,14 @@ namespace Mcap.Model
 {
     internal class LayoutModel : BaseModel
     {
-        private BaseViewModel _currentViewModel;
-        public BaseViewModel CurrentViewModel
+        private BaseModel _currentViewModel;
+        public BaseModel CurrentViewModel
         {
             get { return _currentViewModel; }
             set
             {
                 _currentViewModel = value;
-                OnPropertyChanged("CurrentViewModel");
+                RaisePropertyChanged("CurrentViewModel");
             }
         }
     }

@@ -1,5 +1,4 @@
 ﻿using GalaSoft.MvvmLight;
-using Mcap.Commands;
 using Mcap.Model;
 using System;
 using System.Collections.Generic;
@@ -10,11 +9,11 @@ using System.Windows.Input;
 
 namespace Mcap.ViewModels
 {
-    public class LayoutViewModel: ViewModelBase
+    public class LayoutViewModel: BaseViewModel
     {
-        private ViewModelBase _currentViewModel;
+        private BaseViewModel _currentViewModel;
 
-        public ViewModelBase CurrentViewModel
+        public BaseViewModel CurrentViewModel
         {
             get { return _currentViewModel;  }
             set

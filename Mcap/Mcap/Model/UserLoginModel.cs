@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GalaSoft.MvvmLight;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace Mcap.Model
             set
             {
                 username = value;
-                OnPropertyChanged("UserName");
+                RaisePropertyChanged("UserName");
             }
         }
 
@@ -28,7 +29,7 @@ namespace Mcap.Model
             set
             {
                 password = value;
-                OnPropertyChanged("Password");
+                RaisePropertyChanged("Password");
             }
         }
 
@@ -39,7 +40,7 @@ namespace Mcap.Model
             set
             {
                 remember = value;
-                OnPropertyChanged("Remember");
+                RaisePropertyChanged("Remember");
             }
         }
     }

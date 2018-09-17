@@ -1,28 +1,22 @@
 ﻿using GalaSoft.MvvmLight;
-using Mcap.Commands;
+using GalaSoft.MvvmLight.Command;
 using Mcap.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace Mcap.ViewModels
 {
-    public class LoginViewModel: ViewModelBase
+    public class LoginViewModel: BaseViewModel
     {
         public UserLoginModel UserLogin { get; set; }
 
-        private DelegateCommand loginCommand;
+        private RelayCommand loginCommand;
 
         public ICommand LoginCommand
         {
             get
             {
                 if (loginCommand == null)
-                    loginCommand = new DelegateCommand(new Action(SaveExecuted),
-                       new Func<bool>(SaveCanExecute));
+                    loginCommand = new RelayCommand(LoginExecuted,LoginCanExecute , false);
                 return loginCommand;
             }
         }
@@ -32,12 +26,12 @@ namespace Mcap.ViewModels
             UserLogin = new UserLoginModel() { UserName = "admin", Password = "123456", Remember = false };
         }
         
-        private bool SaveCanExecute()
+        private bool LoginCanExecute()
         {
             return !string.IsNullOrEmpty(UserLogin.UserName) && !string.IsNullOrEmpty(UserLogin.Password);
         }
 
-        private void SaveExecuted()
+        private void LoginExecuted()
         {
             System.Windows.MessageBox.Show(string.Format("Saved: {0} {1})",
                 UserLogin.UserName, UserLogin.Password));

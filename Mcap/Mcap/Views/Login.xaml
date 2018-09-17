@@ -33,7 +33,7 @@
                     <TextBlock Text="RADIOLOGY INFOMATION SYSTEM" TextWrapping="Wrap" TextAlignment="Center" Foreground="White" FontSize="22" Margin="0,5" />
                     <TextBlock Text="© 2018 -www.vnptsoftware.vn" TextWrapping="Wrap" TextAlignment="Center" Foreground="White" FontSize="11" Margin="0,5" />
                 </StackPanel>
-                <StackPanel Grid.Row="0" Grid.Column="1" DataContext="{Binding Path=UserLogin, Mode=TwoWay}">
+                <StackPanel Grid.Row="0" Grid.Column="1">
                     <TextBlock Text="Đăng nhập" Foreground="Gray" Padding="10"></TextBlock>
                     <TextBox Margin="10,5" Padding="3">
                         <TextBox.Background>
@@ -49,7 +49,7 @@
                             </ImageBrush>
                         </TextBox.Background>
                         <TextBox.Text>
-                            <Binding Path="UserName" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
+                            <Binding Path="UserLogin.UserName" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
                                 <Binding.ValidationRules>
                                     <validation:RequiredValidationRule />
                                 </Binding.ValidationRules>
@@ -59,7 +59,7 @@
                     <StackPanel xmlns:ff="clr-namespace:Mcap.Helper">
                         <PasswordBox Margin="10,5" Padding="3" 
                                      ff:PasswordBoxAssistant.BindPassword="true"  
-                                     ff:PasswordBoxAssistant.BoundPassword="{Binding Path=Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                                     ff:PasswordBoxAssistant.BoundPassword="{Binding UserLogin.Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                             <PasswordBox.Background>
                                 <ImageBrush ImageSource="/Resources/icons/lock.png" Stretch="Uniform" AlignmentX="Right">
                                     <ImageBrush.Transform>

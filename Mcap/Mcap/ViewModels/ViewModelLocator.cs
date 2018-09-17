@@ -18,8 +18,17 @@ namespace Mcap.ViewModels
             SimpleIoc.Default.Register<LoginViewModel>();
             SimpleIoc.Default.Register<WorkingViewModel>();
             SimpleIoc.Default.Register<WorklistViewModel>();
-        }
 
+            SimpleIoc.Default.Register<FooterViewModel>();
+        }
+        #region Layout Component
+        public FooterViewModel Footer
+        {
+            get => ServiceLocator.Current.GetInstance<FooterViewModel>();
+        }
+        #endregion
+
+        #region View Container
         public LayoutViewModel MainLayout
         {
             get => ServiceLocator.Current.GetInstance<LayoutViewModel>();
@@ -34,6 +43,7 @@ namespace Mcap.ViewModels
         {
             get => ServiceLocator.Current.GetInstance<WorkingViewModel>();
         }
+        #endregion
         public static void CleanUp ()
         {
 

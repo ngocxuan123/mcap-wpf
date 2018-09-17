@@ -77,8 +77,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Commands\CommandReference.cs" />
-    <Compile Include="Commands\DelegateCommand.cs" />
+    <Compile Include="Components\Footer.xaml.cs">
+      <DependentUpon>Footer.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Components\HtmlTextBox.xaml.cs">
       <DependentUpon>HtmlTextBox.xaml</DependentUpon>
     </Compile>
@@ -92,12 +93,14 @@
     </Compile>
     <Compile Include="Model\BaseModel.cs" />
     <Compile Include="Model\LayoutModel.cs" />
+    <Compile Include="Model\Shared\FooterModel.cs" />
     <Compile Include="Model\UserLoginModel.cs" />
     <Compile Include="Validation\RequiredValidationRule.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
-    <Compile Include="ViewModels\ExampleGrid.cs" />
     <Compile Include="ViewModels\LayoutViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
+    <Compile Include="ViewModels\Shared\FooterViewModel.cs" />
+    <Compile Include="ViewModels\Shared\MenuItemViewModel.cs" />
     <Compile Include="ViewModels\ViewModelLocator.cs" />
     <Compile Include="ViewModels\WorkingViewModel.cs" />
     <Compile Include="ViewModels\WorklistViewModel.cs" />
@@ -110,6 +113,10 @@
     <Compile Include="Views\Worklist.xaml.cs">
       <DependentUpon>Worklist.xaml</DependentUpon>
     </Compile>
+    <Page Include="Components\Footer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Components\HtmlTextBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

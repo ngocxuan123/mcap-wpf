@@ -24,10 +24,10 @@
         </DataTemplate>
     </Window.Resources>
     <DockPanel>
-        <Border DockPanel.Dock="Top" Height="70">
+        <Border DockPanel.Dock="Top" Height="75" Panel.ZIndex="9">
             <StackPanel>
                 <!--#region Window action Overide -->
-                <Grid Grid.Row="0" Grid.Column="0" Background="#EEE">
+                <Grid Grid.Row="0" Grid.Column="0" Background="#EEE" Height="35">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"></ColumnDefinition>
                         <ColumnDefinition Width="*"></ColumnDefinition>
@@ -44,12 +44,15 @@
                 </Grid>
                 <!--#endregion-->
                 <!--Navigate Menu-->
-                <components:McapMenu Tap="McapMenu_Tap"></components:McapMenu>
+                <components:McapMenu Tap="McapMenu_Tap" Height="40"></components:McapMenu>
             </StackPanel>
             <!--Window navigate-->
         </Border>
-        <Border>
-            <ContentControl Grid.Row="2" Content="{Binding Path=CurrentViewModel}" />
+        <Border DockPanel.Dock="Bottom" Height="30" Panel.ZIndex="9">
+            <components:Footer></components:Footer>
         </Border>
+        <ScrollViewer Panel.ZIndex="8">
+            <ContentControl Grid.Row="2" Content="{Binding Path=CurrentViewModel}" />
+        </ScrollViewer>
     </DockPanel>
 </Window>

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Mcap.ViewModels
 {
-    internal class WorklistViewModel: ViewModelBase
+    internal class WorklistViewModel: BaseViewModel
     {
 
     }

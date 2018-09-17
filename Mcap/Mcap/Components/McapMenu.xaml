@@ -6,7 +6,7 @@
              xmlns:fa="http://schemas.fontawesome.io/icons/"
              mc:Ignorable="d" d:DesignWidth="800" Height="33.683">
     <DockPanel>
-        <Menu x:Name="mainMenu" IsMainMenu="True" Height="32" Background="#1B66B2" Foreground="White" VerticalAlignment="Center" ItemsSource="{Binding MenuItems}">
+        <Menu x:Name="mainMenu" IsMainMenu="True" Height="32" Background="#1B66B2" Foreground="White" VerticalAlignment="Center" ItemsSource="{Binding MenuItems}" Visibility="{Binding Visibility}">
             <Menu.Resources>
                 <fa:ImageAwesome x:Key="MenuIconResource" Height="16" Width="16" Icon="{Binding Path=MenuIcon}" Foreground="{Binding Path=Foreground}" />
                 <Style TargetType="{x:Type MenuItem}">

@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="Mcap.Components.Footer"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="35" MinWidth="800"
+             DataContext="{Binding Footer, Source={StaticResource Locator}}">
+    <UserControl.Resources>
+        <Style x:Key="InfomationConfig" TargetType="{x:Type TextBlock}">
+            <Setter Property="Height" Value="35"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Padding" Value="10,7" />
+            <Setter Property="Foreground" Value="White" />
+        </Style>
+    </UserControl.Resources>
+    <Grid Background="SteelBlue" VerticalAlignment="Center">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <TextBlock Style="{DynamicResource InfomationConfig}">
+            <Hyperlink>
+                <TextBlock Style="{DynamicResource InfomationConfig}" Text="{Binding Path=Footer.CompanyName}"></TextBlock>
+            </Hyperlink>
+        </TextBlock>
+        <TextBlock Style="{DynamicResource InfomationConfig}" Grid.Column="1" Text="{Binding Path=Footer.HospitalName}"></TextBlock>
+        <TextBlock Style="{DynamicResource InfomationConfig}" Grid.Column="2" Text="{Binding Path=Footer.UserLogin}"></TextBlock>
+        <TextBlock Style="{DynamicResource InfomationConfig}" Grid.Column="3" Text="{Binding Path=Footer.CurrentDate}"></TextBlock>
+    </Grid>
+</UserControl>
