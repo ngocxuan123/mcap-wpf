@@ -24,5 +24,10 @@ namespace Mcap.Views
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var model = (sender as Button).DataContext;
+        }
     }
 }

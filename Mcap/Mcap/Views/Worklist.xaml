@@ -3,10 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
-             xmlns:mvvm="http://www.galasoft.ch/mvvmlight"
              xmlns:local="clr-namespace:Mcap.Views"
              xmlns:components="clr-namespace:Mcap.Components"
+             xmlns:ewl="clr-namespace:Mcap.Views.Element.Worklist"
              mc:Ignorable="d" 
              VerticalAlignment="Stretch" 
              HorizontalAlignment="Stretch"
@@ -16,25 +15,16 @@
         <!--<Canvas Panel.ZIndex="10" Visibility="{Binding Loading}" VerticalAlignment="Stretch" HorizontalAlignment="Center">
             <components:Loader></components:Loader>
         </Canvas>-->
-        <WrapPanel>
-            <Border BorderThickness="1">
-                <DataGrid 
-                    MinWidth="400" Height="Auto" MaxHeight="600" 
-                    HorizontalScrollBarVisibility="Visible" 
-                    VerticalScrollBarVisibility="Visible" x:Name="patientAwait" 
-                    ItemsSource="{Binding Worklist.Worklist}" BorderThickness="1" >
-                    <i:Interaction.Triggers>
-                        <i:EventTrigger EventName="SelectionChanged">
-                            <mvvm:EventToCommand 
-                            Command="{Binding  SendEmployeeCommand, Mode=OneWay}"
-                            CommandParameter="{Binding ElementName=dgemp,Path=SelectedItem}"    
-                         />     
-                        </i:EventTrigger>
-                    </i:Interaction.Triggers>
-                </DataGrid>
-            </Border>
-           
-            <Button Command="{Binding AddCommand}">Add</Button>
-        </WrapPanel>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="2*" />
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0">
+            <ewl:SearchPanel Height="100"/>
+            <ewl:GridWorklist />
+        </StackPanel>
+        <Border Grid.Column="1">
+            <ewl:DetailOrder />
+        </Border>
     </Grid>
 </UserControl>

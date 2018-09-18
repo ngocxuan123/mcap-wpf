@@ -46,12 +46,6 @@ namespace Mcap.ViewModels
                 return _addCommand;
             }
         }
-        private RelayCommand<Order> _receiveOrderCommand;
-        public RelayCommand<Order> ReceiveOrderCommnd { get
-            {
-                return _receiveOrderCommand;
-            }
-        }
         public WorklistViewModel()
         {
             _worklist = new WorklistModel();
@@ -61,6 +55,7 @@ namespace Mcap.ViewModels
                 new Order(){Name = "Order 2", RequestCode = "CODE 2"},
                 new Order(){Name = "Order 3", RequestCode = "CODE 3"}
             };
+            ReceiveOrder();
         }
         private void AddOrder() => _worklist.Worklist.Add(new Order() { Name = "Order " + (new Random().Next()), RequestCode = "COde 3" });
         private void SendOrder(Order order)
@@ -70,9 +65,15 @@ namespace Mcap.ViewModels
                 Messenger.Default.Send(new OrderMessageComunicator() { Order = order });
             }
         }
-        private void ReceiveOrder(Order order)
+        private void ReceiveOrder()
         {
-
+            Messenger.Default.Register<OrderMessageComunicator>(this, info =>
+            {
+                if (info != null)
+                {
+                    Worklist.CurrentOrder = info.Order;
+                }
+            });
         }
     }
 }

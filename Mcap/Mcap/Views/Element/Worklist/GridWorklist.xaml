@@ -1,0 +1,54 @@
+﻿<UserControl x:Class="Mcap.Views.Element.Worklist.GridWorklist"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Mcap.Views.Element.Worklist"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:mvvm="http://www.galasoft.ch/mvvmlight"
+             mc:Ignorable="d" 
+             VerticalAlignment="Stretch"
+             HorizontalAlignment="Stretch">
+
+    <Grid MinHeight="100" MinWidth="300">
+        <Border BorderThickness="1">
+            <DataGrid 
+                    MinWidth="400" Height="Auto" MaxHeight="600" 
+                    HorizontalScrollBarVisibility="Hidden" 
+                    VerticalScrollBarVisibility="Hidden" x:Name="patientAwait" 
+                    ItemsSource="{Binding Worklist.Worklist}" BorderThickness="1"
+                    IsReadOnly="True"
+                    AutoGenerateColumns="False"
+                    ColumnWidth="*">
+                <DataGrid.ContextMenu>
+                    <ContextMenu >
+                        <MenuItem Header="Select Menu" Command="{Binding AddCommand}" InputGestureText="Ctrl+N">
+                            <MenuItem.InputBindings>
+                                <KeyBinding Key="N" Modifiers="Ctrl" Command="{Binding AddCommand}" />
+                            </MenuItem.InputBindings>
+                        </MenuItem>
+                    </ContextMenu>
+                </DataGrid.ContextMenu>
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Tên" Binding="{Binding Name}" Width="100" />
+                    <DataGridTextColumn Header="Mã dịch vụ" Binding="{Binding RequestCode}" Width="*" />
+                    <DataGridTemplateColumn Width="150">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button>Show/Hide</Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="SelectionChanged">
+                        <mvvm:EventToCommand 
+                            Command="{Binding SendOrderCommand, Mode=OneWay}"
+                            CommandParameter="{Binding ElementName=patientAwait,Path=SelectedItem}"    
+                         />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </DataGrid>
+        </Border>
+    </Grid>
+</UserControl>

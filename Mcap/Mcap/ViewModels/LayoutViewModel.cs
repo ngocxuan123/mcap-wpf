@@ -1,4 +1,5 @@
 ﻿using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.Command;
 using Mcap.Model;
 using System;
 using System.Collections.Generic;
@@ -10,12 +11,26 @@ using System.Windows.Input;
 
 namespace Mcap.ViewModels
 {
-    public class LayoutViewModel: BaseViewModel
+    public class LayoutViewModel : BaseViewModel
     {
         private BaseViewModel _currentViewModel;
+
+        private RelayCommand<BaseViewModel> _changeCurrentContentCommand;
+
+        public RelayCommand<BaseViewModel> ChangeCurrentContentCommand
+        {
+            get
+            {
+                if (_changeCurrentContentCommand == null)
+                {
+                    _changeCurrentContentCommand = new RelayCommand<BaseViewModel>((viewmodel) => { _currentViewModel = viewmodel; });
+                }
+                return _changeCurrentContentCommand;
+            }
+        }
         public BaseViewModel CurrentViewModel
         {
-            get { return _currentViewModel;  }
+            get { return _currentViewModel; }
             set
             {
                 _currentViewModel = value;
@@ -23,7 +38,7 @@ namespace Mcap.ViewModels
             }
         }
 
-        public LayoutViewModel ()
+        public LayoutViewModel()
         {
             CurrentViewModel = new WorklistViewModel();
         }
