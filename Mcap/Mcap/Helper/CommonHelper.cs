@@ -8,7 +8,7 @@ using System.Windows;
 
 namespace Mcap.Helper
 {
-    public static class CommonHelper
+    public class CommonHelper
     {
         public static Uri GetCkeditorUri ()
         {

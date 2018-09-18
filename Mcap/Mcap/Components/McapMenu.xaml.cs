@@ -58,7 +58,7 @@ namespace Mcap.Components
                 new MenuItemViewModel { Header = "Thực hiện", MenuIcon = "AddressCard", Command = new RelayCommand( () => {
                        RaiseTapEvent("Mcap.ViewModels.WorkingViewModel");
                        ChangeActive("Thực hiện");
-                    }), IsActive = true },
+                    }), IsActive = false },
                 new MenuItemViewModel { Header = "Tiếp nhận", MenuIcon = "Ambulance", Command = new RelayCommand( () => {
                        RaiseTapEvent("Tiếp nhận");
                        ChangeActive("Tiếp nhận");
@@ -78,9 +78,9 @@ namespace Mcap.Components
                         }
                 },
                 new MenuItemViewModel { Header = "Worklist", MenuIcon = "Ambulance",  Command = new RelayCommand( () => {
-                       RaiseTapEvent("Mcap.ViewModels.LoginViewModel");
+                       RaiseTapEvent("Mcap.ViewModels.WorklistViewModel");
                        ChangeActive("Worklist");
-                    }), IsActive = false  }
+                    }), IsActive = true  }
             };
             DataContext = this;
         }

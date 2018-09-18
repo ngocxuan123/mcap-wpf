@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -30,7 +31,7 @@ namespace Mcap
         #region "Window action Overide"
         private void Close_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            base.Close();
         }
 
         private void Fullscreen_Click(object sender, RoutedEventArgs e)

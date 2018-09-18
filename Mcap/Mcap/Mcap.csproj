@@ -83,6 +83,9 @@
     <Compile Include="Components\HtmlTextBox.xaml.cs">
       <DependentUpon>HtmlTextBox.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Components\Loader.xaml.cs">
+      <DependentUpon>Loader.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Components\McapMenu.xaml.cs">
       <DependentUpon>McapMenu.xaml</DependentUpon>
     </Compile>
@@ -91,10 +94,12 @@
     <Compile Include="MainLayout.xaml.cs">
       <DependentUpon>MainLayout.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MessageInfrastructure\OrderMessageComunicator.cs" />
     <Compile Include="Model\BaseModel.cs" />
     <Compile Include="Model\LayoutModel.cs" />
     <Compile Include="Model\Shared\FooterModel.cs" />
     <Compile Include="Model\UserLoginModel.cs" />
+    <Compile Include="Model\WorklistModel.cs" />
     <Compile Include="Validation\RequiredValidationRule.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\LayoutViewModel.cs" />
@@ -104,6 +109,12 @@
     <Compile Include="ViewModels\ViewModelLocator.cs" />
     <Compile Include="ViewModels\WorkingViewModel.cs" />
     <Compile Include="ViewModels\WorklistViewModel.cs" />
+    <Compile Include="Views\Element\Main\Form.xaml.cs">
+      <DependentUpon>Form.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Element\Main\Video.xaml.cs">
+      <DependentUpon>Video.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
@@ -121,6 +132,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Components\Loader.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Components\McapMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -133,6 +148,14 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\Element\Main\Form.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Element\Main\Video.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Login.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

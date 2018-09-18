@@ -11,10 +11,19 @@ namespace Mcap.Model
         public FooterModel()
         {
             _companyUri = "https://wwww.itvnpt.vn";
-            _companyName = "℗ Tập đoàn VNPT";
-            _hospitalName = "Đa Khoa Bưu điện";
+            _companyName = "Bản quyền thuộc ℗ Tập đoàn VNPT";
+            _hospitalName = "Bệnh viện Đa Khoa Bưu điện";
             _userLogin = "BS. Nguyễn Hoa Vương";
-            _currentDate = DateTime.Now.ToShortDateString();
+            DateTime now = DateTime.Now;
+            _currentDate = now.ToString("dd/MM/yyyy");
+            _clock = now.ToString("HH:mm:ss");
+            System.Windows.Threading.DispatcherTimer dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
+            dispatcherTimer.Tick += (sender, args) => {
+                DateTime clockNow = DateTime.Now;
+                Clock = DateTime.Now.ToString("HH:mm:ss");
+            };
+            dispatcherTimer.Interval = new TimeSpan(0, 0, 1);
+            dispatcherTimer.Start();
         }
         public FooterModel(string companyUri, string companyName, string hostpitalName, string userLogin)
         {
@@ -72,6 +81,17 @@ namespace Mcap.Model
             {
                 _currentDate = value;
                 RaisePropertyChanged("CurrentDate");
+            }
+        }
+
+        public string _clock;
+        public string Clock
+        {
+            get => _clock;
+            set
+            {
+                _clock = value;
+                RaisePropertyChanged("Clock");
             }
         }
     }

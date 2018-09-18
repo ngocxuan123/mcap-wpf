@@ -8,14 +8,9 @@
         xmlns:components="clr-namespace:Mcap.Components"
         mc:Ignorable="d"
         Title="MainLayout" 
-        Height="450" 
-        Width="800" 
         WindowStyle="None"
-        DataContext="{Binding MainLayout, Source={StaticResource Locator}}">
+        DataContext="{Binding MainLayout, Source={StaticResource Locator}}" Height="932.663" Width="1238.643">
     <Window.Resources>
-        <DataTemplate DataType="{x:Type vm:LoginViewModel}">
-            <v:Login />
-        </DataTemplate>
         <DataTemplate DataType="{x:Type vm:WorklistViewModel}">
             <v:Worklist />
         </DataTemplate>
@@ -23,7 +18,7 @@
             <v:Work />
         </DataTemplate>
     </Window.Resources>
-    <DockPanel>
+    <DockPanel MinHeight="800" MinWidth="1000">
         <Border DockPanel.Dock="Top" Height="75" Panel.ZIndex="9">
             <StackPanel>
                 <!--#region Window action Overide -->
@@ -51,8 +46,11 @@
         <Border DockPanel.Dock="Bottom" Height="30" Panel.ZIndex="9">
             <components:Footer></components:Footer>
         </Border>
-        <ScrollViewer Panel.ZIndex="8">
-            <ContentControl Grid.Row="2" Content="{Binding Path=CurrentViewModel}" />
+        <ScrollViewer VerticalAlignment="Stretch">
+            <ContentControl 
+                VerticalContentAlignment="Stretch" 
+                HorizontalContentAlignment="Stretch"
+                Content="{Binding Path=CurrentViewModel}" />
         </ScrollViewer>
     </DockPanel>
 </Window>

@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 E:\learn\c#\mca-wpf\mcap-wpf\Mcap\Mcap\App.xaml
-71910360615
+10-897568407
 22923066385
-26-1211723368
+301878111641
 129-1798369877
-Components\Footer.xaml;Components\HtmlTextBox.xaml;Components\McapMenu.xaml;MainLayout.xaml;Views\Login.xaml;Views\Work.xaml;Views\Worklist.xaml;
+Components\Footer.xaml;Components\HtmlTextBox.xaml;Components\Loader.xaml;Components\McapMenu.xaml;MainLayout.xaml;Views\Element\Main\Form.xaml;Views\Element\Main\Video.xaml;Views\Login.xaml;Views\Work.xaml;Views\Worklist.xaml;
 
 False
 

@@ -4,12 +4,17 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Mcap.Views"
-             xmlns:Components="clr-namespace:Mcap.Components"
-             mc:Ignorable="d" d:DesignWidth="800" Height="799.6">
+             xmlns:components="clr-namespace:Mcap.Components"
+             mc:Ignorable="d"
+             VerticalAlignment="Stretch" 
+             HorizontalAlignment="Stretch">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+        <Canvas Panel.ZIndex="10" Visibility="{Binding Loading}" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <components:Loader></components:Loader>
+        </Canvas>
         <StackPanel Grid.Row="0">
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -39,7 +44,7 @@
                                 <Separator/>
                                 <Button Padding="5, 0" Content="Thoát ca chụp"/>
                                 <Separator/>
-                                <Button Padding="5, 0" Content="Kết thúc"/>
+                                <Button Padding="5, 0" Content="Kết thúc" Click="Button_Click"/>
                             </ToolBar>
                             <TextBlock Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Text="BỆNH NHÂN ĐANG THỰC HIỆN" Margin="0,5"/>
                             <StackPanel Grid.Column="0" Grid.Row="2">
@@ -105,8 +110,8 @@
                                         <TextBox Padding="2" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="3" Margin="0,3" Text="235 Nguyễn Tri Phương - Hải Châu - Đà Nẵng"/>
                                     </Grid>
                                 </GroupBox>
-                                <GroupBox Header="Kết quả khám bệnh">
-                                    <Components:HtmlTextBox />
+                                <GroupBox Header="Kết quả khám bệnh" Panel.ZIndex="8">
+                                    <components:HtmlTextBox />
                                 </GroupBox>
                             </StackPanel>
                             <Border Grid.Column="1" Grid.Row="2" Grid.RowSpan="2" Background="Transparent" BorderBrush="Gainsboro" BorderThickness="1" Margin="5" Padding="5">

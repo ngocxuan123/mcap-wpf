@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace Mcap.ViewModels
@@ -12,7 +13,6 @@ namespace Mcap.ViewModels
     public class LayoutViewModel: BaseViewModel
     {
         private BaseViewModel _currentViewModel;
-
         public BaseViewModel CurrentViewModel
         {
             get { return _currentViewModel;  }
@@ -25,7 +25,7 @@ namespace Mcap.ViewModels
 
         public LayoutViewModel ()
         {
-            CurrentViewModel = new WorkingViewModel();
+            CurrentViewModel = new WorklistViewModel();
         }
     }
 }

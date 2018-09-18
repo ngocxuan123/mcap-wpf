@@ -11,18 +11,18 @@
             overflow: hidden;
         }
         #editor1 {
-            min-height: 400px;
+            min-height: 200px;
         }
     </style>
 </head>
 
 <body>
 
-    <textarea cols="80" id="editor1" name="editor1" rows="50">&lt;p&gt;This is some &lt;strong&gt;sample text&lt;/strong&gt;. You are using &lt;a href="https://ckeditor.com/"&gt;CKEditor&lt;/a&gt;.&lt;/p&gt;
+    <textarea cols="80" id="editor1" name="editor1" rows="30">&lt;p&gt;This is some &lt;strong&gt;sample text&lt;/strong&gt;. You are using &lt;a href="https://ckeditor.com/"&gt;CKEditor&lt;/a&gt;.&lt;/p&gt;
 	</textarea>
 
     <script>
-        var editor = CKEDITOR.replace('editor1', {
+        CKEDITOR.replace('editor1', {
             // Define the toolbar groups as it is a more accessible solution.
             toolbarGroups: [
                 { "name": "basicstyles", "groups": ["basicstyles"] },

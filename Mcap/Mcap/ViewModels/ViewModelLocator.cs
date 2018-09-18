@@ -34,9 +34,9 @@ namespace Mcap.ViewModels
             get => ServiceLocator.Current.GetInstance<LayoutViewModel>();
         }
 
-        public LoginViewModel Login
+        public WorklistViewModel Worlist
         {
-            get => ServiceLocator.Current.GetInstance<LoginViewModel>();
+            get => ServiceLocator.Current.GetInstance<WorklistViewModel>();
         }
 
         public WorkingViewModel Working

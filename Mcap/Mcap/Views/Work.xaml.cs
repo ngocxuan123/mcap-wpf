@@ -1,4 +1,5 @@
 ﻿using Mcap.Helper;
+using Mcap.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -25,6 +26,12 @@ namespace Mcap.Views
         public Work()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            WorkingViewModel context = (WorkingViewModel)DataContext;
+            context.Loading = Visibility.Hidden;
         }
     }
 }

@@ -5,30 +5,57 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
              d:DesignHeight="35" MinWidth="800"
+             xmlns:fa="http://schemas.fontawesome.io/icons/"
              DataContext="{Binding Footer, Source={StaticResource Locator}}">
     <UserControl.Resources>
         <Style x:Key="InfomationConfig" TargetType="{x:Type TextBlock}">
             <Setter Property="Height" Value="35"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
-            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontSize" Value="13"/>
             <Setter Property="Padding" Value="10,7" />
             <Setter Property="Foreground" Value="White" />
         </Style>
     </UserControl.Resources>
     <Grid Background="SteelBlue" VerticalAlignment="Center">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="1.5*" />
+            <ColumnDefinition Width="1.2*" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="1.4*" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <TextBlock Style="{DynamicResource InfomationConfig}">
             <Hyperlink>
-                <TextBlock Style="{DynamicResource InfomationConfig}" Text="{Binding Path=Footer.CompanyName}"></TextBlock>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Style="{DynamicResource InfomationConfig}" Text="{Binding Path=Footer.CompanyName}"></TextBlock>
+                </StackPanel>
             </Hyperlink>
         </TextBlock>
-        <TextBlock Style="{DynamicResource InfomationConfig}" Grid.Column="1" Text="{Binding Path=Footer.HospitalName}"></TextBlock>
-        <TextBlock Style="{DynamicResource InfomationConfig}" Grid.Column="2" Text="{Binding Path=Footer.UserLogin}"></TextBlock>
-        <TextBlock Style="{DynamicResource InfomationConfig}" Grid.Column="3" Text="{Binding Path=Footer.CurrentDate}"></TextBlock>
+        <Border Grid.Column="1" BorderBrush="#d6d6d6" BorderThickness="1,0,0,0" Padding="10,0,0,0">
+            <StackPanel Orientation="Horizontal">
+                <fa:FontAwesome Icon="HospitalOutline" Height="16" Width="16" Foreground="White"></fa:FontAwesome>
+                <TextBlock Style="{DynamicResource InfomationConfig}" Text="{Binding Path=Footer.HospitalName}"></TextBlock>
+            </StackPanel>
+        </Border>
+        <Border Grid.Column="2" BorderBrush="#d6d6d6" BorderThickness="1,0,0,0" Padding="10,0,0,0">
+            <StackPanel Orientation="Horizontal">
+                <fa:FontAwesome Icon="UserCircle" Height="16" Width="16" Foreground="White"></fa:FontAwesome>
+                <TextBlock Style="{DynamicResource InfomationConfig}" FontWeight="Bold" Text="Người thực hiện: "></TextBlock>
+                <TextBlock Style="{DynamicResource InfomationConfig}"  Text="{Binding Path=Footer.UserLogin}"></TextBlock>
+            </StackPanel>
+        </Border>
+        <Border Grid.Column="3" BorderBrush="#d6d6d6" BorderThickness="1,0,0,0" Padding="10,0,0,0">
+            <StackPanel Orientation="Horizontal">
+                <fa:FontAwesome Icon="Calendar" Height="16" Width="16" Foreground="White"></fa:FontAwesome>
+                <TextBlock Style="{DynamicResource InfomationConfig}" FontWeight="Bold" Text="Ngày thưc hiện: "></TextBlock>
+                <TextBlock Style="{DynamicResource InfomationConfig}" Text="{Binding Path=Footer.CurrentDate}"></TextBlock>
+            </StackPanel>
+        </Border>
+        <Border Grid.Column="4" BorderBrush="#d6d6d6" BorderThickness="1,0,0,0" Padding="10,0,0,0" HorizontalAlignment="Right">
+            <StackPanel Orientation="Horizontal">
+                <fa:FontAwesome Icon="ClockOutline" Height="16" Width="16" Foreground="White"></fa:FontAwesome>
+                <TextBlock Style="{DynamicResource InfomationConfig}" Text="{Binding Path=Footer.Clock}"></TextBlock>
+            </StackPanel>
+        </Border>
     </Grid>
 </UserControl>
