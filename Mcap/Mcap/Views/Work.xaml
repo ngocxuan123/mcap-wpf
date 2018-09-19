@@ -3,11 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:Mcap.Views"
              xmlns:components="clr-namespace:Mcap.Components"
+             xmlns:vm="clr-namespace:Mcap.Views.Element.Main"
              mc:Ignorable="d"
              VerticalAlignment="Stretch" 
-             HorizontalAlignment="Stretch">
+             HorizontalAlignment="Stretch"
+             DataContext="{Binding Working, Source={StaticResource Locator}}">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -114,51 +115,13 @@
                                     <components:HtmlTextBox />
                                 </GroupBox>
                             </StackPanel>
-                            <Border Grid.Column="1" Grid.Row="2" Grid.RowSpan="2" Background="Transparent" BorderBrush="Gainsboro" BorderThickness="1" Margin="5" Padding="5">
-                                <StackPanel Height="555" VerticalAlignment="Top">
-                                    <MediaElement MinHeight="300"/>
-                                    <StackPanel>
-                                        <TextBlock Text="DANH SÁCH HÌNH ẢNH ĐÃ CHỤP" Padding="5"/>
-                                        <ScrollViewer HorizontalScrollBarVisibility="Disabled" Height="90">
-                                            <WrapPanel>
-                                                <Rectangle Height="80" Width="80" Fill="Beige" Margin="5"/>
-                                                <Rectangle Height="80" Width="80" Fill="Beige" Margin="5"/>
-                                                <Rectangle Height="80" Width="80" Fill="Beige" Margin="5"/>
-                                                <Rectangle Height="80" Width="80" Fill="Beige" Margin="5"/>
-                                                <Rectangle Height="80" Width="80" Fill="Beige" Margin="5"/>
-                                                <Rectangle Height="80" Width="80" Fill="Beige" Margin="5"/>
-                                                <Rectangle Height="80" Width="80" Fill="Beige" Margin="5"/>
-                                                <Rectangle Height="80" Width="80" Fill="Beige" Margin="5"/>
-                                                <Rectangle Height="80" Width="80" Fill="Beige" Margin="5"/>
-                                                <Rectangle Height="80" Width="80" Fill="Beige" Margin="5"/>
-                                            </WrapPanel>
-                                        </ScrollViewer>
-                                    </StackPanel>
-                                    <StackPanel>
-                                        <TextBlock Text="DANH SÁCH VIDEO ĐÃ GHI" Padding="5"/>
-                                        <ScrollViewer HorizontalScrollBarVisibility="Disabled" Height="90">
-                                            <WrapPanel>
-                                                <Rectangle Height="80" Width="80" Fill="Beige" Margin="5"/>
-                                                <Rectangle Height="80" Width="80" Fill="Beige" Margin="5"/>
-                                                <Rectangle Height="80" Width="80" Fill="Beige" Margin="5"/>
-                                                <Rectangle Height="80" Width="80" Fill="Beige" Margin="5"/>
-                                                <Rectangle Height="80" Width="80" Fill="Beige" Margin="5"/>
-                                                <Rectangle Height="80" Width="80" Fill="Beige" Margin="5"/>
-                                                <Rectangle Height="80" Width="80" Fill="Beige" Margin="5"/>
-                                                <Rectangle Height="80" Width="80" Fill="Beige" Margin="5"/>
-                                            </WrapPanel>
-                                        </ScrollViewer>
-                                    </StackPanel>
-                                    <ToolBar Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
-                                        <Button Padding="5, 0" Content="Chụp hình"/>
-                                        <Separator/>
-                                        <Button Padding="5, 0" Content="Quay phim"/>
-                                        <Separator/>
-                                        <Button Padding="5, 0" Content="Mở file"/>
-                                        <Separator/>
-                                        <Button Padding="5, 0" Content="Ghi đĩa"/>
-                                    </ToolBar>
-                                </StackPanel>
+                            <Border 
+                                Grid.Column="1" 
+                                Grid.Row="2" Grid.RowSpan="2" 
+                                Background="Transparent" 
+                                BorderBrush="Gainsboro" 
+                                BorderThickness="1" Margin="5" Padding="5">
+                                <vm:Video  HorizontalAlignment="Stretch"></vm:Video>
                             </Border>
                         </Grid>
                     </StackPanel>

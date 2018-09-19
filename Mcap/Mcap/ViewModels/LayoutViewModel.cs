@@ -11,7 +11,7 @@ using System.Windows.Input;
 
 namespace Mcap.ViewModels
 {
-    public class LayoutViewModel : BaseViewModel
+    public class LayoutViewModel : BaseViewModel,IDisposable
     {
         private BaseViewModel _currentViewModel;
 
@@ -41,6 +41,11 @@ namespace Mcap.ViewModels
         public LayoutViewModel()
         {
             CurrentViewModel = new WorklistViewModel();
+        }
+
+        public void Dispose()
+        {
+            throw new NotImplementedException();
         }
     }
 }

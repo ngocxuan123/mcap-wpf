@@ -26,6 +26,7 @@ namespace Mcap
         public MainLayout()
         {
             InitializeComponent();
+            this.Closing += (s, e) => (this.DataContext as IDisposable).Dispose();
         }
 
         #region "Window action Overide"

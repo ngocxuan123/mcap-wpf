@@ -1,4 +1,5 @@
 ﻿using GalaSoft.MvvmLight;
+using Mcap.Model.Element;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,15 @@ namespace Mcap.ViewModels
 {
     public class WorkingViewModel : BaseViewModel
     {
+        #region Private Field
+        private VideoProcessModel _videoContext;
         private Visibility _loading;
+        #endregion
+        public VideoProcessModel VideoContext
+        {
+            get => _videoContext;
+            set => Set(ref _videoContext, value); 
+        }
         public Visibility Loading
         {
             get => _loading;
@@ -21,9 +30,10 @@ namespace Mcap.ViewModels
             }
         }
 
-        public WorkingViewModel ()
+        public WorkingViewModel()
         {
             Loading = Visibility.Visible;
+            VideoContext = new VideoProcessModel();
         }
     }
 }

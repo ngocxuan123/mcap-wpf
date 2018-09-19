@@ -5,8 +5,54 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Mcap.Views.Element.Main"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
+             VerticalAlignment="Stretch"
+             HorizontalAlignment="Center">
+    <Grid MinHeight="600" MinWidth="400">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="12*" />
+            <RowDefinition Height="4*" />
+            <RowDefinition Height="4*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="20"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Label Content="Video player" />
+            <Border Grid.Row="1"
+                    BorderBrush="Black"
+                    BorderThickness="1">
+                <Image Source="{Binding VideoContext.Image}" />
+            </Border>
+        </Grid>
+        <WrapPanel Orientation="Horizontal" Grid.Row="1">
+            <ScrollViewer>
+                <Label Content="Danh sách hình ảnh" />
+            </ScrollViewer>
+        </WrapPanel>
+        <WrapPanel Orientation="Horizontal" Grid.Row="2">
+            <ScrollViewer>
+                <Label Content="Danh sách video" />
+            </ScrollViewer>
+        </WrapPanel>
+        <DockPanel Grid.Row="3">
+            <ToolBarTray Background="Transparent" Width="Auto" DockPanel.Dock="Bottom">
+                <ToolBar Grid.Row="0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" MinHeight="32">
+                    <Button Padding="5, 0" Content="Kết nối" Command="{Binding VideoContext.ConnectVideoCommand}"/>
+                    <Separator/>
+                    <Button Padding="5, 0" Content="Chụp hình"/>
+                    <Separator/>
+                    <Button Padding="5, 0" Content="Chụp hình"/>
+                    <Separator/>
+                    <Button Padding="5, 0" Content="Quay phim"/>
+                    <Separator/>
+                    <Button Padding="5, 0" Content="Mở file"/>
+                    <Separator/>
+                    <Button Padding="5, 0" Content="Ghi đĩa"/>
+                </ToolBar>
+            </ToolBarTray>
+        </DockPanel>
     </Grid>
 </UserControl>

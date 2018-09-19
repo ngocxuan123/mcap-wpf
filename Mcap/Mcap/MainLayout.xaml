@@ -7,16 +7,18 @@
         xmlns:vm="clr-namespace:Mcap.ViewModels"
         xmlns:components="clr-namespace:Mcap.Components"
         mc:Ignorable="d"
-        Title="MainLayout" 
+        Title="{DynamicResource ResourceKey=AppName}" 
         WindowStyle="None"
         DataContext="{Binding MainLayout, Source={StaticResource Locator}}" Height="932.663" Width="1238.643">
     <Window.Resources>
-        <DataTemplate DataType="{x:Type vm:WorklistViewModel}">
-            <v:Worklist />
-        </DataTemplate>
-        <DataTemplate DataType="{x:Type vm:WorkingViewModel}">
-            <v:Work />
-        </DataTemplate>
+        <ResourceDictionary>
+            <DataTemplate DataType="{x:Type vm:WorklistViewModel}">
+                <v:Worklist />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:WorkingViewModel}">
+                <v:Work />
+            </DataTemplate>
+        </ResourceDictionary>
     </Window.Resources>
     <DockPanel MinHeight="800" MinWidth="1000">
         <Border DockPanel.Dock="Top" Height="75" Panel.ZIndex="9">
@@ -50,6 +52,8 @@
             <ContentControl 
                 VerticalContentAlignment="Stretch" 
                 HorizontalContentAlignment="Stretch"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
                 Content="{Binding Path=CurrentViewModel}" />
         </ScrollViewer>
     </DockPanel>

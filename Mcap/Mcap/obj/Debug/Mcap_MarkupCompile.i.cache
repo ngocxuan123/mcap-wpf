@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-D:\work\wpf\mcap-wpf\Mcap\Mcap\obj\Debug\
+E:\learn\c#\mca-wpf\mcap-wpf\Mcap\Mcap\obj\Debug\
 Mcap
 none
 false
 DEBUG;TRACE
-D:\work\wpf\mcap-wpf\Mcap\Mcap\App.xaml
+E:\learn\c#\mca-wpf\mcap-wpf\Mcap\Mcap\App.xaml
 15-601046424
-22923066385
-401096681405
-140-1028225772
+232-812702469
+42-1886079379
+144-2038136809
 Components\Footer.xaml;Components\HtmlTextBox.xaml;Components\Loader.xaml;Components\McapMenu.xaml;MainLayout.xaml;Views\Element\DescriptionSample\Form.xaml;Views\Element\Main\Form.xaml;Views\Element\Main\Video.xaml;Views\Element\ServiceSample\Form.xaml;Views\Element\Worklist\DetailOrder.xaml;Views\Element\Worklist\GridWorklist.xaml;Views\Element\Worklist\SearchPanel.xaml;Views\Login.xaml;Views\Work.xaml;Views\Worklist.xaml;
 
 True

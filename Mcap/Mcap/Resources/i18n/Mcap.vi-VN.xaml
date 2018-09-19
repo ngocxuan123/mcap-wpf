@@ -1,0 +1,8 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+    <sys:String x:Key="ResourceDictinaryName">Loc-vi-VN</sys:String>
+    <sys:String x:Key="RequestCodeLabel">Mã dịch vụ</sys:String>
+    <sys:String x:Key="PatientNameLable">Tên bệnh nhân</sys:String>
+    <sys:String x:Key="AppName">Phần mềm chẩn đoán hình ảnh Siêu âm - Nội soi</sys:String>
+</ResourceDictionary>

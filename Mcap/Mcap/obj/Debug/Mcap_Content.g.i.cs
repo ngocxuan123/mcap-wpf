@@ -8,6 +8,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/i18n/mcap.en-us.xaml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/i18n/mcap.vi-vn.xaml")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("ckeditor.html")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("scripts/ckeditor/adapters/jquery.js")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("scripts/ckeditor/ckeditor.js")]
@@ -237,5 +239,6 @@
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("scripts/ckeditor/plugins/wsc/dialogs/tmpframeset.html")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("scripts/ckeditor/plugins/wsc/dialogs/wsc.css")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("scripts/ckeditor/plugins/wsc/dialogs/wsc.js")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("accord.dll.config")]
 
 
