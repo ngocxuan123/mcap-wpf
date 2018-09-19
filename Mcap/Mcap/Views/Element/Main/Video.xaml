@@ -2,57 +2,104 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
              xmlns:local="clr-namespace:Mcap.Views.Element.Main"
              mc:Ignorable="d" 
              VerticalAlignment="Stretch"
              HorizontalAlignment="Center">
-    <Grid MinHeight="600" MinWidth="400">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="12*" />
-            <RowDefinition Height="4*" />
-            <RowDefinition Height="4*" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="30"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="20"></RowDefinition>
-            </Grid.RowDefinitions>
-            <Label Content="Video player" />
-            <Border Grid.Row="1"
-                    BorderBrush="Black"
-                    BorderThickness="1">
-                <Image Source="{Binding VideoContext.Image}" />
-            </Border>
-        </Grid>
-        <WrapPanel Orientation="Horizontal" Grid.Row="1">
-            <ScrollViewer>
-                <Label Content="Danh sách hình ảnh" />
-            </ScrollViewer>
-        </WrapPanel>
-        <WrapPanel Orientation="Horizontal" Grid.Row="2">
-            <ScrollViewer>
-                <Label Content="Danh sách video" />
-            </ScrollViewer>
-        </WrapPanel>
-        <DockPanel Grid.Row="3">
+    <DockPanel MinHeight="600" MinWidth="400">
+        <DockPanel DockPanel.Dock="Bottom">
             <ToolBarTray Background="Transparent" Width="Auto" DockPanel.Dock="Bottom">
                 <ToolBar Grid.Row="0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" MinHeight="32">
                     <Button Padding="5, 0" Content="Kết nối" Command="{Binding VideoContext.ConnectVideoCommand}"/>
                     <Separator/>
-                    <Button Padding="5, 0" Content="Chụp hình"/>
+                    <Button Padding="5, 0" Content="Dừng" Command="{Binding VideoContext.DisconnectVideoCommand}"/>
                     <Separator/>
-                    <Button Padding="5, 0" Content="Chụp hình"/>
+                    <Button Padding="5, 0" Content="Chụp hình" Command="{Binding VideoContext.CaptureCommand}"/>
                     <Separator/>
-                    <Button Padding="5, 0" Content="Quay phim"/>
+                    <Button Padding="5, 0" Content="Quy phim" Command="{Binding VideoContext.StartRecordVideoCommand}"/>
                     <Separator/>
-                    <Button Padding="5, 0" Content="Mở file"/>
+                    <Button Padding="5, 0" Content="Dừng" Command="{Binding VideoContext.StopRecordVideoCommand}"/>
                     <Separator/>
                     <Button Padding="5, 0" Content="Ghi đĩa"/>
                 </ToolBar>
             </ToolBarTray>
         </DockPanel>
-    </Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="20"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Border
+                        BorderBrush="#ddd"
+                        BorderThickness="1" Margin="5">
+                    <Image Source="{Binding VideoContext.Image}"/>
+                </Border>
+            </Grid>
+            <StackPanel Grid.Row="1" Margin="5">
+                <Label Content="Danh sách hình ảnh" Padding="0,10,10,10"/>
+                <Separator />
+                <ScrollViewer Height="100" HorizontalContentAlignment="Stretch" Margin="0,0,17,0" VerticalScrollBarVisibility="Visible" Grid.Row="1">
+                    <StackPanel>
+                        <ItemsControl ItemsSource="{Binding VideoContext.Images}">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Border BorderBrush="#d6d6d6" BorderThickness="1" Padding="3" Margin="0,0,3,3">
+                                        <StackPanel Margin="0,0,5,5">
+                                            <Image Source="{Binding Item}" Height="65" Width="100" />
+                                            <StackPanel Orientation="Horizontal">
+                                                <CheckBox Margin="0,0,5,0"></CheckBox>
+                                                <Label Content="{Binding Label}" Padding="2"/>
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </Border>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <WrapPanel/>
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                        </ItemsControl>
+                    </StackPanel>
+                </ScrollViewer>
+            </StackPanel>
+            <StackPanel Grid.Row="2" Margin="5">
+                <Separator></Separator>
+                <Label Content="Danh sách video" Padding="0,5,5,5"/>
+                <Separator />
+                <ScrollViewer Height="100" HorizontalContentAlignment="Stretch" Margin="0,0,17,0" VerticalScrollBarVisibility="Visible" Grid.Row="1">
+                    <StackPanel>
+                        <ItemsControl ItemsSource="{Binding VideoContext.VideosVideos}">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Border BorderBrush="#d6d6d6" BorderThickness="1" Padding="3" Margin="0,0,3,3">
+                                        <StackPanel Margin="0,0,5,5">
+                                            <MediaElement Source="{Binding Item}" Width="100" Height="60" />
+                                            <StackPanel Orientation="Horizontal">
+                                                <CheckBox Margin="0,0,5,0"></CheckBox>
+                                                <Label Content="{Binding Label}" Padding="2"/>
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </Border>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <WrapPanel/>
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                        </ItemsControl>
+                    </StackPanel>
+                </ScrollViewer>
+            </StackPanel>
+        </Grid>
+    </DockPanel>
 </UserControl>

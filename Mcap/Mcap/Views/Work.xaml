@@ -19,7 +19,7 @@
         <StackPanel Grid.Row="0">
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="30*"/>
+                    <ColumnDefinition Width="250"/>
                     <ColumnDefinition Width="70*"/>
                 </Grid.ColumnDefinitions>
                 <Border Grid.Row="0" Grid.Column="0" Background="Transparent" BorderBrush="Gainsboro" BorderThickness="1" Margin="5" Padding="5">
@@ -32,12 +32,11 @@
                     <StackPanel>
                         <Grid>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="60*" />
-                                <ColumnDefinition Width="40*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="400" />
                             </Grid.ColumnDefinitions>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="30" />
-                                <RowDefinition Height="30"/>
                                 <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
                             <ToolBar Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
@@ -47,7 +46,6 @@
                                 <Separator/>
                                 <Button Padding="5, 0" Content="Kết thúc" Click="Button_Click"/>
                             </ToolBar>
-                            <TextBlock Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Text="BỆNH NHÂN ĐANG THỰC HIỆN" Margin="0,5"/>
                             <StackPanel Grid.Column="0" Grid.Row="2">
                                 <GroupBox Header="Thông tin hành chính">
                                     <Grid>

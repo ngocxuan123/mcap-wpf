@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Mcap.ViewModels
 {
-    public class WorklistViewModel : BaseViewModel
+    public class WorklistViewModel : ContainerViewModel
     {
         private WorklistModel _worklist;
         public WorklistModel Worklist
@@ -74,6 +74,11 @@ namespace Mcap.ViewModels
                     Worklist.CurrentOrder = info.Order;
                 }
             });
+        }
+
+        public override void Dispose()
+        {
+            throw new NotImplementedException();
         }
     }
 }

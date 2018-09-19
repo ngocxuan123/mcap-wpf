@@ -15,9 +15,9 @@ using System.Windows.Input;
 using System.Windows.Media.Imaging;
 using System.Windows.Threading;
 
-namespace Mcap.Model.Element
+namespace Mcap.ViewModels.Element
 {
-    public class VideoProcessModel : BaseModel
+    public class VideoProcessViewModel : BaseViewModel, IDisposable
     {
         #region Private
 
@@ -29,24 +29,46 @@ namespace Mcap.Model.Element
         private ObservableCollection<VideoItem> _videos;
         private VideoFileWriter _videoWriter;
         private DateTime? _firstFrameTime;
+        private string _currentFile;
 
         #endregion
 
         #region Command
         public ICommand ConnectVideoCommand { get; private set; }
         public ICommand CaptureCommand { get; set; }
-        public ICommand StartRecordVideo { get; private set; }
-        public ICommand StopRecordVideo { get; private set; }
+        public ICommand StartRecordVideoCommand { get; private set; }
+        public ICommand StopRecordVideoCommand { get; private set; }
         public ICommand DisconnectVideoCommand { get; set; }
         #endregion
 
-        public VideoProcessModel()
+        public VideoProcessViewModel()
         {
             DeviceVideos = new ObservableCollection<FilterInfo>();
+            Images = new ObservableCollection<ImageItem>();
+            Videos = new ObservableCollection<VideoItem>();
             GetVideoDivices();
             ConnectVideoCommand = new RelayCommand(ConnectVideoDevice);
             CaptureCommand = new RelayCommand(CaptureImage);
             DisconnectVideoCommand = new RelayCommand(DisconnectVideo);
+            StartRecordVideoCommand = new RelayCommand(StartRecordVideo);
+            StopRecordVideoCommand = new RelayCommand(StopRecordVideo);
+        }
+
+        private void StopRecordVideo()
+        {
+            _isRecording = false;
+            _videoWriter.Close();
+            _videoWriter.Dispose();
+            Videos.Add(new VideoItem() { Item = _currentFile, Label = "Video", Order = 1 });
+        }
+
+        private void StartRecordVideo()
+        {
+            _firstFrameTime = null;
+            _currentFile = DateTime.Now.ToFileTime() + ".avi";
+            _videoWriter = new VideoFileWriter();
+            _videoWriter.Open(_currentFile, (int)Math.Round(Image.Width, 0), (int)Math.Round(Image.Height, 0));
+            _isRecording = true;
         }
 
         private void DisconnectVideo()
@@ -63,19 +85,29 @@ namespace Mcap.Model.Element
         public bool IsRecording
         {
             get => _isRecording;
-            set { Set(ref _isRecording, value); }
+            set => Set(ref _isRecording, value);
         }
 
         public FilterInfo CurrentDevice
         {
             get => _currentDevice;
-            set { Set(ref _currentDevice, value); }
+            set => Set(ref _currentDevice, value);
         }
         public BitmapImage Image
         {
             get => _image;
-            set { Set(ref _image, value); }
+            set => Set(ref _image, value);
         }
+        public ObservableCollection<ImageItem> Images
+        {
+            get => _images;
+            set => Set(ref _images, value);
+        }
+
+        public ObservableCollection<VideoItem> Videos
+        {
+            get => _videos;
+            set => Set(ref _videos, value); }
 
         #region Private Method
         private void GetVideoDivices()
@@ -143,7 +175,18 @@ namespace Mcap.Model.Element
         /// </summary>
         private void CaptureImage()
         {
-            throw new NotImplementedException();
+            if (Image != null)
+            {
+                Images.Add(new ImageItem() { Item = Image, Label = "Hình ảnh", Order = (short)Images.Count });
+            }
+        }
+        public void Dispose()
+        {
+            if (_videoSource != null && _videoSource.IsRunning)
+            {
+                _videoSource.SignalToStop();
+            }
+            _videoWriter?.Dispose();
         }
         #endregion
     }
@@ -159,7 +202,7 @@ namespace Mcap.Model.Element
     {
     }
 
-    public class VideoItem : ItemObject<IVideoSource>
+    public class VideoItem : ItemObject<string>
     {
     }
 }

@@ -11,24 +11,24 @@ using System.Windows.Input;
 
 namespace Mcap.ViewModels
 {
-    public class LayoutViewModel : BaseViewModel,IDisposable
+    public class LayoutViewModel : BaseViewModel, IDisposable
     {
-        private BaseViewModel _currentViewModel;
+        private ContainerViewModel _currentViewModel;
 
-        private RelayCommand<BaseViewModel> _changeCurrentContentCommand;
+        private RelayCommand<ContainerViewModel> _changeCurrentContentCommand;
 
-        public RelayCommand<BaseViewModel> ChangeCurrentContentCommand
+        public RelayCommand<ContainerViewModel> ChangeCurrentContentCommand
         {
             get
             {
                 if (_changeCurrentContentCommand == null)
                 {
-                    _changeCurrentContentCommand = new RelayCommand<BaseViewModel>((viewmodel) => { _currentViewModel = viewmodel; });
+                    _changeCurrentContentCommand = new RelayCommand<ContainerViewModel>((viewmodel) => { _currentViewModel = viewmodel; });
                 }
                 return _changeCurrentContentCommand;
             }
         }
-        public BaseViewModel CurrentViewModel
+        public ContainerViewModel CurrentViewModel
         {
             get { return _currentViewModel; }
             set
@@ -45,7 +45,7 @@ namespace Mcap.ViewModels
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+            CurrentViewModel.Dispose();
         }
     }
 }

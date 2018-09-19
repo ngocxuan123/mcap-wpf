@@ -69,7 +69,7 @@ namespace Mcap
             MenuLayoutRoutedEventArgs args = (MenuLayoutRoutedEventArgs)e;
             LayoutViewModel viewModel = (LayoutViewModel) DataContext;
             Type t = Type.GetType(args.Name);
-            viewModel.CurrentViewModel = (BaseViewModel) Activator.CreateInstance(t);
+            viewModel.CurrentViewModel = (ContainerViewModel) Activator.CreateInstance(t);
         }
     }
 }

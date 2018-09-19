@@ -144,7 +144,8 @@
     </Compile>
     <Compile Include="MessageInfrastructure\OrderMessageComunicator.cs" />
     <Compile Include="Model\BaseModel.cs" />
-    <Compile Include="Model\Element\VideoProcessModel.cs" />
+    <Compile Include="ViewModels\ContainerViewModel.cs" />
+    <Compile Include="ViewModels\Element\VideoProcessViewModel.cs" />
     <Compile Include="Model\LayoutModel.cs" />
     <Compile Include="Model\Shared\FooterModel.cs" />
     <Compile Include="Model\UserLoginModel.cs" />
