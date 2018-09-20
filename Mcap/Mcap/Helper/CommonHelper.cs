@@ -13,7 +13,7 @@ namespace Mcap.Helper
         public static Uri GetCkeditorUri ()
         {
             string curDir = Directory.GetCurrentDirectory();
-            return new Uri(String.Format("file:///{0}/ckeditor.html", curDir));
+            return new Uri(String.Format("file:///{0}/ckeditor/index.htm", curDir));
         }
     }
 }

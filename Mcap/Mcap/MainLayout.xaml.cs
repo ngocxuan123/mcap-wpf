@@ -29,41 +29,6 @@ namespace Mcap
             this.Closing += (s, e) => (this.DataContext as IDisposable).Dispose();
         }
 
-        #region "Window action Overide"
-        private void Close_Click(object sender, RoutedEventArgs e)
-        {
-            base.Close();
-        }
-
-        private void Fullscreen_Click(object sender, RoutedEventArgs e)
-        {
-            Button button = sender as Button;
-            string buttonContent = button.Content.ToString();
-            if (buttonContent.Equals("O"))
-            {
-                WindowState = WindowState.Maximized;
-                button.Content = "o";
-            }
-            else
-            {
-                WindowState = WindowState.Normal;
-                button.Content = "O";
-            }
-        }
-
-        private void MinimiseScreen_Click(object sender, RoutedEventArgs e)
-        {
-            WindowState = WindowState.Minimized;
-        }
-
-        protected override void OnMouseLeftButtonDown(MouseButtonEventArgs e)
-        {
-            base.OnMouseLeftButtonDown(e);
-            if (e.ButtonState == MouseButtonState.Pressed)
-                DragMove();
-        }
-        #endregion
-
         private void McapMenu_Tap(object sender, RoutedEventArgs e)
         {
             MenuLayoutRoutedEventArgs args = (MenuLayoutRoutedEventArgs)e;

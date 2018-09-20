@@ -3,6 +3,7 @@ using AForge.Video;
 using AForge.Video.DirectShow;
 using GalaSoft.MvvmLight.Command;
 using Mcap.Helper;
+using Mcap.Model.Element;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -24,28 +25,28 @@ namespace Mcap.ViewModels.Element
         private bool _isRecording;
         private FilterInfo _currentDevice;
         private BitmapImage _image;
-        private ObservableCollection<ImageItem> _images;
+        private VideoProcessModel _videoProcess;
         private IVideoSource _videoSource;
-        private ObservableCollection<VideoItem> _videos;
         private VideoFileWriter _videoWriter;
         private DateTime? _firstFrameTime;
         private string _currentFile;
+        private bool _isRunning;
 
         #endregion
 
-        #region Command
+        #region Command Property
         public ICommand ConnectVideoCommand { get; private set; }
-        public ICommand CaptureCommand { get; set; }
+        public ICommand CaptureCommand { get; private set; }
         public ICommand StartRecordVideoCommand { get; private set; }
         public ICommand StopRecordVideoCommand { get; private set; }
-        public ICommand DisconnectVideoCommand { get; set; }
+        public ICommand DisconnectVideoCommand { get; private set; }
         #endregion
 
+        #region Constructor
         public VideoProcessViewModel()
         {
             DeviceVideos = new ObservableCollection<FilterInfo>();
-            Images = new ObservableCollection<ImageItem>();
-            Videos = new ObservableCollection<VideoItem>();
+            VideoProcessModel = new VideoProcessModel();
             GetVideoDivices();
             ConnectVideoCommand = new RelayCommand(ConnectVideoDevice);
             CaptureCommand = new RelayCommand(CaptureImage);
@@ -53,41 +54,22 @@ namespace Mcap.ViewModels.Element
             StartRecordVideoCommand = new RelayCommand(StartRecordVideo);
             StopRecordVideoCommand = new RelayCommand(StopRecordVideo);
         }
+        #endregion
 
-        private void StopRecordVideo()
-        {
-            _isRecording = false;
-            _videoWriter.Close();
-            _videoWriter.Dispose();
-            Videos.Add(new VideoItem() { Item = _currentFile, Label = "Video", Order = 1 });
-        }
-
-        private void StartRecordVideo()
-        {
-            _firstFrameTime = null;
-            _currentFile = DateTime.Now.ToFileTime() + ".avi";
-            _videoWriter = new VideoFileWriter();
-            _videoWriter.Open(_currentFile, (int)Math.Round(Image.Width, 0), (int)Math.Round(Image.Height, 0));
-            _isRecording = true;
-        }
-
-        private void DisconnectVideo()
-        {
-            if (_videoSource != null && _videoSource.IsRunning)
-            {
-                _videoSource.SignalToStop();
-                _videoSource.NewFrame -= video_NewFrame;
-            }
-            Image = null;
-        }
-
+        #region Property
         public ObservableCollection<FilterInfo> DeviceVideos { get; set; }
+
+        public bool IsRunning
+        {
+            get => _isRunning;
+            set => Set(ref _isRunning, value);
+        }
+
         public bool IsRecording
         {
             get => _isRecording;
             set => Set(ref _isRecording, value);
         }
-
         public FilterInfo CurrentDevice
         {
             get => _currentDevice;
@@ -98,16 +80,12 @@ namespace Mcap.ViewModels.Element
             get => _image;
             set => Set(ref _image, value);
         }
-        public ObservableCollection<ImageItem> Images
+        public VideoProcessModel VideoProcessModel
         {
-            get => _images;
-            set => Set(ref _images, value);
+            get => _videoProcess;
+            set => Set(ref _videoProcess, value);
         }
-
-        public ObservableCollection<VideoItem> Videos
-        {
-            get => _videos;
-            set => Set(ref _videos, value); }
+        #endregion
 
         #region Private Method
         private void GetVideoDivices()
@@ -130,17 +108,34 @@ namespace Mcap.ViewModels.Element
         {
             if (CurrentDevice != null)
             {
-                _videoSource = new VideoCaptureDevice(CurrentDevice.MonikerString);
-                _videoSource.NewFrame += video_NewFrame;
-                _videoSource.Start();
+                if (!IsRunning)
+                {
+                    _videoSource = new VideoCaptureDevice(CurrentDevice.MonikerString);
+                    _videoSource.NewFrame += video_NewFrame;
+                    _videoSource.Start();
+                    IsRunning = true;
+                } else
+                {
+                   DisconnectVideo();
+                }
             }
         }
 
+        private void DisconnectVideo()
+        {
+            if (_videoSource != null && _videoSource.IsRunning)
+            {
+                _videoSource.SignalToStop();
+                _videoSource.NewFrame -= video_NewFrame;
+            }
+            Image = null;
+            IsRunning = false;
+        }
         private void video_NewFrame(object sender, NewFrameEventArgs eventArgs)
         {
             try
             {
-                if (_isRecording)
+                if (IsRecording)
                 {
                     using (var bitmap = (Bitmap)eventArgs.Frame.Clone())
                     {
@@ -150,7 +145,7 @@ namespace Mcap.ViewModels.Element
                         }
                         else
                         {
-                            _videoWriter.WriteVideoFrame(bitmap);
+                            _videoWriter?.WriteVideoFrame(bitmap);
                             _firstFrameTime = DateTime.Now;
                         }
                     }
@@ -177,9 +172,44 @@ namespace Mcap.ViewModels.Element
         {
             if (Image != null)
             {
-                Images.Add(new ImageItem() { Item = Image, Label = "Hình ảnh", Order = (short)Images.Count });
+                VideoProcessModel.Images.Add(new ImageItem() { Item = Image, Label = "Hình ảnh", Order = 0 });
             }
         }
+
+
+        private void StopRecordVideo()
+        {
+            IsRecording = false;
+            _videoWriter.Close();
+            _videoWriter.Dispose();
+        }
+
+        private void StartRecordVideo()
+        {
+            if (_videoSource != null && _videoSource.IsRunning)
+            {
+                if (!IsRecording)
+                {
+                    var frameRate = 25; // E.g. 25 FPS
+                    var bitRate = 1000000; // E.g. 1000000 is 1 Mbps
+                    _firstFrameTime = null;
+                    _currentFile = DateTime.Now.ToFileTime() + ".mp4";
+                    _videoWriter = new VideoFileWriter();
+                    _videoWriter.Open(_currentFile, (int)Math.Round(Image.Width, 0), (int)Math.Round(Image.Height, 0), frameRate, VideoCodec.MPEG4, bitRate);
+                    IsRecording = true;
+                    VideoProcessModel.Videos.Add(new VideoItem() { Item = _currentFile, Label = "Video", Order = 1 });
+                } else
+                {
+                    StopRecordVideo();
+                }
+                
+            }
+        }
+
+        
+        #endregion
+
+        #region Public Method
         public void Dispose()
         {
             if (_videoSource != null && _videoSource.IsRunning)
@@ -189,20 +219,5 @@ namespace Mcap.ViewModels.Element
             _videoWriter?.Dispose();
         }
         #endregion
-    }
-
-    public class ItemObject<T>
-        where T : class
-    {
-        public T Item { get; set; }
-        public string Label { get; set; }
-        public Int16 Order { get; set; }
-    }
-    public class ImageItem : ItemObject<BitmapImage>
-    {
-    }
-
-    public class VideoItem : ItemObject<string>
-    {
     }
 }

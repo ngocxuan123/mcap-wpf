@@ -20,7 +20,7 @@
             <ColumnDefinition Width="2*" />
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="0">
-            <ewl:SearchPanel Height="100"/>
+            <ewl:SearchPanel Height="160"/>
             <ewl:GridWorklist />
         </StackPanel>
         <Border Grid.Column="1">

@@ -7,9 +7,8 @@
         xmlns:vm="clr-namespace:Mcap.ViewModels"
         xmlns:components="clr-namespace:Mcap.Components"
         mc:Ignorable="d"
-        Title="{DynamicResource ResourceKey=AppName}" 
-        WindowStyle="None"
-        DataContext="{Binding MainLayout, Source={StaticResource Locator}}" Height="932.663" Width="1238.643">
+        Title="{DynamicResource ResourceKey=AppName}"
+        DataContext="{Binding MainLayout, Source={StaticResource Locator}}" Height="932.663" Width="1238.643" Background="White" Icon="Resources/icons/black/capture.png" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <ResourceDictionary>
             <DataTemplate DataType="{x:Type vm:WorklistViewModel}">
@@ -21,25 +20,8 @@
         </ResourceDictionary>
     </Window.Resources>
     <DockPanel MinHeight="800" MinWidth="1000">
-        <Border DockPanel.Dock="Top" Height="75" Panel.ZIndex="9">
+        <Border DockPanel.Dock="Top" Height="40" Panel.ZIndex="9" Background="#0173C7">
             <StackPanel>
-                <!--#region Window action Overide -->
-                <Grid Grid.Row="0" Grid.Column="0" Background="#EEE" Height="35">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"></ColumnDefinition>
-                        <ColumnDefinition Width="*"></ColumnDefinition>
-                    </Grid.ColumnDefinitions>
-                    <StackPanel Grid.Column="0" HorizontalAlignment="Left" Orientation="Horizontal">
-                        <Button Padding="5,2" Width="30" Height="25" Margin="10,5,10,5">&lt;</Button>
-                        <Button Padding="5,2"  Width="30" Height="25" Margin="0,5">&gt;</Button>
-                    </StackPanel>
-                    <StackPanel Grid.Column="1" HorizontalAlignment="Right" Orientation="Horizontal">
-                        <Button x:Name="MinimiseScreen" Width="30" Padding="5,2" Height="25" Margin="0,5,10,5" Click="MinimiseScreen_Click">-</Button>
-                        <Button x:Name="Fullscreen" Width="30" Padding="5,2"  Height="25" Margin="0,5,10,5" Click="Fullscreen_Click">O</Button>
-                        <Button x:Name="Close" Width="30" Padding="5,2" Height="25" Margin="0,5,10,5" Click="Close_Click">x</Button>
-                    </StackPanel>
-                </Grid>
-                <!--#endregion-->
                 <!--Navigate Menu-->
                 <components:McapMenu Tap="McapMenu_Tap" Height="40"></components:McapMenu>
             </StackPanel>

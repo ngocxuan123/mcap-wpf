@@ -17,7 +17,7 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="/FirstFloor.ModernUI;component/Assets/ModernUI.xaml" />
                 <ResourceDictionary Source="/FirstFloor.ModernUI;component/Assets/ModernUI.Light.xaml"/>
-                <ResourceDictionary Source="D:\work\wpf\mcap-wpf\Mcap\Mcap\Resources\i18n\Mcap.vi-VN.xaml" />
+                <ResourceDictionary Source="E:\learn\c#\mca-wpf\mcap-wpf\Mcap\Mcap\Resources\i18n\Mcap.vi-VN.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

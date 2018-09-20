@@ -1,0 +1,8 @@
+E:\learn\c#\mca-wpf\mcap-wpf\Mcap\Mcap.Integrate\Mcap.Integrate\bin\Debug\netstandard2.0\Mcap.Integrate.deps.json
+E:\learn\c#\mca-wpf\mcap-wpf\Mcap\Mcap.Integrate\Mcap.Integrate\bin\Debug\netstandard2.0\Mcap.Integrate.dll
+E:\learn\c#\mca-wpf\mcap-wpf\Mcap\Mcap.Integrate\Mcap.Integrate\bin\Debug\netstandard2.0\Mcap.Integrate.pdb
+E:\learn\c#\mca-wpf\mcap-wpf\Mcap\Mcap.Integrate\Mcap.Integrate\obj\Debug\netstandard2.0\Mcap.Integrate.csproj.CoreCompileInputs.cache
+E:\learn\c#\mca-wpf\mcap-wpf\Mcap\Mcap.Integrate\Mcap.Integrate\obj\Debug\netstandard2.0\Mcap.Integrate.AssemblyInfoInputs.cache
+E:\learn\c#\mca-wpf\mcap-wpf\Mcap\Mcap.Integrate\Mcap.Integrate\obj\Debug\netstandard2.0\Mcap.Integrate.AssemblyInfo.cs
+E:\learn\c#\mca-wpf\mcap-wpf\Mcap\Mcap.Integrate\Mcap.Integrate\obj\Debug\netstandard2.0\Mcap.Integrate.dll
+E:\learn\c#\mca-wpf\mcap-wpf\Mcap\Mcap.Integrate\Mcap.Integrate\obj\Debug\netstandard2.0\Mcap.Integrate.pdb
