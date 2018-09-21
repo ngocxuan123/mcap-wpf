@@ -20,10 +20,10 @@
         </ResourceDictionary>
     </Window.Resources>
     <DockPanel MinHeight="800" MinWidth="1000">
-        <Border DockPanel.Dock="Top" Height="40" Panel.ZIndex="9" Background="#0173C7">
+        <Border DockPanel.Dock="Top" Height="35" Panel.ZIndex="9" Background="#0173C7">
             <StackPanel>
                 <!--Navigate Menu-->
-                <components:McapMenu Tap="McapMenu_Tap" Height="40"></components:McapMenu>
+                <components:McapMenu Tap="McapMenu_Tap" Height="35"></components:McapMenu>
             </StackPanel>
             <!--Window navigate-->
         </Border>

@@ -16,15 +16,25 @@
             <components:Loader></components:Loader>
         </Canvas>-->
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="3*" />
             <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="15" />
+            <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        <StackPanel Grid.Column="0">
-            <ewl:SearchPanel Height="160"/>
-            <ewl:GridWorklist />
-        </StackPanel>
-        <Border Grid.Column="1">
+        <DockPanel VerticalAlignment="Stretch">
+            <ewl:SearchPanel DockPanel.Dock="Top"/>
+            <ewl:GridWorklist/>
+        </DockPanel>
+        <Border Grid.Column="2">
             <ewl:DetailOrder />
         </Border>
+        <GridSplitter 
+            ResizeDirection="Columns" 
+            Grid.Column="1" 
+            Grid.Row="0" 
+            Width="2" 
+            Height="Auto" 
+            HorizontalAlignment="Stretch" 
+            VerticalAlignment="Stretch" 
+            Margin="0" />
     </Grid>
 </UserControl>

@@ -4,22 +4,124 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Mcap.Views.Element.Worklist"
+             xmlns:fa="http://schemas.fontawesome.io/icons/"
              mc:Ignorable="d" 
              VerticalAlignment="Stretch"
-             HorizontalAlignment="Center">
-    <Grid MinHeight="100" MinWidth="400">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
-        <Label Content="Mã dịch vụ" Grid.Column="0"></Label>
-        <TextBlock Text="{Binding Path=Worklist.CurrentOrder.Name}" Grid.Column="1"/>
-    </Grid>
+             HorizontalAlignment="Stretch">
+    <UserControl.Resources>
+        <Style TargetType="Label">
+            <Setter Property="FontWeight" Value="Bold"></Setter>
+        </Style>
+    </UserControl.Resources>
+    <DockPanel MinHeight="100" MinWidth="400" Margin="5">
+        <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom" Height="100">
+            <Button Content="Gọi tên" Height="40"></Button>
+            <Button Content="Đồng bộ" Height="40"></Button>
+            <Button Content="Vào chụp" Height="40"></Button>
+            <Button Content="Hủy ca chụp" Height="40"></Button>
+            <Button Content="Thoát ca chụp" Height="40"></Button>
+        </StackPanel>
+        <GroupBox FontSize="14" Grid.ColumnSpan="2">
+            <GroupBox.Header>
+                <StackPanel Orientation="Horizontal">
+                    <fa:FontAwesome Icon="Clipboard" FontSize="24" />
+                    <Label Content="THÔNG TIN CA CHỤP" Margin="10,0,0,0"/>
+                </StackPanel>
+            </GroupBox.Header>
+            <StackPanel>
+                <GroupBox Header="THÔNG TIN BÊNH NHÂN" Margin="0,10" Padding="5,10,5,10">
+                    <StackPanel>
+                        <Border BorderBrush="#D6D6D6" BorderThickness="0,0,0,0.5">
+                            <StackPanel Orientation="Horizontal" Margin="5">
+                                <Label Content="MÃ BỆNH NHÂN: " Width="170"></Label>
+                                <TextBlock Text="{Binding Path=Worklist.CurrentOrder.Name}" Margin="5"/>
+                            </StackPanel>
+                        </Border>
+                        <Border BorderBrush="#D6D6D6" BorderThickness="0,0,0,0.5">
+                            <StackPanel Orientation="Horizontal" Margin="5">
+                                <Label Content="HỌ TÊN: " Width="170"></Label>
+                                <TextBlock Text="{Binding Path=Worklist.CurrentOrder.Name}" Margin="5"/>
+                            </StackPanel>
+                        </Border>
+                        <Border BorderBrush="#D6D6D6" BorderThickness="0,0,0,0.5">
+                            <StackPanel Orientation="Horizontal" Margin="5">
+                                <Label Content="BHYT: " Width="170"></Label>
+                                <TextBlock Text="{Binding Path=Worklist.CurrentOrder.Name}" Margin="5"/>
+                            </StackPanel>
+                        </Border>
+                        <Border BorderBrush="#D6D6D6" BorderThickness="0,0,0,0.5">
+                            <StackPanel Orientation="Horizontal" Margin="5">
+                                <Label Content="NĂM SINH: " Width="170"></Label>
+                                <TextBlock Text="{Binding Path=Worklist.CurrentOrder.Name}" Margin="5"/>
+                            </StackPanel>
+                        </Border>
+                        <Border BorderBrush="#D6D6D6" BorderThickness="0,0,0,0.5">
+                            <StackPanel Orientation="Horizontal" Margin="5">
+                                <Label Content="GIỚI TÍNH: " Width="170"></Label>
+                                <TextBlock Text="{Binding Path=Worklist.CurrentOrder.Name}" Margin="5"/>
+                            </StackPanel>
+                        </Border>
+                        <Border>
+                            <StackPanel Orientation="Horizontal" Margin="5">
+                                <Label Content="ĐỊA CHỈ: " Width="170"></Label>
+                                <TextBlock Text="{Binding Path=Worklist.CurrentOrder.Name}" Margin="5"/>
+                            </StackPanel>
+                        </Border>
+                    </StackPanel>
+                </GroupBox>
+                <GroupBox Header="THÔNG TIN PHIẾU" Margin="0,10" Padding="5,10,5,10">
+                    <StackPanel>
+                        <Border BorderBrush="#D6D6D6" BorderThickness="0,0,0,0.5">
+                            <StackPanel Orientation="Horizontal" Margin="5">
+                                <Label Content="MÃ PHIẾU: " Width="170"></Label>
+                                <TextBlock Text="{Binding Path=Worklist.CurrentOrder.Name}" Margin="5"/>
+                            </StackPanel>
+                        </Border>
+                        <Border BorderBrush="#D6D6D6" BorderThickness="0,0,0,0.5">
+                            <StackPanel Orientation="Horizontal" Margin="5">
+                                <Label Content="SỐ THỨ TỰ: " Width="170"></Label>
+                                <TextBlock Text="{Binding Path=Worklist.CurrentOrder.Name}" Margin="5"/>
+                            </StackPanel>
+                        </Border>
+                        <Border BorderBrush="#D6D6D6" BorderThickness="0,0,0,0.5">
+                            <StackPanel Orientation="Horizontal" Margin="5">
+                                <Label Content="NGÀY CHỈ ĐỊNH: " Width="170"></Label>
+                                <TextBlock Text="{Binding Path=Worklist.CurrentOrder.Name}" Margin="5"/>
+                            </StackPanel>
+                        </Border>
+                        <Border BorderBrush="#D6D6D6" BorderThickness="0,0,0,0.5">
+                            <StackPanel Orientation="Horizontal" Margin="5">
+                                <Label Content="MÃ DỊCH VỤ: " Width="170"></Label>
+                                <TextBlock Text="{Binding Path=Worklist.CurrentOrder.Name}" Margin="5"/>
+                            </StackPanel>
+                        </Border>
+                        <Border BorderBrush="#D6D6D6" BorderThickness="0,0,0,0.5">
+                            <StackPanel Orientation="Horizontal" Margin="5">
+                                <Label Content="TÊN DỊCH VỤ: " Width="170"></Label>
+                                <TextBlock Text="{Binding Path=Worklist.CurrentOrder.Name}" Margin="5"/>
+                            </StackPanel>
+                        </Border>
+                        <Border BorderBrush="#D6D6D6" BorderThickness="0,0,0,0.5">
+                            <StackPanel Orientation="Horizontal" Margin="5">
+                                <Label Content="THIẾT BỊ: " Width="170"></Label>
+                                <TextBlock Text="{Binding Path=Worklist.CurrentOrder.Name}" Margin="5"/>
+                            </StackPanel>
+                        </Border>
+                        <Border BorderBrush="#D6D6D6" BorderThickness="0,0,0,0.5">
+                            <StackPanel Orientation="Horizontal" Margin="5">
+                                <Label Content="BÁC SỸ CHỈ ĐỊNH: " Width="170"></Label>
+                                <TextBlock Text="{Binding Path=Worklist.CurrentOrder.Name}" Margin="5"/>
+                            </StackPanel>
+                        </Border>
+                        <Border>
+                            <StackPanel Orientation="Horizontal" Margin="5">
+                                <Label Content="CHẨN ĐOÁN BAN ĐẦU: " Width="170"></Label>
+                                <TextBlock Text="{Binding Path=Worklist.CurrentOrder.Name}" Margin="5"/>
+                            </StackPanel>
+                        </Border>
+                    </StackPanel>
+                </GroupBox>
+            </StackPanel>
+        </GroupBox>
+    </DockPanel>
 </UserControl>

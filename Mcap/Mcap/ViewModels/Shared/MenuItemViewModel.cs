@@ -85,7 +85,7 @@ namespace Mcap.ViewModels
         {
             get
             {
-                return IsActive ? "White" : "#0095FF";
+                return IsActive ? "White" : "#0173C7";
             }
         }
 

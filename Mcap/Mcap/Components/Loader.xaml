@@ -6,7 +6,7 @@
              xmlns:fa="http://schemas.fontawesome.io/icons/"
              mc:Ignorable="d" Height="114.407" Width="130.72">
     <StackPanel VerticalAlignment="Center">
-        <fa:ImageAwesome Icon="Spinner" Spin="True" Height="48" Width="48" />
+        <Image Source="/Resources/icons/loading.gif" Height="50" Width="50"></Image>
         <TextBlock Text="Đang tải ..." TextAlignment="Center"></TextBlock>
     </StackPanel>
 </UserControl>

@@ -1,4 +1,5 @@
-﻿using GalaSoft.MvvmLight;
+﻿using FirstFloor.ModernUI.Windows.Controls;
+using GalaSoft.MvvmLight;
 using Mcap.Core.EventArgs;
 using Mcap.ViewModels;
 using System;

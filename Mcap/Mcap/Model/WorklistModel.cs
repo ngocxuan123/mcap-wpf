@@ -50,6 +50,7 @@ namespace Mcap.Model
                 RaisePropertyChanged("RequestCode");
             }
         }
+        public bool IsBoarding { get; set; }
     }
 
     public class Patient : BaseModel

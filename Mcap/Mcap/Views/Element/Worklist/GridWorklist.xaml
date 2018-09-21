@@ -9,15 +9,20 @@
              mc:Ignorable="d" 
              VerticalAlignment="Stretch"
              HorizontalAlignment="Stretch">
-    <Grid MinHeight="100" MinWidth="300">
-        <DataGrid 
-                    MinWidth="400" Height="Auto" MaxHeight="600" 
-                    HorizontalScrollBarVisibility="Hidden" 
-                    VerticalScrollBarVisibility="Hidden" x:Name="patientAwait" 
-                    ItemsSource="{Binding Worklist.Worklist}" BorderThickness="1"
-                    IsReadOnly="True"
-                    AutoGenerateColumns="False"
-                    ColumnWidth="*">
+    <DockPanel x:Name="WorklistContainer">
+        <StackPanel DockPanel.Dock="Bottom" Height="40" Orientation="Horizontal">
+            <Label Content="Có tất cả (" FontWeight="Bold" Margin="0,5"></Label>
+            <Label Content="{Binding Worklist.Worklist.Count}" FontWeight="Bold" Margin="0,5"></Label>
+            <Label Content=") ca chụp cần thực hiện" FontWeight="Bold" Margin="0,5"></Label>
+        </StackPanel>
+        <DataGrid MinWidth="400" 
+                HorizontalScrollBarVisibility="Auto" MaxHeight="700"
+                VerticalScrollBarVisibility="Auto" x:Name="patientAwait" 
+                ItemsSource="{Binding Worklist.Worklist}" BorderThickness="1"
+                IsReadOnly="True"
+                AutoGenerateColumns="False"
+                ColumnWidth="*"
+                  HorizontalGridLinesBrush="#d6d6d6">
             <DataGrid.InputBindings>
                 <KeyBinding Key="N" Modifiers="Ctrl" Command="{Binding AddCommand}" />
             </DataGrid.InputBindings>
@@ -26,13 +31,33 @@
                     <MenuItem Header="Select Menu" Command="{Binding AddCommand}" InputGestureText="Ctrl+N"></MenuItem>
                 </ContextMenu>
             </DataGrid.ContextMenu>
+            <DataGrid.ColumnHeaderStyle>
+                <Style TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Foreground" Value="White"></Setter>
+                    <Setter Property="FontWeight"  Value="Bold" />
+                    <Setter Property="Background" Value="SteelBlue"></Setter>
+                    <Setter Property="Padding" Value="5,7"/>
+                    <Setter Property="BorderThickness" Value="1"/>
+                </Style>
+            </DataGrid.ColumnHeaderStyle>
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Tên" Binding="{Binding Name}" Width="100" />
-                <DataGridTextColumn Header="Mã dịch vụ" Binding="{Binding RequestCode}" Width="*" />
-                <DataGridTemplateColumn Width="150">
+                <DataGridTemplateColumn Width="70" Header="Nội trú">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button>Show/Hide</Button>
+                            <CheckBox IsChecked="{Binding IsBoarding}" IsEnabled="False" HorizontalAlignment="Left"></CheckBox>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="STT" Binding="{Binding Name}" Width="100" />
+                <DataGridTextColumn Header="NGÀY CHỈ ĐỊNH" Binding="{Binding Name}" Width="150" />
+                <DataGridTextColumn Header="TÊN BỆNH NHÂN" Binding="{Binding Name}" Width="150" />
+                <DataGridTextColumn Header="NĂM SINH" Binding="{Binding RequestCode}" Width="100" />
+                <DataGridTextColumn Header="TRẠNG THÁI" Binding="{Binding RequestCode}" Width="150" />
+                <DataGridTextColumn Header="TÊN DỊCH VỤ" Binding="{Binding RequestCode}" Width="*" />
+                <DataGridTemplateColumn Width="100">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Cursor="Hand" Background="#1f78d1" Foreground="White">Thực hiện</Button>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -46,5 +71,5 @@
                 </i:EventTrigger>
             </i:Interaction.Triggers>
         </DataGrid>
-    </Grid>
+    </DockPanel>
 </UserControl>

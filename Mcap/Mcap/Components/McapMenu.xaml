@@ -6,15 +6,16 @@
              xmlns:fa="http://schemas.fontawesome.io/icons/"
              mc:Ignorable="d" d:DesignWidth="800" Height="33.683">
     <DockPanel>
-        <Menu x:Name="mainMenu" IsMainMenu="True" Height="40" Background="#0173C7" Foreground="White" VerticalAlignment="Center" ItemsSource="{Binding MenuItems}" Visibility="{Binding Visibility}">
+        <Menu x:Name="mainMenu" IsMainMenu="True" Height="35" Background="#0173C7" Foreground="White" VerticalAlignment="Center" ItemsSource="{Binding MenuItems}" Visibility="{Binding Visibility}">
             <Menu.Resources>
                 <fa:ImageAwesome x:Key="MenuIconResource" Height="16" Width="16" Icon="{Binding Path=MenuIcon}" Foreground="{Binding Path=Foreground}" />
                 <Style TargetType="{x:Type MenuItem}">
                     <Setter Property="Command" Value="{Binding Command}" />
-                    <Setter Property="Height" Value="40" />
+                    <Setter Property="Height" Value="36" />
+                    <Setter Property="FontWeight" Value="Bold" />
                     <Setter Property="Background" Value="{Binding BackgroundColor}" />
                     <Setter Property="Foreground" Value="{Binding Foreground}" />
-                    <Setter Property="Padding" Value="10" />
+                    <Setter Property="Padding" Value="10,2" />
                     <Setter Property="Header" Value="{Binding Header}" />
                     <Setter Property="IsEnabled" Value="{Binding IsEnabled}" />
                     <Setter Property="Icon" Value="{StaticResource MenuIconResource}" />

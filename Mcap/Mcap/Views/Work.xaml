@@ -20,6 +20,7 @@
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="250"/>
+                    <ColumnDefinition Width="15"/>
                     <ColumnDefinition Width="70*"/>
                 </Grid.ColumnDefinitions>
                 <Border Grid.Row="0" Grid.Column="0" Background="Transparent" BorderBrush="Gainsboro" BorderThickness="1" Margin="5" Padding="5">
@@ -28,7 +29,7 @@
                         <DataGrid Height="Auto" MaxHeight="600" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible" x:Name="patientAwait" ItemsSource="{Binding Customers}" BorderThickness="1" />
                     </StackPanel>
                 </Border>
-                <Border Grid.Row="0" Grid.Column="1" Background="Transparent" BorderBrush="Gainsboro" BorderThickness="1" Margin="5" Padding="5">
+                <Border Grid.Row="0" Grid.Column="2" Background="Transparent" BorderBrush="Gainsboro" BorderThickness="1" Margin="5" Padding="5">
                     <StackPanel>
                         <Grid>
                             <Grid.ColumnDefinitions>
@@ -124,6 +125,15 @@
                         </Grid>
                     </StackPanel>
                 </Border>
+                <GridSplitter 
+                    ResizeDirection="Columns" 
+                    Grid.Column="1" 
+                    Grid.Row="0" 
+                    Width="2" 
+                    Height="Auto" 
+                    HorizontalAlignment="Stretch" 
+                    VerticalAlignment="Stretch" 
+                    Margin="0" />
             </Grid>
         </StackPanel>
     </Grid>

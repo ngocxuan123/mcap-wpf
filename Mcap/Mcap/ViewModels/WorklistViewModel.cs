@@ -51,9 +51,9 @@ namespace Mcap.ViewModels
             _worklist = new WorklistModel();
             _worklist.Worklist = new System.Collections.ObjectModel.ObservableCollection<Order>()
             {
-                new Order(){Name = "Order 1", RequestCode = "CODE 1"},
-                new Order(){Name = "Order 2", RequestCode = "CODE 2"},
-                new Order(){Name = "Order 3", RequestCode = "CODE 3"}
+                new Order(){Name = "Order 1", RequestCode = "CODE 1", IsBoarding = false},
+                new Order(){Name = "Order 2", RequestCode = "CODE 2", IsBoarding = true},
+                new Order(){Name = "Order 3", RequestCode = "CODE 3", IsBoarding = true}
             };
             ReceiveOrder();
         }

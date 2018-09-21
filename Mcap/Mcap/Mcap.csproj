@@ -164,6 +164,7 @@
     </Compile>
     <Compile Include="Helper\BitmapUtils.cs" />
     <Compile Include="Helper\CommonHelper.cs" />
+    <Compile Include="Helper\Extensions.cs" />
     <Compile Include="Helper\PasswordBoxAssistant.cs" />
     <Compile Include="MainLayout.xaml.cs">
       <DependentUpon>MainLayout.xaml</DependentUpon>
@@ -216,6 +217,8 @@
     <Compile Include="Views\Worklist.xaml.cs">
       <DependentUpon>Worklist.xaml</DependentUpon>
     </Compile>
+    <Resource Include="Resources\icons\loading.gif" />
+    <Resource Include="Resources\icons\loader.gif" />
     <Page Include="Components\Footer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
