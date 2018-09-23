@@ -6,7 +6,6 @@
              xmlns:vm="clr-namespace:Mcap.ViewModels"
              xmlns:local="clr-namespace:Mcap"
              d1p1:Ignorable="d"
-             StartupUri="MainLayout.xaml" 
              xmlns:d1p1="http://schemas.openxmlformats.org/markup-compatibility/2006">
     <Application.Resources>
         <ResourceDictionary>
@@ -17,7 +16,7 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="/FirstFloor.ModernUI;component/Assets/ModernUI.xaml" />
                 <ResourceDictionary Source="/FirstFloor.ModernUI;component/Assets/ModernUI.Light.xaml"/>
-                <ResourceDictionary Source="E:\learn\c#\mca-wpf\mcap-wpf\Mcap\Mcap\Resources\i18n\Mcap.vi-VN.xaml" />
+                <ResourceDictionary Source="D:\work\wpf\mcap-wpf\Mcap\Mcap\Resources\i18n\Mcap.vi-VN.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

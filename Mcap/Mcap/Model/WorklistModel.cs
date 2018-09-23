@@ -34,21 +34,15 @@ namespace Mcap.Model
         private string _name;
         public string Name
         {
-            get => _name; set
-            {
-                _name = value;
-                RaisePropertyChanged("Name");
-            }
+            get => _name;
+            set => Set(ref _name, value);
         }
 
         private string _requestCode;
         public string RequestCode
         {
-            get => _requestCode; set
-            {
-                _requestCode = value;
-                RaisePropertyChanged("RequestCode");
-            }
+            get => _requestCode;
+            set => Set(ref _requestCode, value);
         }
         public bool IsBoarding { get; set; }
     }

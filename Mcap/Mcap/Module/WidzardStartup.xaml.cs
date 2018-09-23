@@ -10,26 +10,24 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Mcap.Views.Element.Worklist
+namespace Mcap.Module
 {
     /// <summary>
-    /// Interaction logic for GridWorklist.xaml
+    /// Interaction logic for WidzardStartup.xaml
     /// </summary>
-    public partial class GridWorklist : UserControl
+    public partial class WidzardStartup : Window
     {
-        public GridWorklist()
+        public bool Successfull { get; private set; }
+        public WidzardStartup()
         {
             InitializeComponent();
-            //Initable();
+            Successfull = false;
         }
-
-        private void Initable()
+        private void Wizard_Finish(object sender, Xceed.Wpf.Toolkit.Core.CancelRoutedEventArgs e)
         {
-            MessageBox.Show((Parent as Window).Height.ToString());
-            //patientAwait.MaxHeight = WorklistContainer.ActualHeight;
+            Successfull = true;
         }
     }
 }

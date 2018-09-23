@@ -1,6 +1,8 @@
 ﻿using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
+using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Messaging;
+using Mcap.Helper.Const;
 using Mcap.MessageInfrastructure;
 using Mcap.Model;
 using System;
@@ -11,17 +13,13 @@ using System.Threading.Tasks;
 
 namespace Mcap.ViewModels
 {
-    public class WorklistViewModel : ContainerViewModel
+    public class WorklistViewModel : PageViewModel
     {
+        #region Fields
         private WorklistModel _worklist;
-        public WorklistModel Worklist
-        {
-            get => _worklist; set
-            {
-                _worklist = value;
-                RaisePropertyChanged("Worklist");
-            }
-        }
+        #endregion
+
+        #region Command
         private RelayCommand<Order> _sendOrderCommand;
         public RelayCommand<Order> SendOrderCommand
         {
@@ -46,7 +44,46 @@ namespace Mcap.ViewModels
                 return _addCommand;
             }
         }
+
+        private RelayCommand<Order> _sendOrderToWorkCommand;
+        public RelayCommand<Order> SendOrderToWorkCommand
+        {
+            get
+            {
+                if (_sendOrderToWorkCommand == null)
+                {
+                    _sendOrderToWorkCommand = new RelayCommand<Order>(SendOrderToWork);
+                }
+                return _sendOrderToWorkCommand;
+            }
+        }
+
+  
+        #endregion
+        public WorklistModel Worklist
+        {
+            get => _worklist;
+            set => Set(ref _worklist, value);
+        }
+        #region Property
+        #endregion
+
+        #region Constructor
+        [PreferredConstructorAttribute]
         public WorklistViewModel()
+        {
+            Init();
+            // Subcrice and Init Event listening
+            InitEvent();
+        }
+        #endregion
+
+        #region Init
+        private void InitEvent ()
+        {
+            ReceiveOrder();
+        }
+        private void Init ()
         {
             _worklist = new WorklistModel();
             _worklist.Worklist = new System.Collections.ObjectModel.ObservableCollection<Order>()
@@ -55,30 +92,51 @@ namespace Mcap.ViewModels
                 new Order(){Name = "Order 2", RequestCode = "CODE 2", IsBoarding = true},
                 new Order(){Name = "Order 3", RequestCode = "CODE 3", IsBoarding = true}
             };
-            ReceiveOrder();
         }
+        #endregion
+        #region Public Method
+        public override void Dispose()
+        {
+        }
+        #endregion
+
+        #region Private Method
         private void AddOrder() => _worklist.Worklist.Add(new Order() { Name = "Order " + (new Random().Next()), RequestCode = "COde 3" });
         private void SendOrder(Order order)
         {
-            if (order!=null)
+            if (order != null)
             {
-                Messenger.Default.Send(new OrderMessageComunicator() { Order = order });
+                Messenger.Default.Send(new OrderMessageComunicator() { Item = order }, MessageToken.SEND_ORDER_TO_DETAIL);
             }
         }
+        private void SendOrderToWork(Order order)
+        {
+            if (order != null)
+            {
+                Messenger.Default.Send(new OrderMessageComunicator() { Item = order }, MessageToken.SEND_ORDER_TO_MAIN);
+                SendMenuActive();
+            }
+        }
+        private void SendMenuActive()
+        {
+            Messenger.Default.Send(new MenuMessageComunicator() { Item = "Work" });
+        }
+
         private void ReceiveOrder()
         {
-            Messenger.Default.Register<OrderMessageComunicator>(this, info =>
+            Messenger.Default.Register<OrderMessageComunicator>(this, MessageToken.SEND_ORDER_TO_DETAIL, info =>
             {
                 if (info != null)
                 {
-                    Worklist.CurrentOrder = info.Order;
+                    Worklist.CurrentOrder = info.Item;
+                    //if (Layout!=null)
+                    //{
+                    //    Layout.CurrentViewModel = new WorkingViewModel();
+                    //}
                 }
             });
         }
+        #endregion
 
-        public override void Dispose()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

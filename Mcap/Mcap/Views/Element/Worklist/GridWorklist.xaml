@@ -3,28 +3,35 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:Mcap.Views.Element.Worklist"
+             xmlns:converter="clr-namespace:Mcap.Helper.Converter"
              xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
              xmlns:mvvm="http://www.galasoft.ch/mvvmlight"
              mc:Ignorable="d" 
              VerticalAlignment="Stretch"
              HorizontalAlignment="Stretch">
+    <UserControl.Resources>
+        <converter:ActualHeightConverter x:Key="ActualHeightConverter" />
+    </UserControl.Resources>
     <DockPanel x:Name="WorklistContainer">
         <StackPanel DockPanel.Dock="Bottom" Height="40" Orientation="Horizontal">
             <Label Content="Có tất cả (" FontWeight="Bold" Margin="0,5"></Label>
             <Label Content="{Binding Worklist.Worklist.Count}" FontWeight="Bold" Margin="0,5"></Label>
             <Label Content=") ca chụp cần thực hiện" FontWeight="Bold" Margin="0,5"></Label>
         </StackPanel>
-        <DataGrid MinWidth="400" 
-                HorizontalScrollBarVisibility="Auto" MaxHeight="700"
+        <DataGrid MinWidth="400"
+                HorizontalScrollBarVisibility="Auto"
+                MaxHeight="{Binding RelativeSource={RelativeSource FindAncestor, 
+    AncestorType={x:Type Window}},Converter={StaticResource ActualHeightConverter}, ConverterParameter=330, Path=ActualHeight}"
                 VerticalScrollBarVisibility="Auto" x:Name="patientAwait" 
                 ItemsSource="{Binding Worklist.Worklist}" BorderThickness="1"
                 IsReadOnly="True"
                 AutoGenerateColumns="False"
                 ColumnWidth="*"
-                  HorizontalGridLinesBrush="#d6d6d6">
+                HorizontalGridLinesBrush="#d6d6d6">
             <DataGrid.InputBindings>
                 <KeyBinding Key="N" Modifiers="Ctrl" Command="{Binding AddCommand}" />
+                <MouseBinding MouseAction="LeftDoubleClick"
+                    Command="{Binding SendOrderToWorkCommand}" CommandParameter="{Binding ElementName=patientAwait,Path=SelectedItem}"/>
             </DataGrid.InputBindings>
             <DataGrid.ContextMenu>
                 <ContextMenu >

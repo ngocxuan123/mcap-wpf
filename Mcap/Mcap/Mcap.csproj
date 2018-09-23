@@ -159,21 +159,42 @@
     <Compile Include="Components\Loader.xaml.cs">
       <DependentUpon>Loader.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Components\McapMenu.xaml.cs">
-      <DependentUpon>McapMenu.xaml</DependentUpon>
+    <Compile Include="Components\ToolbarMcapMenu.xaml.cs">
+      <DependentUpon>ToolbarMcapMenu.xaml</DependentUpon>
     </Compile>
     <Compile Include="Helper\BitmapUtils.cs" />
     <Compile Include="Helper\CommonHelper.cs" />
+    <Compile Include="Helper\Const\MessageToken.cs" />
+    <Compile Include="Helper\Converter\ActualHeightConverter.cs" />
+    <Compile Include="Helper\Converter\ConvertToImage.cs" />
     <Compile Include="Helper\Extensions.cs" />
     <Compile Include="Helper\PasswordBoxAssistant.cs" />
     <Compile Include="MainLayout.xaml.cs">
       <DependentUpon>MainLayout.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MessageInfrastructure\MenuMessageComunicator.cs" />
+    <Compile Include="MessageInfrastructure\MessageComunicator.cs" />
     <Compile Include="MessageInfrastructure\OrderMessageComunicator.cs" />
     <Compile Include="Model\BaseModel.cs" />
     <Compile Include="Model\Element\VideoProcessModel.cs" />
+    <Compile Include="Model\Shared\MenuItemModel.cs" />
+    <Compile Include="Module\About.xaml.cs">
+      <DependentUpon>About.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Module\Help.xaml.cs">
+      <DependentUpon>Help.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Module\Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Module\Setting.xaml.cs">
+      <DependentUpon>Setting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Module\WidzardStartup.xaml.cs">
+      <DependentUpon>WidzardStartup.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Validation\RequiredValidationRule.cs" />
-    <Compile Include="ViewModels\ContainerViewModel.cs" />
+    <Compile Include="ViewModels\PageViewModel.cs" />
     <Compile Include="ViewModels\Element\VideoProcessViewModel.cs" />
     <Compile Include="Model\LayoutModel.cs" />
     <Compile Include="Model\Shared\FooterModel.cs" />
@@ -183,7 +204,7 @@
     <Compile Include="ViewModels\LayoutViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\Shared\FooterViewModel.cs" />
-    <Compile Include="ViewModels\Shared\MenuItemViewModel.cs" />
+    <Compile Include="ViewModels\Shared\ToolbarMenuViewModel.cs" />
     <Compile Include="ViewModels\ViewModelLocator.cs" />
     <Compile Include="ViewModels\WorkingViewModel.cs" />
     <Compile Include="ViewModels\WorklistViewModel.cs" />
@@ -195,6 +216,9 @@
     </Compile>
     <Compile Include="Views\Element\Main\Video.xaml.cs">
       <DependentUpon>Video.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Element\Main\Worklist.xaml.cs">
+      <DependentUpon>Worklist.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Element\ServiceSample\Form.xaml.cs">
       <DependentUpon>Form.xaml</DependentUpon>
@@ -208,9 +232,7 @@
     <Compile Include="Views\Element\Worklist\SearchPanel.xaml.cs">
       <DependentUpon>SearchPanel.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Login.xaml.cs">
-      <DependentUpon>Login.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="Views\Login.xaml.cs" />
     <Compile Include="Views\Work.xaml.cs">
       <DependentUpon>Work.xaml</DependentUpon>
     </Compile>
@@ -231,7 +253,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Components\McapMenu.xaml">
+    <Page Include="Components\ToolbarMcapMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -790,6 +812,26 @@
       <Generator>MSBuild:Compile</Generator>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Page Include="Module\About.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Module\Help.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Module\Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Module\Setting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Module\WidzardStartup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Element\DescriptionSample\Form.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -799,6 +841,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Element\Main\Video.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Element\Main\Worklist.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -819,8 +865,8 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Login.xaml">
-      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\Work.xaml">
       <SubType>Designer</SubType>

@@ -10,26 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Mcap.Views.Element.Worklist
+namespace Mcap.Module
 {
     /// <summary>
-    /// Interaction logic for GridWorklist.xaml
+    /// Interaction logic for Help.xaml
     /// </summary>
-    public partial class GridWorklist : UserControl
+    public partial class Help : Window
     {
-        public GridWorklist()
+        public Help()
         {
             InitializeComponent();
-            //Initable();
-        }
-
-        private void Initable()
-        {
-            MessageBox.Show((Parent as Window).Height.ToString());
-            //patientAwait.MaxHeight = WorklistContainer.ActualHeight;
         }
     }
 }

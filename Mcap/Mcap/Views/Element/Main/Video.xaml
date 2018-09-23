@@ -16,7 +16,7 @@
         <fa:FontAwesome x:Key="recording" Icon="VideoCamera" FontSize="18" Foreground="Green"></fa:FontAwesome>
         <fa:FontAwesome x:Key="stop" Icon="StopCircle" FontSize="18" Foreground="Red"></fa:FontAwesome>
     </UserControl.Resources>
-    <DockPanel MinHeight="600" MinWidth="400">
+    <DockPanel>
         <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" Height="30">
             <Button Padding="5, 0" x:Name="btnConnect" Command="{Binding VideoContext.ConnectVideoCommand}">
                 <Button.Style>
@@ -54,44 +54,36 @@
                 <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*"></RowDefinition>
-                    <RowDefinition Height="20"></RowDefinition>
-                </Grid.RowDefinitions>
-                <Border
-                        BorderBrush="#ddd"
-                        BorderThickness="1" Margin="5">
-                    <Image Source="{Binding VideoContext.Image}"/>
-                </Border>
-            </Grid>
-            <StackPanel Grid.Row="1" Margin="5">
+            <Border
+                    BorderBrush="#ddd"
+                    BorderThickness="1" Margin="5">
+                <Image Source="{Binding VideoContext.Image}" Height="250" Width="500"/>
+            </Border>
+            <StackPanel Grid.Row="1">
                 <Label Content="Danh sách hình ảnh" Padding="0,10,10,10"/>
                 <Separator />
-                <ScrollViewer Height="100" HorizontalContentAlignment="Stretch" Margin="0,0,17,0" VerticalScrollBarVisibility="Visible" Grid.Row="1">
-                    <StackPanel>
-                        <ItemsControl ItemsSource="{Binding VideoContext.VideoProcessModel.Images}">
-                            <ItemsControl.ItemTemplate>
-                                <DataTemplate>
-                                    <Border BorderBrush="#d6d6d6" BorderThickness="1" Padding="3" Margin="0,0,3,3">
-                                        <StackPanel Margin="0,0,5,5">
-                                            <Image Source="{Binding Item}" Height="100" Width="100" />
-                                            <StackPanel Orientation="Horizontal">
-                                                <CheckBox Margin="0,0,5,0"></CheckBox>
-                                                <Label Content="{Binding Label}" Padding="2"/>
-                                            </StackPanel>
+                <ScrollViewer Height="100" HorizontalContentAlignment="Stretch" VerticalScrollBarVisibility="Visible" Grid.Row="1">
+                    <ItemsControl ItemsSource="{Binding VideoContext.VideoProcessModel.Images}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Border BorderBrush="#d6d6d6" BorderThickness="1" Padding="3" Margin="0,0,3,3">
+                                    <StackPanel Margin="0,0,5,5">
+                                        <Image Source="{Binding Item}" Height="100" Width="100" />
+                                        <StackPanel Orientation="Horizontal">
+                                            <CheckBox Margin="0,0,5,0"></CheckBox>
+                                            <Label Content="{Binding Label}" Padding="2"/>
                                         </StackPanel>
-                                    </Border>
-                                </DataTemplate>
-                            </ItemsControl.ItemTemplate>
-                        </ItemsControl>
-                    </StackPanel>
+                                    </StackPanel>
+                                </Border>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
                 </ScrollViewer>
             </StackPanel>
-            <StackPanel Grid.Row="2" Margin="5">
+            <StackPanel Grid.Row="2">
                 <Label Content="Danh sách video" Padding="0,5,5,5"/>
                 <Separator />
-                <ScrollViewer Height="100" HorizontalContentAlignment="Stretch" Margin="0,0,17,0" VerticalScrollBarVisibility="Visible" Grid.Row="1">
+                <ScrollViewer Height="100" HorizontalContentAlignment="Stretch" VerticalScrollBarVisibility="Visible" Grid.Row="1">
                     <StackPanel>
                         <ItemsControl ItemsSource="{Binding VideoContext.VideoProcessModel.Videos}">
                             <ItemsControl.ItemTemplate>

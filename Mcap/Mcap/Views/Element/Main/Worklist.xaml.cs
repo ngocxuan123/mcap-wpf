@@ -13,23 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Mcap.Views.Element.Worklist
+namespace Mcap.Views.Element.Main
 {
     /// <summary>
-    /// Interaction logic for GridWorklist.xaml
+    /// Interaction logic for Worklist.xaml
     /// </summary>
-    public partial class GridWorklist : UserControl
+    public partial class Worklist : UserControl
     {
-        public GridWorklist()
+        public Worklist()
         {
             InitializeComponent();
-            //Initable();
-        }
-
-        private void Initable()
-        {
-            MessageBox.Show((Parent as Window).Height.ToString());
-            //patientAwait.MaxHeight = WorklistContainer.ActualHeight;
         }
     }
 }

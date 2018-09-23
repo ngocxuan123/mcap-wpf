@@ -9,7 +9,7 @@
              mc:Ignorable="d" 
              VerticalAlignment="Stretch" 
              HorizontalAlignment="Stretch"
-             DataContext="{Binding Worlist, Source={StaticResource Locator}}"
+             
              >
     <Grid>
         <!--<Canvas Panel.ZIndex="10" Visibility="{Binding Loading}" VerticalAlignment="Stretch" HorizontalAlignment="Center">
@@ -20,7 +20,7 @@
             <ColumnDefinition Width="15" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        <DockPanel VerticalAlignment="Stretch">
+        <DockPanel>
             <ewl:SearchPanel DockPanel.Dock="Top"/>
             <ewl:GridWorklist/>
         </DockPanel>

@@ -1,4 +1,5 @@
-﻿using Mcap.ViewModels;
+﻿using Mcap.Module;
+using Mcap.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -14,12 +15,21 @@ namespace Mcap
     /// </summary>
     public partial class App : Application
     {
-        //protected override void OnStartup(StartupEventArgs e)
-        //{
-        //    base.OnStartup(e);
-
-        //    var window = new MainLayout() { DataContext = new LayoutViewModel() };
-        //    window.Show();
-        //}
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+            var widzard = new WidzardStartup();
+            widzard.Closing += (o, evt) =>
+            {
+                if ((o as WidzardStartup).Successfull)
+                {
+                    //var window = new MainLayout() { DataContext = new LayoutViewModel() };
+                    //window.Show();
+                    var login = new Login();
+                    login.Show();
+                }
+            };
+            widzard.ShowDialog();
+        }
     }
 }

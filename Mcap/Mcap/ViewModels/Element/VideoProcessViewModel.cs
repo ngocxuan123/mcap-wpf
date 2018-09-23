@@ -56,7 +56,7 @@ namespace Mcap.ViewModels.Element
         }
         #endregion
 
-        #region Property
+        #region Public Property
         public ObservableCollection<FilterInfo> DeviceVideos { get; set; }
 
         public bool IsRunning
@@ -190,12 +190,12 @@ namespace Mcap.ViewModels.Element
             {
                 if (!IsRecording)
                 {
-                    var frameRate = 25; // E.g. 25 FPS
-                    var bitRate = 1000000; // E.g. 1000000 is 1 Mbps
+                    //var frameRate = 25; // E.g. 25 FPS
+                    //var bitRate = 1000000; // E.g. 1000000 is 1 Mbps
                     _firstFrameTime = null;
                     _currentFile = DateTime.Now.ToFileTime() + ".mp4";
                     _videoWriter = new VideoFileWriter();
-                    _videoWriter.Open(_currentFile, (int)Math.Round(Image.Width, 0), (int)Math.Round(Image.Height, 0), frameRate, VideoCodec.MPEG4, bitRate);
+                    _videoWriter.Open($"D:/{_currentFile}", (int)Math.Round(Image.Width, 0), (int)Math.Round(Image.Height, 0));
                     IsRecording = true;
                     VideoProcessModel.Videos.Add(new VideoItem() { Item = _currentFile, Label = "Video", Order = 1 });
                 } else

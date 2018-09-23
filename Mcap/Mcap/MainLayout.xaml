@@ -8,7 +8,7 @@
         xmlns:components="clr-namespace:Mcap.Components"
         mc:Ignorable="d"
         Title="{DynamicResource ResourceKey=AppName}"
-        DataContext="{Binding MainLayout, Source={StaticResource Locator}}" Height="932.663" Width="1238.643" Background="White" Icon="Resources/icons/black/capture.png" WindowStartupLocation="CenterScreen">
+        DataContext="{Binding MainLayout, Source={StaticResource Locator}}" Height="932.663" Width="1238.643" Background="White" Icon="Resources/icons/black/capture.png" WindowStartupLocation="CenterScreen" WindowState="Maximized">
     <Window.Resources>
         <ResourceDictionary>
             <DataTemplate DataType="{x:Type vm:WorklistViewModel}">
@@ -19,12 +19,10 @@
             </DataTemplate>
         </ResourceDictionary>
     </Window.Resources>
-    <DockPanel MinHeight="800" MinWidth="1000">
+    <DockPanel MinWidth="1000">
         <Border DockPanel.Dock="Top" Height="35" Panel.ZIndex="9" Background="#0173C7">
-            <StackPanel>
-                <!--Navigate Menu-->
-                <components:McapMenu Tap="McapMenu_Tap" Height="35"></components:McapMenu>
-            </StackPanel>
+            <!--Navigate Menu-->
+            <components:ToolbarMcapMenu Tap="McapMenu_Tap" Height="35" DataContext="{Binding Path=Toolbar}" x:Name="Toolbar"/>
             <!--Window navigate-->
         </Border>
         <Border DockPanel.Dock="Bottom" Height="30" Panel.ZIndex="9">
