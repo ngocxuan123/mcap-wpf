@@ -7,3 +7,11 @@ E:\learn\c#\mca-wpf\mcap-wpf\Mcap\Mcap.Data\Mcap.Data\obj\Debug\netstandard2.0\M
 E:\learn\c#\mca-wpf\mcap-wpf\Mcap\Mcap.Data\Mcap.Data\obj\Debug\netstandard2.0\Mcap.Data.AssemblyInfo.cs
 E:\learn\c#\mca-wpf\mcap-wpf\Mcap\Mcap.Data\Mcap.Data\obj\Debug\netstandard2.0\Mcap.Data.dll
 E:\learn\c#\mca-wpf\mcap-wpf\Mcap\Mcap.Data\Mcap.Data\obj\Debug\netstandard2.0\Mcap.Data.pdb
+D:\work\wpf\mcap-wpf\Mcap\Mcap.Data\Mcap.Data\bin\Debug\netstandard2.0\Mcap.Data.deps.json
+D:\work\wpf\mcap-wpf\Mcap\Mcap.Data\Mcap.Data\bin\Debug\netstandard2.0\Mcap.Data.dll
+D:\work\wpf\mcap-wpf\Mcap\Mcap.Data\Mcap.Data\bin\Debug\netstandard2.0\Mcap.Data.pdb
+D:\work\wpf\mcap-wpf\Mcap\Mcap.Data\Mcap.Data\obj\Debug\netstandard2.0\Mcap.Data.csproj.CoreCompileInputs.cache
+D:\work\wpf\mcap-wpf\Mcap\Mcap.Data\Mcap.Data\obj\Debug\netstandard2.0\Mcap.Data.AssemblyInfoInputs.cache
+D:\work\wpf\mcap-wpf\Mcap\Mcap.Data\Mcap.Data\obj\Debug\netstandard2.0\Mcap.Data.AssemblyInfo.cs
+D:\work\wpf\mcap-wpf\Mcap\Mcap.Data\Mcap.Data\obj\Debug\netstandard2.0\Mcap.Data.dll
+D:\work\wpf\mcap-wpf\Mcap\Mcap.Data\Mcap.Data\obj\Debug\netstandard2.0\Mcap.Data.pdb

@@ -6,3 +6,11 @@ E:\learn\c#\mca-wpf\mcap-wpf\Mcap\Mcap.Integrate\Mcap.Integrate\obj\Debug\netsta
 E:\learn\c#\mca-wpf\mcap-wpf\Mcap\Mcap.Integrate\Mcap.Integrate\obj\Debug\netstandard2.0\Mcap.Integrate.AssemblyInfo.cs
 E:\learn\c#\mca-wpf\mcap-wpf\Mcap\Mcap.Integrate\Mcap.Integrate\obj\Debug\netstandard2.0\Mcap.Integrate.dll
 E:\learn\c#\mca-wpf\mcap-wpf\Mcap\Mcap.Integrate\Mcap.Integrate\obj\Debug\netstandard2.0\Mcap.Integrate.pdb
+D:\work\wpf\mcap-wpf\Mcap\Mcap.Integrate\Mcap.Integrate\bin\Debug\netstandard2.0\Mcap.Integrate.deps.json
+D:\work\wpf\mcap-wpf\Mcap\Mcap.Integrate\Mcap.Integrate\bin\Debug\netstandard2.0\Mcap.Integrate.dll
+D:\work\wpf\mcap-wpf\Mcap\Mcap.Integrate\Mcap.Integrate\bin\Debug\netstandard2.0\Mcap.Integrate.pdb
+D:\work\wpf\mcap-wpf\Mcap\Mcap.Integrate\Mcap.Integrate\obj\Debug\netstandard2.0\Mcap.Integrate.csproj.CoreCompileInputs.cache
+D:\work\wpf\mcap-wpf\Mcap\Mcap.Integrate\Mcap.Integrate\obj\Debug\netstandard2.0\Mcap.Integrate.AssemblyInfoInputs.cache
+D:\work\wpf\mcap-wpf\Mcap\Mcap.Integrate\Mcap.Integrate\obj\Debug\netstandard2.0\Mcap.Integrate.AssemblyInfo.cs
+D:\work\wpf\mcap-wpf\Mcap\Mcap.Integrate\Mcap.Integrate\obj\Debug\netstandard2.0\Mcap.Integrate.dll
+D:\work\wpf\mcap-wpf\Mcap\Mcap.Integrate\Mcap.Integrate\obj\Debug\netstandard2.0\Mcap.Integrate.pdb
