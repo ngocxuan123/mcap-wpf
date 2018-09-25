@@ -53,10 +53,25 @@
         <Label Content="Ngày Kết thúc:" Grid.Column="1" Margin="3"></Label>
         <Label Content="Loại bệnh nhân:" Grid.Column="2" Margin="3"></Label>
         <Button Content="Xóa tham số" Grid.Column="3" Grid.Row="1" Margin="3" Width="100" HorizontalAlignment="Left"></Button>
-        <Button Grid.Column="4" Style="{StaticResource PrimaryBtn}" Grid.Row="1" Margin="3" Width="100" HorizontalAlignment="Left" Padding="0" Background="#1f78d1" Cursor="Hand">
+        <Button Grid.Column="4" Grid.Row="1" Margin="3" Width="100" HorizontalAlignment="Left" Padding="0" Cursor="Hand">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Background" Value="#1f78d1"></Setter>
+                    <Setter Property="Foreground" Value="White"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Foreground" Value="Black"></Setter>
+                            <Setter Property="Background" Value="#d6d6d6"></Setter>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" Value="Red"></Setter>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-                <fa:FontAwesome Icon="AddressBook" FontSize="14" Width="15" Foreground="White"></fa:FontAwesome>
-                <TextBlock Grid.Column="1" Foreground="White" FontWeight="Bold" Margin="20,0,0,0">Đồng bộ</TextBlock>
+                <fa:FontAwesome Icon="AddressBook" FontSize="15" Width="15"></fa:FontAwesome>
+                <TextBlock Margin="20,0,0,0">Đồng bộ</TextBlock>
             </StackPanel>
         </Button>
         <DatePicker Grid.Row="1"  Margin="3" ></DatePicker>

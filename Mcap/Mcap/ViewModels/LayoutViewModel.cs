@@ -50,14 +50,18 @@ namespace Mcap.ViewModels
             Toolbar.MenuItems = new ObservableCollection<MenuItemModel>
             {
                 new MenuItemModel { Header = "Thực hiện", MenuIcon = "AddressCard", Name ="Work", IsActive = false  },
-                new MenuItemModel { Header = "Tiếp nhận", MenuIcon = "Ambulance", Name ="Action",
+                new MenuItemModel { Header = "Worklist", MenuIcon = "Ambulance", Name = "Worklist", IsActive = true },
+                new MenuItemModel { Header = "Ca chụp đã thực hiện", MenuIcon = "Ambulance", Name = "", IsActive = false },
+                new MenuItemModel { Header = "Danh mục", MenuIcon = "Ambulance", Name ="",
                     MenuItems = new ObservableCollection<MenuItemModel>
                         {
-                            new MenuItemModel { Header = "Beta1", MenuIcon = "Ambulance" },
-                            new MenuItemModel { Header = "Beta3", MenuIcon = "Ambulance" }
+                            new MenuItemModel { Header = "Quản lý tài khoản", MenuIcon = "Ambulance" },
+                            new MenuItemModel { Header = "Quản lý thiết bị", MenuIcon = "Ambulance" },
+                            new MenuItemModel { Header = "Quản lý mẫu báo cáo", MenuIcon = "Ambulance" },
+                            new MenuItemModel { Header = "Quản lý dịch vụ", MenuIcon = "Ambulance" }
                         }
                 },
-                new MenuItemModel { Header = "Worklist", MenuIcon = "Ambulance", Name = "Worklist", IsActive = true }
+                new MenuItemModel { Header = "Cài đặt", MenuIcon = "Ambulance", Name = "", IsActive = false }
             };
             PageViews.Add("Work", new WorkingViewModel());
             PageViews.Add("Worklist", new WorklistViewModel());
@@ -116,8 +120,9 @@ namespace Mcap.ViewModels
                 ChangeActive(info.Item);
             });
         }
-        public void ChangeActive(string name = null)
+        public void ChangeActive(string name)
         {
+            if (string.IsNullOrEmpty(name)) return;
             for (int i = 0; i < Toolbar.MenuItems.Count; i++)
             {
                 if (Toolbar.MenuItems[i].Name == name)
