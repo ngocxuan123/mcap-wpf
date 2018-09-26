@@ -1,0 +1,129 @@
+﻿<UserControl x:Class="Mcap.Views.OrderDetail"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Mcap.Views"
+             mc:Ignorable="d" d:DesignHeight="720">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".35*" />
+            <RowDefinition Height=".5*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="30" />
+        </Grid.RowDefinitions>
+        <GroupBox Header="THÔNG TIN HÀNH CHÍNH">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="2*" />
+                </Grid.RowDefinitions>
+                <Border BorderThickness="0,0,0,1" Padding="5" BorderBrush="#d6d6d6">
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="MÃ BỆNH NHÂN: " Width="120"></Label>
+                        <Label Content="6307272" Width="70" FontWeight="Bold"></Label>
+                        <Label Content="TÊN BỆNH NHÂN:" Width="100"></Label>
+                        <Label Content="ĐOÀN NGUYÊN ĐỨC" Width="200" FontWeight="Bold"></Label>
+                        <Label Content="GIỚI TÍNH:" Width="70"></Label>
+                        <Label Content="NAM" Width="70" FontWeight="Bold"></Label>
+                        <Label Content="NĂM SINH:" Width="70"></Label>
+                        <Label Content="1951" Width="50" FontWeight="Bold"></Label>
+                    </StackPanel>
+                </Border>
+                <Border BorderThickness="0,0,0,1" Padding="5" BorderBrush="#d6d6d6" Grid.Row="1">
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="MÃ BHYT: " Width="120"></Label>
+                        <Label Content="BHYT1090293" FontWeight="Bold" Width="300" />
+                    </StackPanel>
+                </Border>
+                <Border BorderThickness="0,0,0,1" Padding="5" BorderBrush="#d6d6d6" Grid.Row="2">
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="ĐỊA CHỈ: " Width="120"></Label>
+                        <TextBlock TextWrapping="Wrap" 
+                                    FontWeight="Bold"
+                                    Width="Auto"
+                                    Text="184 Nguyễn Lương Bằng, Quận Liên Chiểu, Thành Phố Đà Nẵng, Việt Nam." />
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="THÔNG TIN CA CHỤP" Grid.Row="1">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="1.5*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="1.5*" />
+                </Grid.RowDefinitions>
+                <Border BorderThickness="0,0,0,1" Padding="5" BorderBrush="#d6d6d6">
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="NGÀY THỰC HIỆN: " Width="120"></Label>
+                        <Label Content="17-09-2018 11:20:00" Width="200" FontWeight="Bold"></Label>
+                        <Label Content="MÁY THỰC HIỆN: " Width="120"></Label>
+                        <Label Content="US3" Width="Auto" FontWeight="Bold"></Label>
+                    </StackPanel>
+                </Border>
+                <Border BorderThickness="0,0,0,1" Padding="5" BorderBrush="#d6d6d6" Grid.Row="1">
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="MÃ DỊCH VỤ: " Width="120"></Label>
+                        <Label Content="4" Width="200" FontWeight="Bold"></Label>
+                        <Label Content="TÊN DỊCH VỤ: " Width="120"></Label>
+                        <TextBlock TextWrapping="Wrap" 
+                                    FontWeight="Bold"
+                                    Width="Auto"
+                                    Text="Dịch vụ nội soi siêu âm ổ bụng."></TextBlock>
+                    </StackPanel>
+                </Border>
+                <Border BorderThickness="0,0,0,1" Padding="5" BorderBrush="#d6d6d6" Grid.Row="2">
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="BÁC SĨ THỰC HIỆN: " Width="120"></Label>
+                        <Label Content="Nguyễn Quang Trung" Width="200" FontWeight="Bold"></Label>
+                        <Label Content="KTV/ĐIỀU DƯỠNG: " Width="120"></Label>
+                        <Label Content="Nguyễn Hoa Vương" Width="Auto" FontWeight="Bold"></Label>
+                    </StackPanel>
+                </Border>
+                <Border BorderThickness="0,0,0,1" Padding="5" BorderBrush="#d6d6d6" Grid.Row="3">
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="BÁC SĨ CHỈ ĐỊNH: " Width="120"></Label>
+                        <Label Content="Soft Miền Trung" Width="200" FontWeight="Bold"></Label>
+                        <Label Content="CHẨN ĐOÁN: " Width="120"></Label>
+                        <TextBlock TextWrapping="Wrap" 
+                                    FontWeight="Bold"
+                                    Width="Auto"
+                                    Text="184 Nguyễn Lương Bằng, Quận Liên Chiểu, Thành Phố Đà Nẵng, Việt Nam."></TextBlock>
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="KẾT QUẢ CA CHỤP" Grid.Row="2">
+            <StackPanel>
+                <Border BorderThickness="0,0,0,1" Padding="5" BorderBrush="#d6d6d6">
+                    <StackPanel>
+                        <Label Content="MÔ TẢ" Margin="0,0,0,5"></Label>
+                        <RichTextBox Height="150" ></RichTextBox>
+                    </StackPanel>
+                </Border>
+                <Border BorderThickness="0,0,0,1" Padding="5" BorderBrush="#d6d6d6">
+                    <StackPanel>
+                        <Label Content="KẾT LUẬN" Margin="0,0,0,5"></Label>
+                        <RichTextBox Height="50" ></RichTextBox>
+                    </StackPanel>
+                </Border>
+                <Border BorderThickness="0,0,0,1" Padding="5" BorderBrush="#d6d6d6">
+                    <StackPanel>
+                        <Label Content="ĐỀ NGHỊ" Margin="0,0,0,5"></Label>
+                        <RichTextBox Height="50" ></RichTextBox>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </GroupBox>
+        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Content="Ghi đĩa" Margin="5,0,0,0"/>
+            <Button Content="Hủy trả ca chụp" Margin="5,0,0,0"/>
+            <Button Content="Gửi lên pacs" Margin="5,0,0,0"/>
+            <Button Content="In theo ngày" Margin="5,0,0,0"/>
+            <Button Content="In" Margin="5,0,0,0"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

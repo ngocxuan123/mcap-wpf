@@ -162,6 +162,18 @@
     <Compile Include="Components\ToolbarMcapMenu.xaml.cs">
       <DependentUpon>ToolbarMcapMenu.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\InfoHospital.xaml.cs">
+      <DependentUpon>InfoHospital.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Integrate.xaml.cs">
+      <DependentUpon>Integrate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\OptionSettings.xaml.cs">
+      <DependentUpon>OptionSettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Pacs.xaml.cs">
+      <DependentUpon>Pacs.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Helper\BitmapUtils.cs" />
     <Compile Include="Helper\CommonHelper.cs" />
     <Compile Include="Helper\Const\MessageToken.cs" />
@@ -208,6 +220,21 @@
     <Compile Include="ViewModels\ViewModelLocator.cs" />
     <Compile Include="ViewModels\WorkingViewModel.cs" />
     <Compile Include="ViewModels\WorklistViewModel.cs" />
+    <Compile Include="Views\Complete.xaml.cs">
+      <DependentUpon>Complete.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Concept.xaml.cs">
+      <DependentUpon>Concept.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Description-template.xaml.cs">
+      <DependentUpon>Description-template.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Element\CompleteWorklist\GridWorklist.xaml.cs">
+      <DependentUpon>GridWorklist.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Element\CompleteWorklist\SearchPanel.xaml.cs">
+      <DependentUpon>SearchPanel.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Element\DescriptionSample\Form.xaml.cs">
       <DependentUpon>Form.xaml</DependentUpon>
     </Compile>
@@ -233,6 +260,15 @@
       <DependentUpon>SearchPanel.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Login.xaml.cs" />
+    <Compile Include="Views\Modality.xaml.cs">
+      <DependentUpon>Modality.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Element\CompleteWorklist\OrderDetail.xaml.cs">
+      <DependentUpon>OrderDetail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Report-template.xaml.cs">
+      <DependentUpon>Report-template.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Work.xaml.cs">
       <DependentUpon>Work.xaml</DependentUpon>
     </Compile>
@@ -254,6 +290,22 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Components\ToolbarMcapMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\InfoHospital.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Integrate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\OptionSettings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Pacs.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -832,6 +884,26 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Complete.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Concept.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Description-template.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Element\CompleteWorklist\GridWorklist.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Element\CompleteWorklist\SearchPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Element\DescriptionSample\Form.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -867,6 +939,18 @@
     <Page Include="Views\Login.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Modality.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Element\CompleteWorklist\OrderDetail.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Report-template.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Work.xaml">
       <SubType>Designer</SubType>

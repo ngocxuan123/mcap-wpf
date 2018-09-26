@@ -1,0 +1,165 @@
+﻿<UserControl x:Class="Mcap.Controls.Integrate"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Mcap.Controls"
+             mc:Ignorable="d" Width="617.716" Height="350.287">
+    <UserControl.Resources>
+        <Style x:Name="LabelSty" TargetType="{x:Type Label}">
+            <Setter Property="FontWeight" Value="Bold" />
+        </Style>
+    </UserControl.Resources>
+    <DockPanel>
+        <TabControl>
+            <TabItem Header="HỆ THỐNG HIS/RIS">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="40" />
+                    </Grid.RowDefinitions>
+                    <GroupBox Header="THÔNG TIN CẤU HÌNH">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Label Content="HỆ THỐNG TÍCH HỢP" Width="150" Margin="5"/>
+                            <ComboBox Grid.Column="1" Grid.ColumnSpan="3" Margin="10" MinWidth="400">
+                                <ComboBoxItem Content="Hệ thống VNPT RIS"></ComboBoxItem>
+                            </ComboBox>
+                            <Label Content="CỔNG ĐĂNG NHẬP" Width="150" Margin="5" Grid.Row="1"/>
+                            <TextBox Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Margin="10" MinWidth="400" />
+                            <Label Content="CỔNG DỊCH VỤ" Width="150" Margin="5" Grid.Row="2"/>
+                            <TextBox Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" Margin="10" MinWidth="400" />
+                            <Label Content="CLIENT ID" Width="150" Margin="5" Grid.Row="3"/>
+                            <TextBox Grid.Row="3" Grid.Column="1" Margin="10"  />
+                            <Label Content="CLIENT SECRET" Width="150" Margin="5" Grid.Row="3" Grid.Column="2"/>
+                            <TextBox Grid.Row="3" Grid.Column="4" Margin="10"  />
+                            <Label Content="TÀI KHOẢN" Width="150" Margin="5" Grid.Row="4"/>
+                            <TextBox Grid.Row="4" Grid.Column="1" Margin="10"  />
+                            <Label Content="MẬT KHẨU" Width="150" Margin="5" Grid.Row="4" Grid.Column="2"/>
+                            <TextBox Grid.Row="4" Grid.Column="4" Margin="10"  />
+                            <Label Content="STT" Grid.Row="5" Width="150" Margin="5"/>
+                            <ComboBox Grid.Column="1" Grid.Row="5" Margin="10">
+                                <ComboBoxItem Content="RIS"></ComboBoxItem>
+                                <ComboBoxItem Content="HIS"></ComboBoxItem>
+                            </ComboBox>
+                        </Grid>
+                    </GroupBox>
+                    <StackPanel Grid.Row="1"  HorizontalAlignment="Right" Orientation="Horizontal" Margin="0,5" Height="30">
+                        <Button Content="Kiểm tra kết nối" Width="120" Margin="5,0,0,0"/>
+                        <Button Content="Lưu" Width="60" Margin="5,0,0,0"/>
+                        <Button Content="Làm mới" Width="80" Margin="5,0,0,0"/>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+            <TabItem Header="HỆ THỐNG PACS">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="40" />
+                    </Grid.RowDefinitions>
+                    <GroupBox Header="DICOM SERVER">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="50" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="110" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="110" />
+                                <ColumnDefinition Width="100" />
+                            </Grid.ColumnDefinitions>
+                            <Label Width="150" Margin="5">
+                                <Label.Content>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label Content="ĐỊA CHỈ IP"></Label>
+                                        <Label Content="( * )" Foreground="Red" />
+                                    </StackPanel>
+                                </Label.Content>
+                            </Label>
+                            <TextBox Grid.Column="1" Margin="10" Height="25" />
+                            <Label Width="100" Margin="5" Grid.Column="2">
+                                <Label.Content>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label Content="PORT"></Label>
+                                        <Label Content="( * )" Foreground="Red" />
+                                    </StackPanel>
+                                </Label.Content>
+                            </Label>
+                            <TextBox Grid.Column="3" Margin="10,0,0,0" Height="25" />
+                            <Label Width="100" Margin="10" Grid.Row="1">
+                                <Label.Content>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label Content="AE TITLE"></Label>
+                                        <Label Content="( * )" Foreground="Red" />
+                                    </StackPanel>
+                                </Label.Content>
+                            </Label>
+                            <TextBox Grid.Column="1" Grid.ColumnSpan="3" Margin="10,0,0,0" Height="25" Grid.Row="1" />
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Header="DICOM CLIENT" Grid.Row="1">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="50" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="110" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="110" />
+                                <ColumnDefinition Width="100" />
+                            </Grid.ColumnDefinitions>
+                            <Label Width="150" Margin="5">
+                                <Label.Content>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label Content="AE TITLE"></Label>
+                                        <Label Content="( * )" Foreground="Red" />
+                                    </StackPanel>
+                                </Label.Content>
+                            </Label>
+                            <TextBox Grid.Column="1" Margin="10" Height="25" />
+                            <Label Width="110" Margin="5" Grid.Column="2">
+                                <Label.Content>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label Content="LOẠI MÁY"></Label>
+                                        <Label Content="( * )" Foreground="Red" />
+                                    </StackPanel>
+                                </Label.Content>
+                            </Label>
+                            <TextBox Grid.Column="3" Margin="10,0,0,0" Height="25" />
+                            <Label Width="100" Margin="10" Grid.Row="1">
+                                <Label.Content>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label Content="ROOT ID"></Label>
+                                        <Label Content="( * )" Foreground="Red" />
+                                    </StackPanel>
+                                </Label.Content>
+                            </Label>
+                            <TextBox Grid.Column="1" Grid.ColumnSpan="3" Margin="10,0,0,0" Height="25" Grid.Row="1" />
+                        </Grid>
+                    </GroupBox>
+                    <StackPanel Grid.Row="2" HorizontalAlignment="Right" Orientation="Horizontal" Margin="0,5" Height="30">
+                        <Button Content="Kiểm tra kết nối" Width="120" Margin="5,0,0,0"/>
+                        <Button Content="Lưu" Width="60" Margin="5,0,0,0"/>
+                        <Button Content="Làm mới" Width="80" Margin="5,0,0,0"/>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </DockPanel>
+</UserControl>

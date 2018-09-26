@@ -1,0 +1,75 @@
+﻿<UserControl x:Class="Mcap.Views.Element.CompleteWorklist.SearchPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Mcap.Views.Element.CompleteWorklist"
+             xmlns:fa="http://schemas.fontawesome.io/icons/"
+             mc:Ignorable="d" d:DesignWidth="950.665" 
+            >
+    <UserControl.Resources>
+        <Style BasedOn="{StaticResource {x:Type ToggleButton}}" TargetType="RadioButton">
+            <Style.Triggers>
+                <Trigger Property="IsChecked" Value="true">
+                    <Setter Property="Background" Value="SteelBlue"/>
+                    <Setter Property="Foreground" Value="White"></Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style TargetType="Label">
+            <Setter Property="FontSize" Value="13"></Setter>
+            <Setter Property="FontWeight" Value="Bold"></Setter>
+        </Style>
+        <Style x:Key="PrimaryBtn" TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="#1f78d1" />
+            <Setter Property="Foreground" Value="White"/>
+            <Style.Triggers>
+                <Trigger Property="Button.IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#2177bc"/>
+                </Trigger>
+                <Trigger Property="Button.IsPressed" Value="True">
+                    <Setter Property="Background" Value="Red"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+    <Grid Margin="0,10,0,10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150" />
+            <ColumnDefinition Width="150" />
+            <ColumnDefinition Width="120" />
+            <ColumnDefinition Width="150" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Label Content="Ngày bắt đầu:"></Label>
+        <Label Content="Ngày Kết thúc:" Grid.Column="1"></Label>
+        <Label Content="Bác sỹ:" Grid.Column="2"></Label>
+        <Label Content="Loại máy:" Grid.Column="3"></Label>
+        <Label Content="Tên máy:" Grid.Column="4"></Label>
+        <ComboBox Grid.Column="3" Grid.Row="1" Margin="3" x:Name="searchType"></ComboBox>
+        <ComboBox Grid.Column="4" Grid.Row="1" Margin="3" x:Name="searchModalty"></ComboBox>
+        <DatePicker Grid.Row="1"  Margin="3" ></DatePicker>
+        <DatePicker Grid.Row="1" Grid.Column="1" Margin="3"></DatePicker>
+        <ComboBox Grid.Row="1" Grid.Column="2" Margin="3" x:Name="searchDoctor"></ComboBox>
+        <Label Content="Loại ca chụp" Grid.Row="2" Grid.ColumnSpan="2"></Label>
+        <StackPanel Grid.Row="3" Orientation="Horizontal" Margin="3" Grid.ColumnSpan="2">
+            <RadioButton GroupName="Time">Tích hợp</RadioButton>
+            <RadioButton GroupName="Time">Local</RadioButton>
+            <RadioButton GroupName="Time">Tất cả</RadioButton>
+        </StackPanel>
+        <Label Content="Dịch vụ" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2"></Label>
+        <ComboBox Grid.Row="3" Grid.ColumnSpan="2" Grid.Column="2" Margin="3" x:Name="searchService"></ComboBox>
+        <StackPanel Grid.Column="4" Grid.Row="3" Margin="3" Orientation="Horizontal">
+            <TextBox Text="Tìm kiếm bệnh nhân..." Width="240"></TextBox>
+            <Button >Xóa</Button>
+            <Button >Tìm kiếm</Button>
+        </StackPanel>
+    </Grid>
+</UserControl>

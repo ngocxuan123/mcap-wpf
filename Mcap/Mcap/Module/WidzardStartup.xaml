@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Mcap.Module"
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:controls="clr-namespace:Mcap.Controls"
         mc:Ignorable="d"
-        Title="Cấu hình thông tin kết nối và thông tin cơ sở y tế" Height="450" Width="800" Icon="/Mcap;component/ckeditor/plugins/smiley/images/omg_smile.gif" WindowStartupLocation="CenterScreen">
+        Title="Cấu hình thông tin kết nối và thông tin cơ sở y tế" Height="531.992" Width="829.555" Icon="/Mcap;component/ckeditor/plugins/smiley/images/omg_smile.gif" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
         <xctk:Wizard FinishButtonClosesWindow="True" Finish="Wizard_Finish">
             <xctk:WizardPage x:Name="IntroPage"
@@ -18,12 +19,14 @@
                              Description="Cài đặt cấu hình kết nối database gồm server username/password">
             </xctk:WizardPage>
             <xctk:WizardPage x:Name="ConfigIntegratePage"
-                             Title="Vui lòng lựa chọn hệ thống tích hợp"
-                             Description="Tích hợp với hệ thống HIS/RIS-PACS">
+                             Title="Cài đặt thông tin tích hợp"
+                             Description="Vui lòng chọn hệ thống tích hợp.">
+                <controls:Integrate></controls:Integrate>
             </xctk:WizardPage>
             <xctk:WizardPage x:Name="ConfigHospitalInfoPage"
                              Title="Cài đặt thông tin cơ sở y tế"
                              Description="Thông tin cơ sở y tế, địa chỉ">
+                <controls:InfoHospital HorizontalContentAlignment="Stretch" />
             </xctk:WizardPage>
             <xctk:WizardPage x:Name="CongurationPage"
                              Title="Cấu hình thông tin thành công"
