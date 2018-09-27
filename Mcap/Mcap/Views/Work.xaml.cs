@@ -25,54 +25,15 @@ namespace Mcap.Views
     public partial class Work : UserControl
     {
         ListBox dragSource = null;
+        private Point _startPoint;
         public Work()
         {
             InitializeComponent();
             List<TodoItem> items = new List<TodoItem>();
-            items.Add(new TodoItem() { Title = "Complete this WPF tutorial", Completion = 45 });
-            items.Add(new TodoItem() { Title = "Learn C#", Completion = 80 });
-            items.Add(new TodoItem() { Title = "Learn C#", Completion = 80 });
+            items.Add(new TodoItem() { Title = "Nguyễn Văn A", Completion = 45 });
+            items.Add(new TodoItem() { Title = "Nguyễn Văn B", Completion = 80 });
+            items.Add(new TodoItem() { Title = "Nguyễn Văn C", Completion = 80 });
 
-            items.Add(new TodoItem() { Title = "Learn C#", Completion = 80 });
-            items.Add(new TodoItem() { Title = "Learn C#", Completion = 80 });
-            items.Add(new TodoItem() { Title = "Learn C#", Completion = 80 });
-            items.Add(new TodoItem() { Title = "Learn C#", Completion = 80 });
-            items.Add(new TodoItem() { Title = "Learn C#", Completion = 80 });
-            items.Add(new TodoItem() { Title = "Learn C#", Completion = 80 });
-            items.Add(new TodoItem() { Title = "Learn C#", Completion = 80 });
-            items.Add(new TodoItem() { Title = "Learn C#", Completion = 80 });
-            items.Add(new TodoItem() { Title = "Learn C#", Completion = 80 });
-            items.Add(new TodoItem() { Title = "Learn C#", Completion = 80 });
-            items.Add(new TodoItem() { Title = "Learn C#", Completion = 80 });
-            items.Add(new TodoItem() { Title = "Learn C#", Completion = 80 });
-            items.Add(new TodoItem() { Title = "Learn C#", Completion = 80 });
-            items.Add(new TodoItem() { Title = "Learn C#", Completion = 80 });
-            items.Add(new TodoItem() { Title = "Learn C#", Completion = 80 });
-            items.Add(new TodoItem() { Title = "Learn C#", Completion = 80 });
-            items.Add(new TodoItem() { Title = "Learn C#", Completion = 80 });
-            items.Add(new TodoItem() { Title = "Learn C#", Completion = 80 });
-            items.Add(new TodoItem() { Title = "Learn C#", Completion = 80 });
-            items.Add(new TodoItem() { Title = "Learn C#", Completion = 80 });
-            items.Add(new TodoItem() { Title = "Learn C#", Completion = 80 });
-            items.Add(new TodoItem() { Title = "Learn C#", Completion = 80 });
-            items.Add(new TodoItem() { Title = "Learn C#", Completion = 80 });
-            items.Add(new TodoItem() { Title = "Learn C#", Completion = 80 });
-            items.Add(new TodoItem() { Title = "Learn C#", Completion = 80 });
-            items.Add(new TodoItem() { Title = "Learn C#", Completion = 80 });
-            items.Add(new TodoItem() { Title = "Learn C#", Completion = 80 });
-            items.Add(new TodoItem() { Title = "Learn C#", Completion = 80 });
-            items.Add(new TodoItem() { Title = "Learn C#", Completion = 80 });
-            items.Add(new TodoItem() { Title = "Learn C#", Completion = 80 });
-            items.Add(new TodoItem() { Title = "Learn C#", Completion = 80 });
-            items.Add(new TodoItem() { Title = "Learn C#", Completion = 80 });
-            items.Add(new TodoItem() { Title = "Learn C#", Completion = 80 });
-            items.Add(new TodoItem() { Title = "Learn C#", Completion = 80 });
-            items.Add(new TodoItem() { Title = "Learn C#", Completion = 80 });
-            items.Add(new TodoItem() { Title = "Learn C#", Completion = 80 });
-            items.Add(new TodoItem() { Title = "Learn C#", Completion = 80 });
-            items.Add(new TodoItem() { Title = "Learn C#", Completion = 80 });
-            items.Add(new TodoItem() { Title = "Learn C#", Completion = 80 });
-            items.Add(new TodoItem() { Title = "Wash the car", Completion = 0 });
 
             lbTodoList.ItemsSource = items;
         }
@@ -85,14 +46,15 @@ namespace Mcap.Views
 
         private void lbTodoList_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            ListBox parent = (ListBox)sender;
-            dragSource = parent;
-            object data = GetDataFromListBox(dragSource, e.GetPosition(parent));
+            //ListView parent = (ListView)sender;
+            //dragSource = parent;
+            //object data = GetDataFromListBox(dragSource, e.GetPosition(parent));
 
-            if (data != null)
-            {
-                DragDrop.DoDragDrop(parent, data, DragDropEffects.Move);
-            }
+            //if (data != null)
+            //{
+            //    DragDrop.DoDragDrop(parent, data, DragDropEffects.Move);
+            //}
+            _startPoint = e.GetPosition(null);
         }
         private static object GetDataFromListBox(ListBox source, Point point)
         {
@@ -134,6 +96,27 @@ namespace Mcap.Views
             object data = e.Data.GetData(typeof(TodoItem));
             ((IList)lbTodoList.ItemsSource).Remove(data);
             Console.WriteLine(data);
+        }
+
+        private void lbTodoList_PreviewMouseMove(object sender, MouseEventArgs e)
+        {
+            Point mousePos = e.GetPosition(null);
+            Vector diff = _startPoint - mousePos;
+            DragDrop.DoDragDrop(lbTodoList, "dasdda", DragDropEffects.Move);
+            //if (e.LeftButton == MouseButtonState.Pressed &&
+            //    Math.Abs(diff.X) > SystemParameters.MinimumHorizontalDragDistance ||
+            //    Math.Abs(diff.Y) > SystemParameters.MinimumVerticalDragDistance)
+            //{
+            //    // Get the dragged ListViewItem
+            //    ListView parent = (ListView)sender;
+            //    dragSource = parent;
+            //    object data = GetDataFromListBox(dragSource, e.GetPosition(parent));
+
+            //    if (data != null)
+            //    {
+            //        DragDrop.DoDragDrop(parent, data, DragDropEffects.Move);
+            //    }
+            //}
         }
     }
 

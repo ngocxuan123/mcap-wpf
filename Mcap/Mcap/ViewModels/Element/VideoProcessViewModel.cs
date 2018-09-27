@@ -215,6 +215,7 @@ namespace Mcap.ViewModels.Element
             if (_videoSource != null && _videoSource.IsRunning)
             {
                 _videoSource.SignalToStop();
+                _videoSource.Stop();
             }
             _videoWriter?.Dispose();
         }

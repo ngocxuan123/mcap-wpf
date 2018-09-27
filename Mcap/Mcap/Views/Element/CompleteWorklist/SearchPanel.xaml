@@ -35,41 +35,86 @@
     </UserControl.Resources>
     <Grid Margin="0,10,0,10">
         <Grid.RowDefinitions>
-            <RowDefinition Height="30"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="30"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="150" />
-            <ColumnDefinition Width="150" />
-            <ColumnDefinition Width="120" />
-            <ColumnDefinition Width="150" />
+            <ColumnDefinition Width="250" />
+            <ColumnDefinition Width="250" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        <Label Content="Ngày bắt đầu:"></Label>
-        <Label Content="Ngày Kết thúc:" Grid.Column="1"></Label>
-        <Label Content="Bác sỹ:" Grid.Column="2"></Label>
-        <Label Content="Loại máy:" Grid.Column="3"></Label>
-        <Label Content="Tên máy:" Grid.Column="4"></Label>
-        <ComboBox Grid.Column="3" Grid.Row="1" Margin="3" x:Name="searchType"></ComboBox>
-        <ComboBox Grid.Column="4" Grid.Row="1" Margin="3" x:Name="searchModalty"></ComboBox>
-        <DatePicker Grid.Row="1"  Margin="3" ></DatePicker>
-        <DatePicker Grid.Row="1" Grid.Column="1" Margin="3"></DatePicker>
-        <ComboBox Grid.Row="1" Grid.Column="2" Margin="3" x:Name="searchDoctor"></ComboBox>
-        <Label Content="Loại ca chụp" Grid.Row="2" Grid.ColumnSpan="2"></Label>
-        <StackPanel Grid.Row="3" Orientation="Horizontal" Margin="3" Grid.ColumnSpan="2">
-            <RadioButton GroupName="Time">Tích hợp</RadioButton>
-            <RadioButton GroupName="Time">Local</RadioButton>
-            <RadioButton GroupName="Time">Tất cả</RadioButton>
-        </StackPanel>
-        <Label Content="Dịch vụ" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2"></Label>
-        <ComboBox Grid.Row="3" Grid.ColumnSpan="2" Grid.Column="2" Margin="3" x:Name="searchService"></ComboBox>
-        <StackPanel Grid.Column="4" Grid.Row="3" Margin="3" Orientation="Horizontal">
-            <TextBox Text="Tìm kiếm bệnh nhân..." Width="240"></TextBox>
-            <Button >Xóa</Button>
-            <Button >Tìm kiếm</Button>
-        </StackPanel>
+        <Grid Margin="10,5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Label Content="Ngày bắt đầu:"></Label>
+            <DatePicker Grid.Column="1"  ></DatePicker>
+        </Grid>
+        <Grid Grid.Column="1"  Margin="10,5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Label Content="Ngày Kết thúc:"></Label>
+            <DatePicker Grid.Column="1"  ></DatePicker>
+        </Grid>
+        <Grid Grid.Column="2" Margin="10,5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="70" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Label Content="Bác sỹ:"></Label>
+            <ComboBox Grid.Column="1" x:Name="searchDoctor"></ComboBox>
+        </Grid>
+        <Grid Grid.Column="3" Margin="10,5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="70" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Label Content="Loại máy:"></Label>
+            <ComboBox x:Name="searchType" Grid.Column="1"></ComboBox>
+        </Grid>
+        <Grid Grid.Column="4" Margin="10,5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="70" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Label Content="Tên máy:"></Label>
+            <ComboBox x:Name="searchModalty" Grid.Column="1"></ComboBox>
+        </Grid>
+        <!-- Hàng 2-->
+        <Grid Grid.Row="1" Grid.ColumnSpan="2" Margin="10,5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Label Content="Loại ca chụp: "></Label>
+            <StackPanel Orientation="Horizontal" Grid.Column="1">
+                <RadioButton GroupName="Time">Tích hợp</RadioButton>
+                <RadioButton GroupName="Time">Local</RadioButton>
+                <RadioButton GroupName="Time">Tất cả</RadioButton>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="2" Margin="10,5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="70" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Label Content="Dịch vụ: "></Label>
+            <ComboBox x:Name="searchService" Grid.Column="1"></ComboBox>
+        </Grid>
+        <Grid Grid.Column="4" Grid.Row="1"  Margin="10,5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="70" />
+                <ColumnDefinition Width="100" />
+            </Grid.ColumnDefinitions>
+            <TextBox Text="Tìm kiếm bệnh nhân..."></TextBox>
+            <Button Grid.Column="1">Xóa</Button>
+            <Button Grid.Column="2">Tìm kiếm</Button>
+        </Grid>
     </Grid>
 </UserControl>

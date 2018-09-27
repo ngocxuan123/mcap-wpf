@@ -51,7 +51,7 @@ namespace Mcap.ViewModels
             {
                 new MenuItemModel { Header = "Thực hiện", MenuIcon = "AddressCard", Name ="Work", IsActive = false  },
                 new MenuItemModel { Header = "Worklist", MenuIcon = "Ambulance", Name = "Worklist", IsActive = true },
-                new MenuItemModel { Header = "Ca chụp đã thực hiện", MenuIcon = "Ambulance", Name = "", IsActive = false },
+                new MenuItemModel { Header = "Ca chụp đã thực hiện", MenuIcon = "Ambulance", Name = "Complete", IsActive = false },
                 new MenuItemModel { Header = "Danh mục", MenuIcon = "Ambulance", Name ="",
                     MenuItems = new ObservableCollection<MenuItemModel>
                         {
@@ -65,6 +65,7 @@ namespace Mcap.ViewModels
             };
             PageViews.Add("Work", new WorkingViewModel());
             PageViews.Add("Worklist", new WorklistViewModel());
+            PageViews.Add("Complete", new CompleteViewModel());
             CurrentViewModel = PageViews["Worklist"];
         }
 

@@ -206,6 +206,10 @@
       <DependentUpon>WidzardStartup.xaml</DependentUpon>
     </Compile>
     <Compile Include="Validation\RequiredValidationRule.cs" />
+    <Compile Include="ViewModels\CompleteViewModel.cs" />
+    <Compile Include="ViewModels\ConceptViewModel.cs" />
+    <Compile Include="ViewModels\DescriptionTemplateViewModel.cs" />
+    <Compile Include="ViewModels\ModalityViewModel.cs" />
     <Compile Include="ViewModels\PageViewModel.cs" />
     <Compile Include="ViewModels\Element\VideoProcessViewModel.cs" />
     <Compile Include="Model\LayoutModel.cs" />
@@ -215,6 +219,7 @@
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\LayoutViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
+    <Compile Include="ViewModels\ReportTemplateViewModel.cs" />
     <Compile Include="ViewModels\Shared\FooterViewModel.cs" />
     <Compile Include="ViewModels\Shared\ToolbarMenuViewModel.cs" />
     <Compile Include="ViewModels\ViewModelLocator.cs" />

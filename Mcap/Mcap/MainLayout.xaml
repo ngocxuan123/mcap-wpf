@@ -17,6 +17,18 @@
             <DataTemplate DataType="{x:Type vm:WorkingViewModel}">
                 <v:Work />
             </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:CompleteViewModel}">
+                <v:Complete />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:ConceptViewModel}">
+                <v:Concept />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:DescriptionTemplateViewModel}">
+                <v:Description_template />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:ReportTemplateViewModel}">
+                <v:Report_template />
+            </DataTemplate>
         </ResourceDictionary>
     </Window.Resources>
     <DockPanel MinWidth="1000">

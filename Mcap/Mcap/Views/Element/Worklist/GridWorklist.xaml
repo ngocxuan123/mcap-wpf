@@ -35,7 +35,11 @@
             </DataGrid.InputBindings>
             <DataGrid.ContextMenu>
                 <ContextMenu >
-                    <MenuItem Header="Select Menu" Command="{Binding AddCommand}" InputGestureText="Ctrl+N"></MenuItem>
+                    <MenuItem Header="Gọi tên" Command="{Binding AddCommand}" InputGestureText="Ctrl+K"></MenuItem>
+                    <MenuItem Header="Đồng bộ" Command="{Binding AddCommand}" InputGestureText="Ctrl+B"></MenuItem>
+                    <MenuItem Header="Vào chụp" Command="{Binding AddCommand}" InputGestureText="Ctrl+B"></MenuItem>
+                    <MenuItem Header="Hủy kết quả" Command="{Binding AddCommand}" InputGestureText="Ctrl+B"></MenuItem>
+                    <MenuItem Header="Thoát ca chụp" Command="{Binding AddCommand}" InputGestureText="Ctrl+B"></MenuItem>
                 </ContextMenu>
             </DataGrid.ContextMenu>
             <DataGrid.ColumnHeaderStyle>
@@ -59,12 +63,21 @@
                 <DataGridTextColumn Header="NGÀY CHỈ ĐỊNH" Binding="{Binding Name}" Width="150" />
                 <DataGridTextColumn Header="TÊN BỆNH NHÂN" Binding="{Binding Name}" Width="150" />
                 <DataGridTextColumn Header="NĂM SINH" Binding="{Binding RequestCode}" Width="100" />
-                <DataGridTextColumn Header="TRẠNG THÁI" Binding="{Binding RequestCode}" Width="150" />
                 <DataGridTextColumn Header="TÊN DỊCH VỤ" Binding="{Binding RequestCode}" Width="*" />
-                <DataGridTemplateColumn Width="100">
+                <DataGridTemplateColumn Header="TRẠNG THÁI" Width="150">
+                    <DataGridTemplateColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                            <Setter Property="Foreground" Value="White"></Setter>
+                            <Setter Property="FontWeight"  Value="Bold" />
+                            <Setter Property="Background" Value="SteelBlue"></Setter>
+                            <Setter Property="Padding" Value="5,7"/>
+                            <Setter Property="BorderThickness" Value="1"/>
+                        </Style>
+                    </DataGridTemplateColumn.HeaderStyle>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Cursor="Hand" Background="#1f78d1" Foreground="White">Thực hiện</Button>
+                            <Label Cursor="Hand" Background="#999" Foreground="White" Margin="0,3" Width="120" HorizontalContentAlignment="Center">ĐANG CHỜ</Label>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

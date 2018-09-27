@@ -10,6 +10,11 @@
             <ColumnDefinition Width="2*" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
+        <Grid.Resources>
+            <Style TargetType="{x:Type MenuItem}">
+                <Setter Property="Padding" Value="15,2" />
+            </Style>
+        </Grid.Resources>
         <Menu x:Name="mainMenu" Foreground="White" Background="Transparent" IsMainMenu="True" Height="35" VerticalAlignment="Center" ItemsSource="{Binding MenuItems}" Visibility="{Binding Visibility}">
             <Menu.Resources>
                 <fa:ImageAwesome x:Key="MenuIconResource" Height="16" Width="16" Icon="{Binding Path=MenuIcon}" Foreground="{Binding Path=Foreground}" />
@@ -19,7 +24,6 @@
                     <Setter Property="Height" Value="36" />
                     <Setter Property="Background" Value="{Binding BackgroundColor}" />
                     <Setter Property="Foreground" Value="{Binding Foreground}" />
-                    <Setter Property="Padding" Value="15,2" />
                     <Setter Property="Header" Value="{Binding Header}" />
                     <Setter Property="IsEnabled" Value="{Binding IsEnabled}" />
                     <Setter Property="ItemsSource" Value="{Binding MenuItems}"/>

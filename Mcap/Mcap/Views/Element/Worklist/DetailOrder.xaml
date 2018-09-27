@@ -135,7 +135,7 @@
                                         Margin="3"
                                         TextWrapping="Wrap" 
                                         Foreground="Black"
-                                        Text="184 Nguyễn Lương Bằng, Quận Liên Chiểu, Thành Phố Đà Nẵng, Việt Nam. ađ" />
+                                        Text="184 Nguyễn Lương Bằng, Quận Liên Chiểu, Thành Phố Đà Nẵng, Việt Nam. 184 Nguyễn Lương Bằng, Quận Liên Chiểu, Thành Phố Đà Nẵng, Việt Nam." />
                                 </StackPanel>
                             </Grid>
                         </Border>
