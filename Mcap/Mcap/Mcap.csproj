@@ -240,17 +240,41 @@
     <Compile Include="Views\Element\CompleteWorklist\SearchPanel.xaml.cs">
       <DependentUpon>SearchPanel.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Element\CompleteWorklist\WindowDetail.xaml.cs">
+      <DependentUpon>WindowDetail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Element\Concept\Form.xaml.cs">
+      <DependentUpon>Form.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Element\Concept\GridConcept.xaml.cs">
+      <DependentUpon>GridConcept.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Element\Concept\SearchPanel.xaml.cs">
+      <DependentUpon>SearchPanel.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Element\DescriptionSample\Form.xaml.cs">
       <DependentUpon>Form.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Element\Main\Form.xaml.cs">
       <DependentUpon>Form.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Element\Main\SearchPanel.xaml.cs">
+      <DependentUpon>SearchPanel.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Element\Main\Video.xaml.cs">
       <DependentUpon>Video.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Element\Main\Worklist.xaml.cs">
       <DependentUpon>Worklist.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Element\Modility\Form.xaml.cs">
+      <DependentUpon>Form.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Element\Modility\GridModility.xaml.cs">
+      <DependentUpon>GridModility.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Element\Modility\SearchPanel.xaml.cs">
+      <DependentUpon>SearchPanel.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Element\ServiceSample\Form.xaml.cs">
       <DependentUpon>Form.xaml</DependentUpon>
@@ -909,6 +933,22 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Element\CompleteWorklist\WindowDetail.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Element\Concept\Form.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Element\Concept\GridConcept.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Element\Concept\SearchPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Element\DescriptionSample\Form.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -917,11 +957,27 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Element\Main\SearchPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Element\Main\Video.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Element\Main\Worklist.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Element\Modility\Form.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Element\Modility\GridModility.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Element\Modility\SearchPanel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

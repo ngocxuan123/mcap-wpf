@@ -29,6 +29,9 @@
             <DataTemplate DataType="{x:Type vm:ReportTemplateViewModel}">
                 <v:Report_template />
             </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:ModalityViewModel}">
+                <v:Modality />
+            </DataTemplate>
         </ResourceDictionary>
     </Window.Resources>
     <DockPanel MinWidth="1000">

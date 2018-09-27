@@ -10,6 +10,7 @@ E:\learn\c#\mca-wpf\mcap-wpf\Mcap\Mcap.Service\Mcap.Service\obj\Debug\netstandar
 D:\work\wpf\mcap-wpf\Mcap\Mcap.Service\Mcap.Service\bin\Debug\netstandard2.0\Mcap.Service.deps.json
 D:\work\wpf\mcap-wpf\Mcap\Mcap.Service\Mcap.Service\bin\Debug\netstandard2.0\Mcap.Service.dll
 D:\work\wpf\mcap-wpf\Mcap\Mcap.Service\Mcap.Service\bin\Debug\netstandard2.0\Mcap.Service.pdb
+D:\work\wpf\mcap-wpf\Mcap\Mcap.Service\Mcap.Service\obj\Debug\netstandard2.0\Mcap.Service.csprojAssemblyReference.cache
 D:\work\wpf\mcap-wpf\Mcap\Mcap.Service\Mcap.Service\obj\Debug\netstandard2.0\Mcap.Service.csproj.CoreCompileInputs.cache
 D:\work\wpf\mcap-wpf\Mcap\Mcap.Service\Mcap.Service\obj\Debug\netstandard2.0\Mcap.Service.AssemblyInfoInputs.cache
 D:\work\wpf\mcap-wpf\Mcap\Mcap.Service\Mcap.Service\obj\Debug\netstandard2.0\Mcap.Service.AssemblyInfo.cs

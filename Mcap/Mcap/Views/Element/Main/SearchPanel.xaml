@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="Mcap.Views.Element.Main.SearchPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Mcap.Views.Element.Main"
+             mc:Ignorable="d" 
+             xmlns:fa="http://schemas.fontawesome.io/icons/"
+             d:DesignHeight="123" d:DesignWidth="250">
+    <UserControl.Resources>
+        <Style BasedOn="{StaticResource {x:Type ToggleButton}}" TargetType="RadioButton">
+            <Style.Triggers>
+                <Trigger Property="IsChecked" Value="true">
+                    <Setter Property="Background" Value="SteelBlue"/>
+                    <Setter Property="Foreground" Value="White"></Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="3" />
+            <RowDefinition Height="20" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="20" />
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <fa:FontAwesome Icon="ListUl" FontSize="16" />
+            <Label Content="Danh sách chờ" Margin="5,0" />
+        </StackPanel>
+        <Border BorderBrush="#d6d6d6" BorderThickness="0,0,0,1" Grid.Row="1" />
+        <Label Content="Loại ca chụp" FontWeight="Bold" Margin="3,0" Grid.Row="2" />
+        <StackPanel Orientation="Horizontal" Grid.Row="3" Margin="3,0">
+            <RadioButton GroupName="Time">Tích hợp</RadioButton>
+            <RadioButton GroupName="Time">Local</RadioButton>
+            <RadioButton GroupName="Time">Tất cả</RadioButton>
+        </StackPanel>
+        <TextBox Text="Tìm kiếm ca chụp..."  Grid.Row="4" Margin="3"/>
+        <CheckBox Content="Tự động làm mới" Grid.Row="5" Margin="3,0"/>
+    </Grid>
+</UserControl>

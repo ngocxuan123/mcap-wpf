@@ -10,18 +10,20 @@
              VerticalAlignment="Stretch"
              HorizontalAlignment="Center">
     <UserControl.Resources>
-        <fa:FontAwesome x:Key="connect" Icon="Link" FontSize="18"></fa:FontAwesome>
-        <fa:FontAwesome x:Key="disconnect" Icon="Unlink" FontSize="18"></fa:FontAwesome>
-        <fa:FontAwesome x:Key="capture" Icon="Camera" FontSize="18"></fa:FontAwesome>
-        <fa:FontAwesome x:Key="recording" Icon="VideoCamera" FontSize="18" Foreground="Green"></fa:FontAwesome>
-        <fa:FontAwesome x:Key="stop" Icon="StopCircle" FontSize="18" Foreground="Red"></fa:FontAwesome>
+        <fa:FontAwesome x:Key="connect" Icon="Link"></fa:FontAwesome>
+        <fa:FontAwesome x:Key="disconnect" Icon="Unlink"></fa:FontAwesome>
+        <fa:FontAwesome x:Key="capture" Icon="Camera" ></fa:FontAwesome>
+        <fa:FontAwesome x:Key="recording" Icon="VideoCamera"></fa:FontAwesome>
+        <fa:FontAwesome x:Key="stop" Icon="StopCircle"></fa:FontAwesome>
     </UserControl.Resources>
     <DockPanel>
-        <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" Height="30">
-            <Button Padding="5, 0" x:Name="btnConnect" Command="{Binding VideoContext.ConnectVideoCommand}">
+        <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" Height="25">
+            <Button ToolTip="Kết nối đến thiết bị" x:Name="btnConnect" Command="{Binding VideoContext.ConnectVideoCommand}" Margin="0,0,3,0" Width="40">
                 <Button.Style>
                     <Style TargetType="Button">
                         <Setter Property="Content" Value="{StaticResource connect}" />
+                        <Setter Property="Background" Value="White" />
+                        <Setter Property="BorderBrush" Value="#d6d6d6" />
                         <Style.Triggers>
                             <DataTrigger Binding="{Binding VideoContext.IsRunning}" Value="True">
                                 <Setter Property="Content" Value="{StaticResource disconnect}"></Setter>
@@ -31,12 +33,14 @@
                 </Button.Style>
             </Button>
             <Separator/>
-            <Button Padding="5, 0" Content="{StaticResource capture}" Command="{Binding VideoContext.CaptureCommand}"/>
+            <Button ToolTip="Chụp hình" Content="{StaticResource capture}" Command="{Binding VideoContext.CaptureCommand}" Margin="3,0" />
             <Separator/>
-            <Button Padding="5, 0" Command="{Binding VideoContext.StartRecordVideoCommand}">
+            <Button ToolTip="Quay phim" Command="{Binding VideoContext.StartRecordVideoCommand}" Width="40" Margin="3,0">
                 <Button.Style>
                     <Style TargetType="Button">
                         <Setter Property="Content" Value="{StaticResource recording}" />
+                        <Setter Property="Background" Value="White" />
+                        <Setter Property="BorderBrush" Value="#d6d6d6" />
                         <Style.Triggers>
                             <DataTrigger Binding="{Binding VideoContext.IsRecording}" Value="True">
                                 <Setter Property="Content" Value="{StaticResource stop}"></Setter>
@@ -46,7 +50,26 @@
                 </Button.Style>
             </Button>
             <Separator/>
-            <xctk:IconButton Content="{StaticResource disconnect}"></xctk:IconButton>
+            <Button ToolTip="Thêm hình ảnh" Margin="3,0">
+                <Button.Content>
+                    <fa:FontAwesome Icon="FolderOpen" />
+                </Button.Content>
+            </Button>
+            <Button ToolTip="Lưu hình ảnh" Margin="3,0">
+                <Button.Content>
+                    <fa:FontAwesome Icon="Save" />
+                </Button.Content>
+            </Button>
+            <Button ToolTip="Ghi đĩa" Margin="3,0">
+                <Button.Content>
+                    <fa:FontAwesome Icon="HddOutline" />
+                </Button.Content>
+            </Button>
+            <Button ToolTip="Xóa hình ảnh - video đã thực hiện" Margin="3,0">
+                <Button.Content>
+                    <fa:FontAwesome Icon="Trash" />
+                </Button.Content>
+            </Button>
         </StackPanel>
         <Grid>
             <Grid.RowDefinitions>

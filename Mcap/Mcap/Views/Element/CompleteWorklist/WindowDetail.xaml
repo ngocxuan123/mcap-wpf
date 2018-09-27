@@ -1,0 +1,13 @@
+﻿<Window x:Class="Mcap.Views.Element.CompleteWorklist.WindowDetail"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Mcap.Views.Element.CompleteWorklist"
+        xmlns:cf="clr-namespace:Mcap.Views"
+        mc:Ignorable="d"
+        Title="THÔNG TIN CA CHỤP ĐÃ THỰC HIỆN" Height="750" Width="900" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="/Mcap;component/Resources/icons/black/record.png">
+    <Grid>
+        <cf:OrderDetail HorizontalContentAlignment="Stretch" HorizontalAlignment="Stretch"/>
+    </Grid>
+</Window>

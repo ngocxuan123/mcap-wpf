@@ -55,10 +55,10 @@ namespace Mcap.ViewModels
                 new MenuItemModel { Header = "Danh mục", MenuIcon = "Ambulance", Name ="",
                     MenuItems = new ObservableCollection<MenuItemModel>
                         {
-                            new MenuItemModel { Header = "Quản lý tài khoản", MenuIcon = "Ambulance" },
-                            new MenuItemModel { Header = "Quản lý thiết bị", MenuIcon = "Ambulance" },
-                            new MenuItemModel { Header = "Quản lý mẫu báo cáo", MenuIcon = "Ambulance" },
-                            new MenuItemModel { Header = "Quản lý dịch vụ", MenuIcon = "Ambulance" }
+                            new MenuItemModel { Header = "Quản lý mẫu mô tả", MenuIcon = "Ambulance", Name = "Template"},
+                            new MenuItemModel { Header = "Quản lý thiết bị", MenuIcon = "Ambulance", Name = "Modility" },
+                            new MenuItemModel { Header = "Quản lý mẫu báo cáo", MenuIcon = "Ambulance", Name = "Report" },
+                            new MenuItemModel { Header = "Quản lý dịch vụ", MenuIcon = "Ambulance", Name = "Concept" }
                         }
                 },
                 new MenuItemModel { Header = "Cài đặt", MenuIcon = "Ambulance", Name = "", IsActive = false }
@@ -66,6 +66,10 @@ namespace Mcap.ViewModels
             PageViews.Add("Work", new WorkingViewModel());
             PageViews.Add("Worklist", new WorklistViewModel());
             PageViews.Add("Complete", new CompleteViewModel());
+            PageViews.Add("Template", new DescriptionTemplateViewModel());
+            PageViews.Add("Modility", new ModalityViewModel());
+            PageViews.Add("Report", new ReportTemplateViewModel());
+            PageViews.Add("Concept", new ConceptViewModel());
             CurrentViewModel = PageViews["Worklist"];
         }
 

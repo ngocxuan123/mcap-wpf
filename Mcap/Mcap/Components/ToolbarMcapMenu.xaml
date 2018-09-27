@@ -11,7 +11,7 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Grid.Resources>
-            <Style TargetType="{x:Type MenuItem}">
+            <Style TargetType="{x:Type MenuItem}" x:Key="MenuItem">
                 <Setter Property="Padding" Value="15,2" />
             </Style>
         </Grid.Resources>
@@ -26,7 +26,7 @@
                     <Setter Property="Foreground" Value="{Binding Foreground}" />
                     <Setter Property="Header" Value="{Binding Header}" />
                     <Setter Property="IsEnabled" Value="{Binding IsEnabled}" />
-                    <Setter Property="ItemsSource" Value="{Binding MenuItems}"/>
+                    <Setter Property="ItemsSource" Value="{Binding MenuItems}" />
                     <Setter Property="VerticalAlignment" Value="Center" />
                     <Setter Property="Cursor" Value="Hand" />
                     <Style.Triggers>

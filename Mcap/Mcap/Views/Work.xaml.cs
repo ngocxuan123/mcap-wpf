@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -33,6 +34,9 @@ namespace Mcap.Views
             items.Add(new TodoItem() { Title = "Nguyễn Văn A", Completion = 45 });
             items.Add(new TodoItem() { Title = "Nguyễn Văn B", Completion = 80 });
             items.Add(new TodoItem() { Title = "Nguyễn Văn C", Completion = 80 });
+            items.Add(new TodoItem() { Title = "Nguyễn Văn D", Completion = 80 });
+            items.Add(new TodoItem() { Title = "Nguyễn Văn E", Completion = 80 });
+            items.Add(new TodoItem() { Title = "Nguyễn Văn F", Completion = 80 });
 
 
             lbTodoList.ItemsSource = items;
@@ -100,9 +104,9 @@ namespace Mcap.Views
 
         private void lbTodoList_PreviewMouseMove(object sender, MouseEventArgs e)
         {
-            Point mousePos = e.GetPosition(null);
-            Vector diff = _startPoint - mousePos;
-            DragDrop.DoDragDrop(lbTodoList, "dasdda", DragDropEffects.Move);
+            //Point mousePos = e.GetPosition(null);
+            //Vector diff = _startPoint - mousePos;
+            //DragDrop.DoDragDrop(lbTodoList, "dasdda", DragDropEffects.Move);
             //if (e.LeftButton == MouseButtonState.Pressed &&
             //    Math.Abs(diff.X) > SystemParameters.MinimumHorizontalDragDistance ||
             //    Math.Abs(diff.Y) > SystemParameters.MinimumVerticalDragDistance)
@@ -117,6 +121,20 @@ namespace Mcap.Views
             //        DragDrop.DoDragDrop(parent, data, DragDropEffects.Move);
             //    }
             //}
+        }
+
+        private void Show_PopupToolTip(object sender, MouseEventArgs e)
+        {
+            ListViewItem listViewItem = e.Source as ListViewItem;
+            TodoItem item = listViewItem.Content as TodoItem;
+            MyFirstPopupTextBlock.Text = item.Title;
+            MyToolTip.PlacementTarget = listViewItem;
+            MyToolTip.Placement = PlacementMode.MousePoint;
+            MyToolTip.IsOpen = true;
+        }
+        private void Hide_PopupToolTip(object sender, MouseEventArgs e)
+        {
+            MyToolTip.IsOpen = false;
         }
     }
 

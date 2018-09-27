@@ -15,15 +15,15 @@
     <DockPanel x:Name="WorklistContainer">
         <StackPanel DockPanel.Dock="Bottom" Height="40" Orientation="Horizontal">
             <Label Content="Có tất cả (" FontWeight="Bold" Margin="0,5"></Label>
-            <Label Content="{Binding Worklist.Worklist.Count}" FontWeight="Bold" Margin="0,5"></Label>
+            <Label Content="{Binding Worklist.Count}" FontWeight="Bold" Margin="0,5"></Label>
             <Label Content=") ca chụp cần thực hiện" FontWeight="Bold" Margin="0,5"></Label>
         </StackPanel>
         <DataGrid MinWidth="400"
                 HorizontalScrollBarVisibility="Auto"
                 MaxHeight="{Binding RelativeSource={RelativeSource FindAncestor, 
-    AncestorType={x:Type Window}},Converter={StaticResource ActualHeightConverter}, ConverterParameter=330, Path=ActualHeight}"
+    AncestorType={x:Type Window}},Converter={StaticResource ActualHeightConverter}, ConverterParameter=230, Path=ActualHeight}"
                 VerticalScrollBarVisibility="Auto" x:Name="patientAwait" 
-                ItemsSource="{Binding Worklist.Worklist}" BorderThickness="1"
+                ItemsSource="{Binding Worklist}" BorderThickness="1"
                 IsReadOnly="True"
                 AutoGenerateColumns="False"
                 ColumnWidth="*"
@@ -35,11 +35,8 @@
             </DataGrid.InputBindings>
             <DataGrid.ContextMenu>
                 <ContextMenu >
-                    <MenuItem Header="Gọi tên" Command="{Binding AddCommand}" InputGestureText="Ctrl+K"></MenuItem>
-                    <MenuItem Header="Đồng bộ" Command="{Binding AddCommand}" InputGestureText="Ctrl+B"></MenuItem>
-                    <MenuItem Header="Vào chụp" Command="{Binding AddCommand}" InputGestureText="Ctrl+B"></MenuItem>
-                    <MenuItem Header="Hủy kết quả" Command="{Binding AddCommand}" InputGestureText="Ctrl+B"></MenuItem>
-                    <MenuItem Header="Thoát ca chụp" Command="{Binding AddCommand}" InputGestureText="Ctrl+B"></MenuItem>
+                    <MenuItem Header="Xem chi tiết" Command="{Binding ViewCommand}" InputGestureText="Ctrl+W"></MenuItem>
+                    <MenuItem Header="Chỉnh sửa" Command="{Binding AddCommand}" InputGestureText="Ctrl+E"></MenuItem>
                 </ContextMenu>
             </DataGrid.ContextMenu>
             <DataGrid.ColumnHeaderStyle>
@@ -77,7 +74,7 @@
                     </DataGridTemplateColumn.HeaderStyle>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Label Cursor="Hand" Background="#999" Foreground="White" Margin="0,3" Width="120" HorizontalContentAlignment="Center">ĐANG CHỜ</Label>
+                            <Label Cursor="Hand" Background="#4caf50" Foreground="White" Margin="0,3" Width="120" HorizontalContentAlignment="Center">ĐÃ THỰC HIỆN</Label>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

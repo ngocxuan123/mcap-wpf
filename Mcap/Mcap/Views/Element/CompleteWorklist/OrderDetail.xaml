@@ -4,20 +4,23 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Mcap.Views"
-             mc:Ignorable="d" d:DesignHeight="720">
+             mc:Ignorable="d" d:DesignHeight="700">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height=".35*" />
-            <RowDefinition Height=".5*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
-            <RowDefinition Height="30" />
+            <RowDefinition Height="50" />
         </Grid.RowDefinitions>
-        <GroupBox Header="THÔNG TIN HÀNH CHÍNH">
+        <GroupBox>
+            <GroupBox.Header>
+                <TextBlock Text="THÔNG TIN HÀNH CHÍNH" FontWeight="Bold" />
+            </GroupBox.Header>
             <Grid>
                 <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
                     <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="2*" />
                 </Grid.RowDefinitions>
                 <Border BorderThickness="0,0,0,1" Padding="5" BorderBrush="#d6d6d6">
                     <StackPanel Orientation="Horizontal">
@@ -37,7 +40,7 @@
                         <Label Content="BHYT1090293" FontWeight="Bold" Width="300" />
                     </StackPanel>
                 </Border>
-                <Border BorderThickness="0,0,0,1" Padding="5" BorderBrush="#d6d6d6" Grid.Row="2">
+                <Border BorderThickness="0" Padding="5" BorderBrush="#d6d6d6" Grid.Row="2">
                     <StackPanel Orientation="Horizontal">
                         <Label Content="ĐỊA CHỈ: " Width="120"></Label>
                         <TextBlock TextWrapping="Wrap" 
@@ -48,13 +51,16 @@
                 </Border>
             </Grid>
         </GroupBox>
-        <GroupBox Header="THÔNG TIN CA CHỤP" Grid.Row="1">
+        <GroupBox Grid.Row="1">
+            <GroupBox.Header>
+                <TextBlock Text="THÔNG TIN CA CHỤP" FontWeight="Bold" />
+            </GroupBox.Header>
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="1.5*" />
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="1.5*" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
                 <Border BorderThickness="0,0,0,1" Padding="5" BorderBrush="#d6d6d6">
                     <StackPanel Orientation="Horizontal">
@@ -83,7 +89,7 @@
                         <Label Content="Nguyễn Hoa Vương" Width="Auto" FontWeight="Bold"></Label>
                     </StackPanel>
                 </Border>
-                <Border BorderThickness="0,0,0,1" Padding="5" BorderBrush="#d6d6d6" Grid.Row="3">
+                <Border BorderThickness="0" Padding="5" BorderBrush="#d6d6d6" Grid.Row="3">
                     <StackPanel Orientation="Horizontal">
                         <Label Content="BÁC SĨ CHỈ ĐỊNH: " Width="120"></Label>
                         <Label Content="Soft Miền Trung" Width="200" FontWeight="Bold"></Label>
@@ -96,29 +102,44 @@
                 </Border>
             </Grid>
         </GroupBox>
-        <GroupBox Header="KẾT QUẢ CA CHỤP" Grid.Row="2">
-            <StackPanel>
-                <Border BorderThickness="0,0,0,1" Padding="5" BorderBrush="#d6d6d6">
-                    <StackPanel>
-                        <Label Content="MÔ TẢ" Margin="0,0,0,5"></Label>
-                        <RichTextBox Height="150" ></RichTextBox>
-                    </StackPanel>
-                </Border>
-                <Border BorderThickness="0,0,0,1" Padding="5" BorderBrush="#d6d6d6">
-                    <StackPanel>
-                        <Label Content="KẾT LUẬN" Margin="0,0,0,5"></Label>
-                        <RichTextBox Height="50" ></RichTextBox>
-                    </StackPanel>
-                </Border>
-                <Border BorderThickness="0,0,0,1" Padding="5" BorderBrush="#d6d6d6">
-                    <StackPanel>
-                        <Label Content="ĐỀ NGHỊ" Margin="0,0,0,5"></Label>
-                        <RichTextBox Height="50" ></RichTextBox>
-                    </StackPanel>
-                </Border>
-            </StackPanel>
+        <GroupBox Grid.Row="2">
+            <GroupBox.Header>
+                <TextBlock Text="KẾT QUẢ CA CHỤP" FontWeight="Bold" />
+            </GroupBox.Header>
+            <TabControl>
+                <TabItem Header="Thông tin bệnh lý">
+                    <TabPanel>
+                        <StackPanel Width="870">
+                            <Border BorderThickness="0,0,0,1" Padding="5" BorderBrush="#d6d6d6">
+                                <StackPanel>
+                                    <Label Content="MÔ TẢ" Margin="0,0,0,5"></Label>
+                                    <RichTextBox Height="150" ></RichTextBox>
+                                </StackPanel>
+                            </Border>
+                            <Border BorderThickness="0,0,0,1" Padding="5" BorderBrush="#d6d6d6">
+                                <StackPanel>
+                                    <Label Content="KẾT LUẬN" Margin="0,0,0,5"></Label>
+                                    <RichTextBox Height="50" ></RichTextBox>
+                                </StackPanel>
+                            </Border>
+                            <Border BorderThickness="0,0,0,1" Padding="5" BorderBrush="#d6d6d6">
+                                <StackPanel>
+                                    <Label Content="ĐỀ NGHỊ" Margin="0,0,0,5"></Label>
+                                    <RichTextBox Height="40" ></RichTextBox>
+                                </StackPanel>
+                            </Border>
+                        </StackPanel>
+                    </TabPanel>
+                </TabItem>
+                <TabItem Header="Thông tin hình ảnh - video">
+                    <TabPanel>
+                        
+                    </TabPanel>
+                </TabItem>
+            </TabControl>
+            
         </GroupBox>
-        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Right">
+        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Right" Margin="10">
             <Button Content="Ghi đĩa" Margin="5,0,0,0"/>
             <Button Content="Hủy trả ca chụp" Margin="5,0,0,0"/>
             <Button Content="Gửi lên pacs" Margin="5,0,0,0"/>
