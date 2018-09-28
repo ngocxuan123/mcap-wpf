@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Mcap.Controls"
-             mc:Ignorable="d" Width="617.716" Height="350.287">
+             mc:Ignorable="d">
     <UserControl.Resources>
         <Style x:Name="LabelSty" TargetType="{x:Type Label}">
             <Setter Property="FontWeight" Value="Bold" />

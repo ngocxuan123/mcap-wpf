@@ -28,6 +28,7 @@ namespace Mcap.Model.Shared
         public string Header { get; set; }
         public string Name { get; set; }
         public string ClassName { get; set; }
+        public bool IsPopup { get; set; }
         public string MenuIcon { get; set; }
         public Image ImageIcon { get; set; }
         public bool IsEnabled

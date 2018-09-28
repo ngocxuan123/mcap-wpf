@@ -3,9 +3,91 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:fa="http://schemas.fontawesome.io/icons/"
+             xmlns:components="clr-namespace:Mcap.Components"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="650" d:DesignWidth="800">
     <Grid>
-            
+        <Border Padding="10,5" BorderBrush="#d6d6d6" BorderThickness="1,0,0,0" Margin="10,0,0,0">
+            <StackPanel>
+                <StackPanel Margin="0,5" Orientation="Horizontal">
+                    <fa:FontAwesome Icon="InfoCircle" FontSize="16"/>
+                    <TextBlock Text="THÔNG TIN MẪU MÔ TẢ" Margin="10,0" FontWeight="Bold"/>
+                </StackPanel>
+                <Separator Height="5" />
+                <TabControl>
+                    <TabItem Header="Thông tin căn bản">
+                        <StackPanel>
+                                <Label Content="Mã mẫu mô tả (*)"/>
+                                <TextBox Text="MT002" />
+                                <Label Content="Tên mô tả" />
+                                <TextBox Text="Mô tả nội soi ổ bụng" />
+                                <Label Content="Trạng thái (*)" />
+                                <ComboBox Height="25">
+                                    <ComboBoxItem Content="Cho phép" />
+                                    <ComboBoxItem Content="Tạm dừng" />
+                                </ComboBox>
+                            </StackPanel>
+                    </TabItem>
+                    <TabItem Header="Thông tin chi tiết">
+                        <StackPanel>
+                            <Border BorderThickness="0,0,0,1" Padding="5" BorderBrush="#d6d6d6">
+                                <StackPanel>
+                                    <Label Content="MÔ TẢ" Margin="0,0,0,5"></Label>
+                                    <components:HtmlTextBox Height="350" />
+                                </StackPanel>
+                            </Border>
+                            <Border BorderThickness="0,0,0,1" Padding="5" BorderBrush="#d6d6d6">
+                                <StackPanel>
+                                    <Label Content="KẾT LUẬN" Margin="0,0,0,5"></Label>
+                                    <RichTextBox Height="50" ></RichTextBox>
+                                </StackPanel>
+                            </Border>
+                            <Border BorderThickness="0,0,0,1" Padding="5" BorderBrush="#d6d6d6">
+                                <StackPanel>
+                                    <Label Content="ĐỀ NGHỊ" Margin="0,0,0,5"></Label>
+                                    <RichTextBox Height="40" ></RichTextBox>
+                                </StackPanel>
+                            </Border>
+                        </StackPanel>
+                    </TabItem>
+                    <TabItem Header="Danh sách dịch vụ sử dụng">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="40" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <TextBox Text="Tìm kiếm dịch vụ" Margin="5,7"/>
+                            <DataGrid ItemsSource="{Binding Customers}" AutoGenerateColumns="False" Grid.Row="1">
+                                <DataGrid.Columns>
+                                    <DataGridTemplateColumn Header="Image" Width="SizeToCells" IsReadOnly="True">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <Image Source="{Binding Image}" />
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </Grid>
+                    </TabItem>
+                </TabControl>
+
+                <StackPanel Orientation="Horizontal" Margin="5" HorizontalAlignment="Center">
+                    <Button Width="80">
+                        <StackPanel Orientation="Horizontal">
+                            <fa:FontAwesome Icon="Save" FontSize="15"/>
+                            <TextBlock Text="Lưu" Margin="10,0,0,0" />
+                        </StackPanel>
+                    </Button>
+                    <Button Width="100" Margin="5,0">
+                        <StackPanel Orientation="Horizontal">
+                            <fa:FontAwesome Icon="Eraser" FontSize="15"/>
+                            <TextBlock Text="Làm mới" Margin="5,0,0,0" />
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+            </StackPanel>
+        </Border>
     </Grid>
 </UserControl>

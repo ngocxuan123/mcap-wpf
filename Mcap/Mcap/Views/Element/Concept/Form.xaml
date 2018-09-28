@@ -15,25 +15,55 @@
                     <TextBlock Text="THÔNG TIN DỊCH VỤ" Margin="10,0" FontWeight="Bold"/>
                 </StackPanel>
                 <Separator Height="5" />
-                <Label Content="Loại dịch vụ (*)" />
-                <ComboBox Height="25">
-                    <ComboBoxItem Content="RIS" />
-                    <ComboBoxItem Content="HIS" />
-                </ComboBox>
-                <Label Content="Tên dịch vụ (*)"/>
-                <RichTextBox Height="70" />
-                <Label Content="Nhóm dịch vụ (*)" />
-                <ComboBox Height="25">
-                    <ComboBoxItem Content="Siêu âm" />
-                    <ComboBoxItem Content="Nội soi" />
-                </ComboBox>
-                <Label Content="Mô tả" />
-                <RichTextBox Height="100" />
-                <Label Content="Trạng thái (*)" />
-                <ComboBox Height="25">
-                    <ComboBoxItem Content="Cho phép" />
-                    <ComboBoxItem Content="Tạm dừng" />
-                </ComboBox>
+                <TabControl>
+                    <TabItem Header="Thông tin dịch vụ">
+                        <TabPanel>
+                            <StackPanel>
+                                <Label Content="Loại dịch vụ (*)" />
+                                <ComboBox Height="25">
+                                    <ComboBoxItem Content="RIS" />
+                                    <ComboBoxItem Content="HIS" />
+                                </ComboBox>
+                                <Label Content="Tên dịch vụ (*)"/>
+                                <RichTextBox Height="70" />
+                                <Label Content="Nhóm dịch vụ (*)" />
+                                <ComboBox Height="25">
+                                    <ComboBoxItem Content="Siêu âm" />
+                                    <ComboBoxItem Content="Nội soi" />
+                                </ComboBox>
+                                <Label Content="Mô tả" />
+                                <RichTextBox Height="100" />
+                                <Label Content="Trạng thái (*)" />
+                                <ComboBox Height="25">
+                                    <ComboBoxItem Content="Cho phép" />
+                                    <ComboBoxItem Content="Tạm dừng" />
+                                </ComboBox>
+                            </StackPanel>
+                        </TabPanel>
+                    </TabItem>
+                    <TabItem Header="Lựa chọn mẫu mô tả">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="40" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <TextBox Text="Tìm kiếm mẫu mô tả" Margin="5,7"/>
+                            <DataGrid ItemsSource="{Binding Customers}" AutoGenerateColumns="False" Grid.Row="1">
+                                <DataGrid.Columns>
+                                    <DataGridTemplateColumn Header="Image" Width="SizeToCells" IsReadOnly="True">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <Image Source="{Binding Image}" />
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </Grid>
+                        
+                    </TabItem>
+                </TabControl>
+               
                 <StackPanel Orientation="Horizontal" Margin="5" HorizontalAlignment="Center">
                     <Button Width="80">
                         <StackPanel Orientation="Horizontal">

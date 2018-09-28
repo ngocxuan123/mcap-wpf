@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Mcap.Views.Element.CompleteWorklist"
         xmlns:cf="clr-namespace:Mcap.Views"
         mc:Ignorable="d"
-        Title="THÔNG TIN CA CHỤP ĐÃ THỰC HIỆN" Height="750" Width="900" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="/Mcap;component/Resources/icons/black/record.png">
+        Title="THÔNG TIN CA CHỤP ĐÃ THỰC HIỆN" Height="750" Width="900" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="/Mcap;component/Resources/icons/black/record.png" ShowInTaskbar="False">
     <Grid>
         <cf:OrderDetail HorizontalContentAlignment="Stretch" HorizontalAlignment="Stretch"/>
     </Grid>

@@ -1,5 +1,5 @@
-﻿<UserControl x:Class="Mcap.Views.Element.Modility.GridModility"
-              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+﻿<UserControl x:Class="Mcap.Views.Element.DescriptionSample.Grid"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
@@ -15,15 +15,15 @@
     <DockPanel x:Name="WorklistContainer">
         <StackPanel DockPanel.Dock="Bottom" Height="40" Orientation="Horizontal">
             <Label Content="Có tất cả (" FontWeight="Bold" Margin="0,5"></Label>
-            <Label Content="{Binding Modilities.Count}" FontWeight="Bold" Margin="0,5"></Label>
-            <Label Content=") thiết bị" FontWeight="Bold" Margin="0,5"></Label>
+            <Label Content="{Binding Templates.Count}" FontWeight="Bold" Margin="0,5"></Label>
+            <Label Content=") mẫu mô tả" FontWeight="Bold" Margin="0,5"></Label>
         </StackPanel>
         <DataGrid MinWidth="400"
                 HorizontalScrollBarVisibility="Auto"
                 MaxHeight="{Binding RelativeSource={RelativeSource FindAncestor, 
     AncestorType={x:Type Window}},Converter={StaticResource ActualHeightConverter}, ConverterParameter=180, Path=ActualHeight}"
                 VerticalScrollBarVisibility="Auto" x:Name="patientAwait" 
-                ItemsSource="{Binding Modilities}" BorderThickness="1"
+                ItemsSource="{Binding Templates}" BorderThickness="1"
                 IsReadOnly="True"
                 AutoGenerateColumns="False"
                 ColumnWidth="*"
@@ -48,16 +48,14 @@
                 </Style>
             </DataGrid.ColumnHeaderStyle>
             <DataGrid.Columns>
-                <DataGridTextColumn Header="TÊN" Binding="{Binding Name}" Width="*">
+                <DataGridTextColumn Header="MÃ MẪU MÔ TẢ" Binding="{Binding Code}" Width="150" />
+                <DataGridTextColumn Header="TÊN MẪU MÔ TẢ" Binding="{Binding Name}" Width="*">
                     <DataGridTextColumn.ElementStyle>
                         <Style TargetType="TextBlock">
                             <Setter Property="TextWrapping" Value="Wrap" />
                         </Style>
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
-                <DataGridTextColumn Header="AET" Binding="{Binding AET}" Width="*" />
-                <DataGridTextColumn Header="MÃ MÁY" Binding="{Binding Code}" Width="150" />
-                <DataGridTextColumn Header="LOẠI MÁY" Binding="{Binding Type}" Width="150" />
                 <DataGridTemplateColumn Header="TRẠNG THÁI" Width="100">
                     <DataGridTemplateColumn.HeaderStyle>
                         <Style TargetType="DataGridColumnHeader">
@@ -71,7 +69,7 @@
                     </DataGridTemplateColumn.HeaderStyle>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Label Cursor="Hand" Background="#4caf50" Foreground="White" Margin="0,3" Width="100" HorizontalContentAlignment="Center" FontSize="10">CHO PHÉP</Label>
+                            <Label Cursor="Hand" Background="#4caf50" Foreground="White" Margin="0,3" Width="100" HorizontalContentAlignment="Center" FontSize="10" Content="{Binding Status}"></Label>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

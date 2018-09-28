@@ -4,6 +4,7 @@ using GalaSoft.MvvmLight.Messaging;
 using Mcap.MessageInfrastructure;
 using Mcap.Model;
 using Mcap.Model.Shared;
+using Mcap.Module;
 using Mcap.ViewModels;
 using Mcap.ViewModels.Shared;
 using System;
@@ -22,6 +23,7 @@ namespace Mcap.ViewModels
         #region Private Field
         private PageViewModel _currentViewModel;
         private Dictionary<string, PageViewModel> _pageViews;
+        private Dictionary<string, Window> _windowViews;
         private ToolbarMenuViewModel _toolbar;
         #endregion
 
@@ -61,7 +63,7 @@ namespace Mcap.ViewModels
                             new MenuItemModel { Header = "Quản lý dịch vụ", MenuIcon = "Ambulance", Name = "Concept" }
                         }
                 },
-                new MenuItemModel { Header = "Cài đặt", MenuIcon = "Ambulance", Name = "", IsActive = false }
+                new MenuItemModel { Header = "Cài đặt", MenuIcon = "Ambulance", Name = "Setting", IsActive = false, IsPopup = true }
             };
             PageViews.Add("Work", new WorkingViewModel());
             PageViews.Add("Worklist", new WorklistViewModel());
@@ -70,6 +72,7 @@ namespace Mcap.ViewModels
             PageViews.Add("Modility", new ModalityViewModel());
             PageViews.Add("Report", new ReportTemplateViewModel());
             PageViews.Add("Concept", new ConceptViewModel());
+            PopupViews.Add("Setting", new Setting());
             CurrentViewModel = PageViews["Worklist"];
         }
 
@@ -98,6 +101,17 @@ namespace Mcap.ViewModels
                 return _pageViews;
             }
         }
+        public Dictionary<string, Window> PopupViews
+        {
+            get
+            {
+                if (_windowViews == null)
+                {
+                    _windowViews = new Dictionary<string, Window>();
+                }
+                return _windowViews;
+            }
+        }
         public ToolbarMenuViewModel Toolbar
         {
             get
@@ -122,7 +136,13 @@ namespace Mcap.ViewModels
         {
             Messenger.Default.Register<MenuMessageComunicator>(this, info =>
             {
-                ChangeActive(info.Item);
+                if (info.Item == "Setting")
+                {
+                    (new Setting()).ShowDialog();
+                } else
+                {
+                    ChangeActive(info.Item);
+                }
             });
         }
         public void ChangeActive(string name)

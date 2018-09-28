@@ -17,6 +17,7 @@
             <xctk:WizardPage x:Name="ConfigDatabasePage"
                              Title="Cài đặt cấu hình database"
                              Description="Cài đặt cấu hình kết nối database gồm server username/password">
+                <controls:Database />
             </xctk:WizardPage>
             <xctk:WizardPage x:Name="ConfigIntegratePage"
                              Title="Cài đặt thông tin tích hợp"

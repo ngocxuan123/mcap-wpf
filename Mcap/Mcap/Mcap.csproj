@@ -162,6 +162,9 @@
     <Compile Include="Components\ToolbarMcapMenu.xaml.cs">
       <DependentUpon>ToolbarMcapMenu.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Database.xaml.cs">
+      <DependentUpon>Database.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\InfoHospital.xaml.cs">
       <DependentUpon>InfoHospital.xaml</DependentUpon>
     </Compile>
@@ -255,6 +258,12 @@
     <Compile Include="Views\Element\DescriptionSample\Form.xaml.cs">
       <DependentUpon>Form.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Element\DescriptionSample\Grid.xaml.cs">
+      <DependentUpon>Grid.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Element\DescriptionSample\SearchPanel.xaml.cs">
+      <DependentUpon>SearchPanel.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Element\Main\Form.xaml.cs">
       <DependentUpon>Form.xaml</DependentUpon>
     </Compile>
@@ -319,6 +328,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Components\ToolbarMcapMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Database.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -950,6 +963,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Element\DescriptionSample\Form.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Element\DescriptionSample\Grid.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Element\DescriptionSample\SearchPanel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

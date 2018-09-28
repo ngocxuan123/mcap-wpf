@@ -3,10 +3,37 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:controls="clr-namespace:Mcap.Controls"
         xmlns:local="clr-namespace:Mcap.Module"
         mc:Ignorable="d"
-        Title="Setting" Height="450" Width="800">
+        Title="Cài đặt hệ thống" Height="429.979" Width="870.551" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
-        
+        <TabControl TabStripPlacement="Left">
+            <TabControl.Resources>
+                <Style TargetType="{x:Type TabItem}">
+                    <!--<Setter Property="HeaderTemplate">
+                        <Setter.Value>
+                            <DataTemplate>
+                                <ContentPresenter Content="{TemplateBinding Content}">
+                                    <ContentPresenter.LayoutTransform>
+                                        <RotateTransform Angle="270" />
+                                    </ContentPresenter.LayoutTransform>
+                                </ContentPresenter>
+                            </DataTemplate>
+                        </Setter.Value>
+                    </Setter>-->
+                    <Setter Property="Padding" Value="3" />
+                </Style>
+            </TabControl.Resources>
+            <TabItem Header="Thông tin tích hợp" Padding="10">
+                <controls:Integrate />
+            </TabItem>
+            <TabItem Header="Thông tin bệnh viện" Padding="10">
+                <controls:InfoHospital />
+            </TabItem>
+            <TabItem Header="Thông tin làm việc" Padding="10"/>
+            <TabItem Header="Thiết bị phát video" Padding="10"/>
+            <TabItem Header="Thông tin máy thực hiện" Padding="10"/>
+        </TabControl>
     </Grid>
 </Window>

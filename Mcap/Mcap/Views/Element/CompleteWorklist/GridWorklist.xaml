@@ -16,7 +16,7 @@
         <StackPanel DockPanel.Dock="Bottom" Height="40" Orientation="Horizontal">
             <Label Content="Có tất cả (" FontWeight="Bold" Margin="0,5"></Label>
             <Label Content="{Binding Worklist.Count}" FontWeight="Bold" Margin="0,5"></Label>
-            <Label Content=") ca chụp cần thực hiện" FontWeight="Bold" Margin="0,5"></Label>
+            <Label Content=") ca chụp đã thực hiện" FontWeight="Bold" Margin="0,5"></Label>
         </StackPanel>
         <DataGrid MinWidth="400"
                 HorizontalScrollBarVisibility="Auto"
