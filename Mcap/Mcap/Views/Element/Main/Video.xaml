@@ -89,15 +89,17 @@
                     <ItemsControl ItemsSource="{Binding VideoContext.VideoProcessModel.Images}">
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
-                                <Border BorderBrush="#d6d6d6" BorderThickness="1" Padding="3" Margin="0,0,3,3">
-                                    <StackPanel Margin="0,0,5,5">
-                                        <Image Source="{Binding Item}" Height="100" Width="100" />
-                                        <StackPanel Orientation="Horizontal">
-                                            <CheckBox Margin="0,0,5,0"></CheckBox>
-                                            <Label Content="{Binding Label}" Padding="2"/>
+                                <WrapPanel Orientation="Horizontal">
+                                    <Border Width="100" Height="100" BorderBrush="#d6d6d6" BorderThickness="1" Padding="3" Margin="0,0,3,3">
+                                        <StackPanel Margin="0,0,5,5">
+                                            <Image Source="{Binding Item}" Height="100" Width="100" />
+                                            <StackPanel Orientation="Horizontal">
+                                                <CheckBox Margin="0,0,5,0"></CheckBox>
+                                                <Label Content="{Binding Label}" Padding="2"/>
+                                            </StackPanel>
                                         </StackPanel>
-                                    </StackPanel>
-                                </Border>
+                                    </Border>
+                                </WrapPanel>
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
                     </ItemsControl>

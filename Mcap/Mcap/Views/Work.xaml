@@ -132,11 +132,15 @@
                 <Border Drop="Border_PreviewDrop"  AllowDrop="True" Grid.Row="0" Grid.Column="2" Background="Transparent" BorderBrush="Gainsboro" BorderThickness="1" Margin="5" Padding="5">
                     <DockPanel>
                         <ToolBar Height="30" Grid.Row="1" DockPanel.Dock="Bottom">
-                            <Button Padding="5, 0" Content="In"/>
+                            <Button Padding="5, 0" Content="LÀM MỚI"/>
                             <Separator/>
-                            <Button Padding="5, 0" Content="Thoát ca chụp"/>
+                            <Button Padding="5, 0" Content="DỪNG CA CHỤP"/>
                             <Separator/>
-                            <Button Padding="5, 0" Content="Kết thúc" Click="Button_Click"/>
+                            <Button Padding="5, 0" Content="THOÁT CA CHỤP"/>
+                            <Separator/>
+                            <Button Padding="5, 0" Content="IN" Click="Button_Click"/>
+                            <Separator/>
+                            <Button Padding="5, 0" Content="KẾT THÚC" Click="Button_Click"/>
                         </ToolBar>
                         <Border 
                             Grid.Column="1" 
@@ -148,71 +152,7 @@
                             <vm:Video  HorizontalAlignment="Stretch"/>
                         </Border>
                         <StackPanel Grid.Row="0">
-                            <GroupBox Header="Thông tin hành chính">
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="15.33*" />
-                                        <ColumnDefinition Width="44.33*" />
-                                        <ColumnDefinition Width="20.33*" />
-                                        <ColumnDefinition Width="30.33*" />
-                                    </Grid.ColumnDefinitions>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="Auto" />
-                                        <RowDefinition Height="Auto" />
-                                        <RowDefinition Height="Auto" />
-                                        <RowDefinition Height="Auto" />
-                                    </Grid.RowDefinitions>
-                                    <Label Grid.Row="0" Grid.ColumnSpan="4" Grid.Column="0" Content="NGUYỄN VĂN A" FontWeight="Bold" Margin="0,5"/>
-                                    <Label Grid.Row="1" Grid.Column="0" Content="MÃ BN #:" Margin="0,5"/>
-                                    <TextBox Padding="2" Grid.Column="1" Grid.Row="1" Margin="0,3" Text="BN00001523"/>
-                                    <Label Grid.Row="1" Grid.Column="2" Content="Tuổi:" Margin="15,5,0,5"/>
-                                    <TextBox Padding="2" Grid.Column="3" Grid.Row="1" Margin="0,3" Text="31"/>
-
-                                    <Label Grid.Row="2" Grid.Column="0" Content="MÃ BHYT #:" Margin="0,5"/>
-                                    <TextBox Padding="2" Grid.Column="1" Grid.Row="2" Margin="0,3" Text="DN7792385238233"/>
-                                    <Label Grid.Row="2" Grid.Column="2" Content="Giới tính:" Margin="15,5,0,5"/>
-                                    <TextBox Padding="2" Grid.Column="3" Grid.Row="2" Margin="0,3" Text="Nam"/>
-
-                                    <Label Grid.Row="3" Grid.Column="0" Content="Địa chỉ:" Margin="0,5"/>
-                                    <TextBox Padding="2" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="3" Margin="0,3" Text="235 Nguyễn Tri Phương - Hải Châu - Đà Nẵng"/>
-                                </Grid>
-                            </GroupBox>
-                            <GroupBox Header="Thông tin dịch vụ">
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="15.33*" />
-                                        <ColumnDefinition Width="44.33*" />
-                                        <ColumnDefinition Width="20.33*" />
-                                        <ColumnDefinition Width="30.33*" />
-                                    </Grid.ColumnDefinitions>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="Auto" />
-                                        <RowDefinition Height="Auto" />
-                                        <RowDefinition Height="Auto" />
-                                        <RowDefinition Height="Auto" />
-                                    </Grid.RowDefinitions>
-                                    <Label Grid.Row="0" Grid.Column="0" Content="MÃ Phiếu #:" Margin="0,5"/>
-                                    <TextBox Padding="2" Grid.Column="1" Grid.Row="0" Margin="0,3" Text="{Binding CurrentOrder.Name, Mode=TwoWay}"/>
-                                    <Label Grid.Row="0" Grid.Column="2" Content="Thời điểm nhận:" Margin="15,5,0,5"/>
-                                    <DatePicker Padding="2" Grid.Column="3" Grid.Row="0" Margin="0,3" Text="28-08-2018 11:20"/>
-
-                                    <Label Grid.Row="1" Grid.Column="0" Content="Tên Dịch Vụ:" Margin="0,5"/>
-                                    <TextBox Padding="2" Grid.Column="1" Grid.Row="1" Margin="0,3" Text="Nội soi dạ dày"/>
-                                    <Label Grid.Row="1" Grid.Column="2" Content="Ngày chỉ định:" Margin="15,5,0,5"/>
-                                    <DatePicker Padding="2" Grid.Column="3" Grid.Row="1" Margin="0,3" Text="31"/>
-
-                                    <Label Grid.Row="2" Grid.Column="0" Content="MÃ BHYT #:" Margin="0,5"/>
-                                    <TextBox Padding="2" Grid.Column="1" Grid.Row="2" Margin="0,3" Text="DN7792385238233"/>
-                                    <Label Grid.Row="2" Grid.Column="2" Content="Giới tính:" Margin="15,5,0,5"/>
-                                    <TextBox Padding="2" Grid.Column="3" Grid.Row="2" Margin="0,3" Text="Nam"/>
-
-                                    <Label Grid.Row="3" Grid.Column="0" Content="Địa chỉ:" Margin="0,5"/>
-                                    <TextBox Padding="2" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="3" Margin="0,3" Text="235 Nguyễn Tri Phương - Hải Châu - Đà Nẵng"/>
-                                </Grid>
-                            </GroupBox>
-                            <GroupBox Header="Kết quả khám bệnh" Panel.ZIndex="8">
-                                <components:HtmlTextBox />
-                            </GroupBox>
+                            <vm:Form />
                         </StackPanel>
                     </DockPanel>
                 </Border>

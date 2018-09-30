@@ -74,7 +74,7 @@
                     </DataGridTemplateColumn.HeaderStyle>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Label Cursor="Hand" Background="#4caf50" Foreground="White" Margin="0,3" Width="120" HorizontalContentAlignment="Center">ĐÃ THỰC HIỆN</Label>
+                            <Label Cursor="Hand" Background="#4caf50" Foreground="White" Margin="0,3" Width="120" HorizontalContentAlignment="Center">ĐÃ GỬI KẾT QUẢ</Label>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
