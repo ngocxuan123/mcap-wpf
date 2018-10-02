@@ -15,3 +15,4 @@ D:\work\wpf\mcap-wpf\Mcap\Mcap.Integrate\Mcap.Integrate\obj\Debug\netstandard2.0
 D:\work\wpf\mcap-wpf\Mcap\Mcap.Integrate\Mcap.Integrate\obj\Debug\netstandard2.0\Mcap.Integrate.AssemblyInfo.cs
 D:\work\wpf\mcap-wpf\Mcap\Mcap.Integrate\Mcap.Integrate\obj\Debug\netstandard2.0\Mcap.Integrate.dll
 D:\work\wpf\mcap-wpf\Mcap\Mcap.Integrate\Mcap.Integrate\obj\Debug\netstandard2.0\Mcap.Integrate.pdb
+E:\learn\c#\mca-wpf\mcap-wpf\Mcap\Mcap.Integrate\Mcap.Integrate\obj\Debug\netstandard2.0\Mcap.Integrate.csprojAssemblyReference.cache

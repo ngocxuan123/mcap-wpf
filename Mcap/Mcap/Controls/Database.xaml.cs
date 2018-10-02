@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using ADOX;
 namespace Mcap.Controls
 {
     /// <summary>
@@ -23,6 +23,12 @@ namespace Mcap.Controls
         public Database()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Catalog cat = new Catalog();
+            cat.Create("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + "E:\\mcap.mdb" + ";Jet OLEDB:Database Password=test");
         }
     }
 }

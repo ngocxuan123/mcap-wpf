@@ -1,0 +1,23 @@
+CKEDITOR.plugins.setLang( 'autocorrect', 'vi', {
+	toolbar: 'Công cụ',
+	autocorrect: 'Bộ gõ tắt',
+	disable: 'Vô hiệu tự động hoàn thành',
+	enable: 'Bật tự động hoàn thành',
+	autocorrectNow: 'Tự động hoàn thành ngay',
+	options: 'Tùy chọn',
+	autoformat: 'Tự động định dạng',
+	autoformatAsYouType: 'Tự động định dạng',
+	replaceTextAsYouType: 'Áp dụng bộ từ gõ tắt',
+	replaceAsYouType: 'Thay thế khi bạn nhập',
+	applyAsYouType: 'Áp dụng khi bạn nhập',
+	apply: 'Áp dụng',
+	replace: 'Thay thế',
+	smartQuotesOption: '"Tự động thêm dấu "trích dẫn"',
+	formatOrdinalsOption: 'Ordinals (1st) with superscript',
+	replaceHyphensOption: 'Thay đổi (--) với (—)',
+	recognizeUrlsOption: 'Thay đổi url, đường dẫn internet',
+	formatBulletedListsOption: 'Tự động bullet danh sách',
+	formatNumberedListsOption: 'Tự động danh sách theo STT',
+	createHorizontalRulesOption: 'Quy tắc ngang',
+	replaceFractionsOption: 'Tự động thay thế (1/2) với ký tự (½)'
+});

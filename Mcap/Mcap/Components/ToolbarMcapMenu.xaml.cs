@@ -1,5 +1,4 @@
 ﻿using GalaSoft.MvvmLight;
-using Mcap.Core.EventArgs;
 using Mcap.Model;
 using System;
 using System.Collections.ObjectModel;
@@ -36,8 +35,8 @@ namespace Mcap.Components
         // This method raises the Tap event
         void RaiseTapEvent(string Name)
         {
-            MenuLayoutRoutedEventArgs newEventArgs = new MenuLayoutRoutedEventArgs(TapEvent, Name);
-            RaiseEvent(newEventArgs);
+            //MenuLayoutRoutedEventArgs newEventArgs = new MenuLayoutRoutedEventArgs(TapEvent, Name);
+            //RaiseEvent(newEventArgs);
         }
         public ToolbarMcapMenu()
         {

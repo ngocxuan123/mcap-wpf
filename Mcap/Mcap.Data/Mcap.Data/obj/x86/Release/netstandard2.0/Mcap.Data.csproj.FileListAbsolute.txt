@@ -1,9 +1,0 @@
-E:\learn\c#\mca-wpf\mcap-wpf\Mcap\Mcap.Data\Mcap.Data\bin\x86\Release\netstandard2.0\Mcap.Data.deps.json
-E:\learn\c#\mca-wpf\mcap-wpf\Mcap\Mcap.Data\Mcap.Data\bin\x86\Release\netstandard2.0\Mcap.Data.dll
-E:\learn\c#\mca-wpf\mcap-wpf\Mcap\Mcap.Data\Mcap.Data\bin\x86\Release\netstandard2.0\Mcap.Data.pdb
-E:\learn\c#\mca-wpf\mcap-wpf\Mcap\Mcap.Data\Mcap.Data\obj\x86\Release\netstandard2.0\Mcap.Data.csprojAssemblyReference.cache
-E:\learn\c#\mca-wpf\mcap-wpf\Mcap\Mcap.Data\Mcap.Data\obj\x86\Release\netstandard2.0\Mcap.Data.csproj.CoreCompileInputs.cache
-E:\learn\c#\mca-wpf\mcap-wpf\Mcap\Mcap.Data\Mcap.Data\obj\x86\Release\netstandard2.0\Mcap.Data.AssemblyInfoInputs.cache
-E:\learn\c#\mca-wpf\mcap-wpf\Mcap\Mcap.Data\Mcap.Data\obj\x86\Release\netstandard2.0\Mcap.Data.AssemblyInfo.cs
-E:\learn\c#\mca-wpf\mcap-wpf\Mcap\Mcap.Data\Mcap.Data\obj\x86\Release\netstandard2.0\Mcap.Data.dll
-E:\learn\c#\mca-wpf\mcap-wpf\Mcap\Mcap.Data\Mcap.Data\obj\x86\Release\netstandard2.0\Mcap.Data.pdb

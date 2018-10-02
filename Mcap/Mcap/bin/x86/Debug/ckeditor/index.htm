@@ -1,0 +1,63 @@
+﻿<html>
+<head>
+    <title>Untitled Page</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=11,IE=10,IE=9,IE=8">
+    <meta charset="utf-8">
+    <meta name="ckeditor-sample-required-plugins" content="sourcearea">
+    <script type="text/javascript" src="ckeditor.js"></script>
+    <style type="text/css">
+        body, html
+        {
+            padding: 0px;
+            margin: 0px;
+            height: 100%;
+        }
+        
+        #cke_bottom_detail, .cke_bottom
+        {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <textarea class="ckeditor" name="txtNoiDung"></textarea>
+    <script type="text/javascript">
+        CKEDITOR.on('instanceReady',
+			function (evt) {
+			   var instanceName = 'txtNoiDung'; // the HTML id configured for editor
+			   var editor = CKEDITOR.instances[instanceName];
+			   editor.execCommand('maximize');
+			}
+		);
+
+        CKEDITOR.replace('txtNoiDung', {
+            toolbar: [
+                { name: 'document', items: ['Source', '-', 'Cut', 'Copy', 'Paste', '-', 'Bold', 'Italic', 'Underline', 'Strike', 'RemoveFormat', '-', 'Undo', 'Redo'] },
+                { name: 'basicstyles2', items: ['Font', 'FontSize', 'TextColor'] },
+                { name: 'paragraph', groups: ['list', 'indent', 'blocks', 'bidi'], items: ['NumberedList', '-', 'Outdent', 'Indent', '-', 'SpecialChar', '-', 'AutoCorrect'] }
+            ],
+            filebrowserImageBrowseUrl: 'http://2.pik.vn/',
+            filebrowserWindowWidth: '850',
+            filebrowserWindowHeight: '550'
+        });
+    </script>
+
+    <script type="text/javascript">
+		function LoadHotKeyData(map) {
+            CKEDITOR.instances['txtNoiDung'].execCommand('updateData', JSON.parse(map));
+        }
+		
+        function GanGiaTri(str) {
+            CKEDITOR.instances['txtNoiDung'].setData(str);
+        }
+
+        function LayGiaTri(str) {
+            return CKEDITOR.instances['txtNoiDung'].getData();
+        }
+
+        function ChenGiaTri(str) {
+            CKEDITOR.instances['txtNoiDung'].insertHtml(str);
+        }  
+    </script>
+</body>
+</html>

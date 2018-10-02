@@ -1,4 +1,5 @@
 ﻿using Mcap.Module;
+using System.Data.OleDb;
 using Mcap.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -7,6 +8,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using Mcap.Core.Exception;
 
 namespace Mcap
 {
@@ -30,6 +32,25 @@ namespace Mcap
                 }
             };
             widzard.ShowDialog();
+            //try
+            //{
+            //    using (Data.McapDbContext context = new Data.McapDbContext())
+            //    {
+            //        context.Patients.Add(new Data.Patient() { Name = "Vuong oc" });
+            //        context.SaveChanges();
+            //        //throw new ExceptionDemo();
+            //    }
+            //    widzard.ShowDialog();
+            //}
+            //catch (ExceptionDemo exc)
+            //{
+            //    MessageBox.Show(exc.Message);
+            //}
+            //catch (Exception)
+            //{
+            //    throw;
+            //}
+
         }
     }
 }
